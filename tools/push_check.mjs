@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-// Prüfung vor jedem Push. Läuft ohne KI und ohne Netzwerk.
+// Prüfung vor jedem Push. Läuft ohne KI; für die Sichtbarkeitsprüfung wird GitHub abgefragt (Internet nötig).
 // Aufruf im Repo-Ordner:  node tools/push_check.mjs [--oeffentlich]
-//   --oeffentlich  zusätzlich: nur Demo-Daten (isDemo: true) erlaubt, keine Ordner import/, vertrieb/, archive/
+//   --oeffentlich  für das öffentliche Repo: nur Demo-Daten (isDemo: true), keine Ordner import/, vertrieb/, archive/
+//   ohne Schalter  für das interne Repo: das Repo muss bei GitHub privat sein
 // Exit-Code 0 = in Ordnung, 1 = Push nicht erlaubt.
 
 import { execSync } from 'node:child_process';
@@ -41,9 +42,32 @@ for (const f of files) {
   }
 }
 
+// Sichtbarkeit des Repos bei GitHub prüfen (über curl, das auf dem Mac vorinstalliert ist)
+function repoVisibility() {
+  let remote;
+  try { remote = execSync('git remote get-url origin', { encoding: 'utf8' }).trim(); } catch { return { error: 'kein Git-Remote "origin"' }; }
+  const m = remote.match(/github\.com[/:]([^/]+)\/([^/.]+)(\.git)?$/);
+  if (!m) return { error: `Remote ist kein GitHub-Repo: ${remote}` };
+  try {
+    const out = execSync(`curl -s -m 15 -w "\\n%{http_code}" https://api.github.com/repos/${m[1]}/${m[2]}`, { encoding: 'utf8' });
+    const code = out.slice(out.lastIndexOf('\n') + 1).trim();
+    const body = out.slice(0, out.lastIndexOf('\n'));
+    // 404 ohne Anmeldung heißt: von außen nicht sichtbar, also privat
+    if (code === '404') return { repo: `${m[1]}/${m[2]}`, visibility: 'private' };
+    if (code !== '200') return { error: `GitHub antwortet mit Status ${code}` };
+    return { repo: `${m[1]}/${m[2]}`, visibility: JSON.parse(body).visibility };
+  } catch (e) {
+    return { error: `GitHub nicht erreichbar (${e.message.split('\n')[0]})` };
+  }
+}
+const vis = repoVisibility();
+if (vis.error) problems.push(`Sichtbarkeit des Repos nicht prüfbar: ${vis.error}. Bitte Internetverbindung prüfen und erneut starten.`);
+else if (publicRepo && vis.visibility !== 'public') problems.push(`${vis.repo} ist "${vis.visibility}", erwartet war öffentlich (für GitHub Pages).`);
+else if (!publicRepo && vis.visibility !== 'private') problems.push(`${vis.repo} ist "${vis.visibility}". Das interne Repo muss privat sein. Unter Settings > General > Danger Zone auf "Private" stellen.`);
+
 if (problems.length) {
   console.log('PUSH NICHT ERLAUBT:');
   problems.forEach((p) => console.log(`  - ${p}`));
   process.exit(1);
 }
-console.log(`Push-Prüfung bestanden: ${files.length} Dateien geprüft${publicRepo ? ' (öffentliches Repo)' : ''}.`);
+console.log(`Push-Prüfung bestanden: ${files.length} Dateien geprüft, ${vis.repo} ist ${vis.visibility === 'public' ? 'öffentlich' : 'privat'}.`);

@@ -15,8 +15,8 @@ const arg = (name, def) => {
   const i = process.argv.indexOf(name);
   return i > 0 ? process.argv[i + 1] : def;
 };
-const VERSION = arg('--version', '2026-11-12_01');
-const STAND = arg('--stand', '2026-11-12T23:30:00+01:00');
+const VERSION = arg('--version', '2026-11-13_01');
+const STAND = arg('--stand', '2026-11-13T00:40:00+01:00');
 const EVENT_ID = 'demo-energietage-2027';
 const outDir = resolve(here, '../data/events', EVENT_ID);
 
@@ -52,6 +52,10 @@ const ROOMS = [
   { id: 'raum-elbe', name: 'Raum Elbe', floor: '1. OG' },
   { id: 'raum-havel', name: 'Raum Havel', floor: '2. OG' },
   { id: 'raum-ostufer', name: 'Raum Ostufer', floor: '2. OG' },
+  { id: 'raum-oder', name: 'Raum Oder', floor: '2. OG' },
+  { id: 'raum-saale', name: 'Raum Saale', floor: '2. OG' },
+  { id: 'raum-mulde', name: 'Raum Mulde', floor: 'Anbau' },
+  { id: 'raum-neisse', name: 'Raum Neiße', floor: 'Anbau' },
 ];
 
 const TOPICS = [
@@ -205,6 +209,58 @@ const FORUMS = [
     'Wie Bürgerinnen und Bürger selbst Windparks betreiben.'],
 ];
 
+
+// Zweiter Block (Nachmittag) je Forum, gleiche Reihenfolge wie FORUMS
+const AFTERNOON_TALKS = [
+  ['Musterantrag: Was in die Unterlagen gehört', 'Beteiligung der Träger öffentlicher Belange', 'Erörterungstermine effizient gestalten', 'Kennzahlen zur Verfahrensdauer'],
+  ['Netzanschluss beim Repowering erhalten', 'Turbinenwahl für bestehende Flächen', 'Eigentümer und Pächter beim Repowering', 'Wirtschaftlichkeitsrechnung Alt gegen Neu'],
+  ['Netzausbauplanung der Verteilnetzbetreiber', 'Kosten des Netzanschlusses verteilen', 'Flexible Netzanschlussvereinbarungen', 'Netzanschluss für Hybridparks'],
+  ['Kartierungen effizient planen', 'Ersatzzahlungen statt Abschaltung?', 'Monitoring nach Inbetriebnahme', 'Zusammenarbeit mit Naturschutzbehörden'],
+  ['Beteiligungsmodelle im Vergleich', 'Kommunale Einnahmen sinnvoll verwenden', 'Junge Menschen für Windprojekte gewinnen', 'Akzeptanzforschung: neue Ergebnisse'],
+  ['Strombörse und Marktwert Wind', 'Prognosegüte und Ausgleichsenergie', 'Vermarktung nach Ende der Förderung', 'Regionale Grünstromprodukte'],
+  ['Hafenlogistik und Zwischenlagerung', 'Kranlogistik bei beengten Standorten', 'Verkehrssicherung bei Nachttransporten', 'Digitale Transportplanung'],
+  ['Verträge mit Betriebsführern gestalten', 'Datenhoheit des Betreibers', 'Ertragsabweichungen analysieren', 'Pflichten nach Netzstabilitätsvorgaben'],
+  ['Flächenpools und Abstimmung mit Nachbarn', 'Windenergiegebiete und Bestandsanlagen', 'Rechtliche Folgen der Flächenausweisung', 'Raumordnung über Ländergrenzen'],
+  ['Nachtkennzeichnung nachrüsten', 'Flugsicherung im Genehmigungsverfahren', 'Hubschrauberlandeplätze in der Nähe', 'Neue Vorgaben zur Tageskennzeichnung'],
+  ['Erste Hilfe in großer Höhe', 'Persönliche Schutzausrüstung im Test', 'Sicherheitskultur in Serviceteams', 'Arbeitszeit und Ermüdung'],
+  ['Neue Verwaltungsvorschriften im Überblick', 'Eilverfahren: Chancen und Risiken', 'Urteile zum Artenschutz', 'Fragen aus dem Publikum an die Fachleute'],
+  ['Mezzanine-Kapital für Projektierer', 'Fonds als Käufer fertiger Parks', 'Due Diligence beim Kauf', 'Bewertung von Projektrechten'],
+  ['Speicher ohne eigenen Netzanschluss', 'Netzentgelte für Speicher', 'Betriebsstrategie für Speicher am Windpark', 'Sicherheitsanforderungen an Batteriesysteme'],
+  ['Wasserstofftransport im ländlichen Raum', 'Abnehmer für grünen Wasserstoff finden', 'Förderprogramme für Elektrolyseure', 'Praxisbericht: Elektrolyseur im Probebetrieb'],
+  ['Künstliche Intelligenz in der Fehlerdiagnose', 'Datenqualität in SCADA-Systemen', 'Leistungskurven überwachen', 'Datenplattformen für mehrere Hersteller'],
+  ['Standsicherheit älterer Türme', 'Weiterbetrieb und Genehmigungsrecht', 'Versicherung von Altanlagen', 'Erfahrungen nach 25 Betriebsjahren'],
+  ['Infraschall: Stand der Forschung', 'Schallreduzierte Betriebsmodi', 'Beschwerden von Anwohnern bearbeiten', 'Gutachten im gerichtlichen Verfahren'],
+  ['Naturgefahren und Versicherungsschutz', 'Schadenmanagement nach Blitzschlag', 'Versicherung während der Bauphase', 'Haftung bei Eiswurf'],
+  ['Netzanschluss im Umspannwerk des Netzbetreibers', 'Abrechnung von Einspeisemanagement', 'Netzbetreiberportale im Vergleich', 'Störungsmeldungen schneller bearbeiten'],
+  ['Pachtpreise und Marktentwicklung', 'Steuerliche Fragen für Verpächter', 'Rückbauverpflichtung im Pachtvertrag', 'Mustervertrag: Erfahrungen aus der Praxis'],
+  ['Abschlussarbeit: Ertragsprognose mit Wetterdaten', 'Abschlussarbeit: Schallausbreitung im Wald', 'Weiterbildung für Quereinsteiger', 'Netzwerke für junge Fachleute'],
+  ['Rückbau im laufenden Windpark', 'Entsorgung von Betonfundamenten', 'Kreislaufquoten für Rotorblätter', 'Rückbau aus Sicht der Behörde'],
+  ['Schwachwindanlagen für das Binnenland', 'Rotorblattlängen und Transportgrenzen', 'Turmhöhen über 180 Meter', 'Neue Generatorkonzepte'],
+  ['Bürgerenergie in Ausschreibungen', 'Höchstwerte und Gebotsverhalten', 'Marktdesign und Netzentgelte', 'Kapazitätsmechanismen in der Diskussion'],
+  ['Hauptkomponenten selbst einkaufen?', 'Inspektionsintervalle optimieren', 'Fernüberwachung rund um die Uhr', 'Instandsetzung von Rotorblattkanten'],
+  ['Waldbrandrisiko und Löschkonzepte', 'Wegebau im Forst', 'Artenschutz im Wald', 'Ersatzaufforstung und Ausgleichsflächen'],
+  ['Social Media in der Projektkommunikation', 'Anwohnerbriefe richtig formulieren', 'Krisenkommunikation bei Störfällen', 'Dialogformate mit Vereinen'],
+  ['Spannungshaltung durch Windparks', 'Inselnetzfähigkeit', 'Schwarzstartfähigkeit von Windparks', 'Prüfung netzdienlicher Eigenschaften'],
+  ['Sicherheitsupdates für Anlagensteuerungen', 'Meldepflichten bei Sicherheitsvorfällen', 'Lieferanten und IT-Sicherheit', 'Übung: Ausfall der Parksteuerung'],
+  ['Recyclingfähiges Material im Turmbau', 'Gebrauchtteile in der Instandsetzung', 'Lieferketten transparent machen', 'Kreislaufwirtschaft in Ausschreibungen'],
+  ['Digitale Behördenbeteiligung', 'Vorantragskonferenzen', 'Gemeinsame Prüfstandards der Länder', 'Ausblick: Verfahren in fünf Jahren'],
+  ['Genossenschaften als Netzbetreiber?', 'Mitgliederversammlungen digital', 'Kooperation von Genossenschaften', 'Rechtliche Grundlagen der Bürgerbeteiligung'],
+];
+
+// Schwerpunkte (Kategorien) mit Farbe. Zuordnung über Stichworte im Titel, höchstens einer je Programmpunkt.
+const CATEGORIES = [
+  { id: 'schneller-bauen', label: 'Schneller genehmigen und bauen', color: '#2f6fb5', words: ['genehmig', 'verfahren', 'fristen', 'behörd', 'antrag'] },
+  { id: 'erloese', label: 'Erlöse und Finanzierung', color: '#2e7d4f', words: ['ppa', 'finanz', 'erlös', 'wirtschaftlich', 'vermarkt', 'kapital', 'fonds', 'preis', 'rendite'] },
+  { id: 'daten-ki', label: 'Daten und KI', color: '#7a4fb0', words: ['daten', 'digital', 'künstliche', 'scada', 'cyber', 'überwach'] },
+  { id: 'menschen', label: 'Menschen und Fachkräfte', color: '#b3541e', words: ['fachkräfte', 'nachwuchs', 'berufseinstieg', 'quereinsteiger', 'teams', 'junge'] },
+  { id: 'kreislauf', label: 'Kreislauf und Rückbau', color: '#6b6b1f', words: ['recycl', 'rückbau', 'kreislauf', 'verwertung', 'gebraucht'] },
+];
+function categoryFor(title) {
+  const t = title.toLowerCase();
+  const c = CATEGORIES.find((cat) => cat.words.some((w) => t.includes(w)));
+  return c ? c.id : undefined;
+}
+
 const PLENA = [
   ['Eröffnung und Keynote', [['Begrüßung', 'Begrüßung'], ['Windenergie an Land: Bilanz und Ausblick', 'Keynote'], ['Podium: Was die nächsten Jahre bringen', 'Diskussion']]],
   ['Plenum am zweiten Tag', [['Einführung in den Tag', 'Begrüßung'], ['Netze, Speicher, Märkte: Wie das System zusammenwächst', 'Keynote'], ['Podium: Akzeptanz als Standortfaktor', 'Diskussion']]],
@@ -250,11 +306,9 @@ const addMin = (hhmm, m) => {
   return `${pad(Math.floor(t / 60))}:${pad(t % 60)}`;
 };
 
-// Je Tag 11 Foren in zwei Blöcken: 6 + 5 parallel
-const BLOCKS = [
-  { start: '11:00', rooms: ['saal-1', 'saal-2', 'saal-3', 'saal-4', 'raum-elbe', 'raum-havel'] },
-  { start: '14:30', rooms: ['saal-1', 'saal-2', 'saal-3', 'saal-4', 'raum-ostufer'] },
-];
+// Je Tag 11 Foren gleichzeitig, jedes Forum ganztägig in zwei Blöcken
+const FORUM_ROOMS = ['saal-1', 'saal-2', 'saal-3', 'saal-4', 'raum-elbe', 'raum-havel', 'raum-ostufer', 'raum-oder', 'raum-saale', 'raum-mulde', 'raum-neisse'];
+const BLOCKS = ['10:45', '14:00'];
 
 const forums = [];
 const sessions = [];
@@ -267,7 +321,7 @@ DAYS.forEach((day, di) => {
   const pMod = newSpeaker(orgName('demo-veranstalter'));
   forums.push({ id: pId, number: `P${di + 1}`, title: pTitle, kind: 'plenum', dayId: day.id, roomId: 'plenarsaal', organizerIds: ['demo-veranstalter'], moderatorIds: [pMod], topicIds: [] });
   let t = '09:00';
-  const pLen = [15, 35, 40];
+  const pLen = [15, 35, 25];
   pItems.forEach(([title, type], k) => {
     const speakerIds = type === 'Diskussion'
       ? [newSpeaker(pick(affiliationPool)), newSpeaker(pick(affiliationPool)), newSpeaker(pick(affiliationPool))]
@@ -276,37 +330,41 @@ DAYS.forEach((day, di) => {
     t = addMin(t, pLen[k]);
   });
 
-  // Foren
-  const dayForums = FORUMS.slice(di * 11, di * 11 + 11);
-  let fi = 0;
-  for (const block of BLOCKS) {
-    for (const roomId of block.rooms) {
-      const [title, topicIds, organizerIds, talks, description] = dayForums[fi++];
-      forumNo++;
-      const fId = `forum-${pad(forumNo)}`;
-      const mod = newSpeaker(orgName(organizerIds[0]));
-      forums.push({ id: fId, number: String(forumNo), title, description, kind: 'forum', dayId: day.id, roomId, organizerIds, moderatorIds: [mod], topicIds });
-      // Einführung 5 Min, 4 Vorträge à 15 Min, Diskussion 25 Min = 90 Min
-      let ts = block.start;
-      sessions.push({ id: `${fId}-0`, forumId: fId, title: `Einführung: ${title}`, type: 'Begrüßung', start: `${day.date}T${ts}`, end: `${day.date}T${addMin(ts, 5)}`, speakerIds: [mod], topicIds, status: 'geplant' });
-      ts = addMin(ts, 5);
-      talks.forEach((talk, k) => {
-        const aff = k === 0 ? orgName(organizerIds[organizerIds.length - 1]) : pick(affiliationPool);
+  // Foren: Einführung 5 Min, je Block 4 Vorträge à 20 Min und 20 Min Diskussion
+  FORUMS.slice(di * 11, di * 11 + 11).forEach(([title, topicIds, organizerIds, talks, description], fi) => {
+    const afternoon = AFTERNOON_TALKS[di * 11 + fi];
+    forumNo++;
+    const fId = `forum-${pad(forumNo)}`;
+    const mod = newSpeaker(orgName(organizerIds[0]));
+    forums.push({ id: fId, number: String(forumNo), title, description, kind: 'forum', dayId: day.id, roomId: FORUM_ROOMS[fi], organizerIds, moderatorIds: [mod], topicIds });
+    [talks, afternoon].forEach((blockTalks, bi) => {
+      let ts = BLOCKS[bi];
+      if (bi === 0) {
+        sessions.push({ id: `${fId}-0`, forumId: fId, title: `Einführung: ${title}`, type: 'Begrüßung', start: `${day.date}T${ts}`, end: `${day.date}T${addMin(ts, 5)}`, speakerIds: [mod], topicIds, status: 'geplant' });
+        ts = addMin(ts, 5);
+      }
+      blockTalks.forEach((talk, k) => {
+        const n = bi * 4 + k + 1;
+        const aff = n === 1 ? orgName(organizerIds[organizerIds.length - 1]) : pick(affiliationPool);
         const ids = [newSpeaker(aff)];
         if (rnd() < 0.2) ids.push(newSpeaker(aff));
-        sessions.push({ id: `${fId}-${k + 1}`, forumId: fId, title: talk, type: 'Vortrag', start: `${day.date}T${ts}`, end: `${day.date}T${addMin(ts, 15)}`, speakerIds: ids, topicIds, status: 'geplant' });
-        ts = addMin(ts, 15);
+        const s = { id: `${fId}-${n}`, forumId: fId, title: talk, type: 'Vortrag', start: `${day.date}T${ts}`, end: `${day.date}T${addMin(ts, 20)}`, speakerIds: ids, topicIds, status: 'geplant' };
+        const cat = categoryFor(talk);
+        if (cat) s.categoryId = cat;
+        sessions.push(s);
+        ts = addMin(ts, 20);
       });
-      const panel = sessions.filter((s) => s.forumId === fId && s.type === 'Vortrag').flatMap((s) => s.speakerIds);
-      sessions.push({ id: `${fId}-d`, forumId: fId, title: `Diskussion: ${title}`, type: 'Diskussion', start: `${day.date}T${ts}`, end: `${day.date}T${addMin(ts, 25)}`, speakerIds: [mod, ...panel], topicIds, status: 'geplant' });
-    }
-  }
+      const panel = sessions.filter((s) => s.forumId === fId && s.type === 'Vortrag' && s.start >= `${day.date}T${BLOCKS[bi]}`).flatMap((s) => s.speakerIds);
+      sessions.push({ id: `${fId}-d${bi + 1}`, forumId: fId, title: `Diskussion ${bi === 0 ? 'am Vormittag' : 'am Nachmittag'}: ${title}`, type: 'Diskussion', start: `${day.date}T${ts}`, end: `${day.date}T${addMin(ts, 20)}`, speakerIds: [mod, ...panel], topicIds, status: 'geplant' });
+    });
+  });
 });
 
 // Beispiele für Programmänderungen, damit die Anzeige in der Demo sichtbar ist
 const changed = sessions.find((s) => s.id === 'forum-06-2');
+changed.roomId = 'plenarsaal';
 changed.status = 'geändert';
-changed.statusNote = 'Neue Referentin';
+changed.statusNote = 'Raum geändert: jetzt im Plenarsaal';
 const dropped = sessions.find((s) => s.id === 'forum-19-3');
 dropped.status = 'entfällt';
 dropped.statusNote = 'Vortrag entfällt ersatzlos';
@@ -327,7 +385,7 @@ const sponsorSlots = [
   { id: 'slot-forum-13', placement: 'forum_presented_by', sponsorId: 'sp-kapitalwind', forumId: 'forum-13', active: true },
   { id: 'slot-forum-24', placement: 'forum_presented_by', sponsorId: 'sp-turmwerk', forumId: 'forum-24', active: true },
   { id: 'slot-forum-31', placement: 'forum_presented_by', sponsorId: 'sp-windmuehle', forumId: 'forum-31', active: true },
-  { id: 'slot-kalender', placement: 'calendar_note', sponsorId: 'sp-windmuehle', text: 'Programm-App unterstützt von Windmühle Beispiel AG (Anzeige)', active: true },
+  { id: 'slot-kalender', placement: 'calendar_note', sponsorId: 'sp-windmuehle', text: 'Programm-App unterstützt von Windmühle Beispiel AG', active: true },
 ];
 
 function logoSvg(name, color) {
@@ -354,6 +412,7 @@ const data = {
   days: DAYS,
   rooms: ROOMS,
   topics: TOPICS,
+  categories: CATEGORIES.map(({ id, label, color }) => ({ id, label, color })),
   organizers: ORGANIZERS,
   speakers,
   forums,

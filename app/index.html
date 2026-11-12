@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Programm</title>
+  <meta name="description" content="Filterbares Programm mit Merkliste und Kalenderexport. Ohne Anmeldung.">
+  <meta name="theme-color" content="#0a5a75">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="preload" href="events/index.json" as="fetch" crossorigin>
+  <link rel="modulepreload" href="js/codes.js">
+  <link rel="modulepreload" href="js/state.js">
+  <link rel="modulepreload" href="js/ics.js">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="sprunglink" href="#inhalt">Zum Inhalt springen</a>
+
+  <header class="kopf">
+    <div class="demo-hinweis" id="demo-hinweis" hidden>
+      <strong>Demo:</strong> Alle Namen, Firmen und Programmpunkte sind frei erfunden.
+    </div>
+    <div class="breite">
+      <h1 id="titel">Programm wird geladen …</h1>
+      <p class="kopf-meta"><span id="ort"></span><br><span class="stand"></span></p>
+    </div>
+  </header>
+
+  <nav class="reiter" id="reiter" aria-label="Bereiche" hidden>
+    <div class="breite reiter-innen">
+      <a href="#" data-seite="programm">Programm</a>
+      <a href="#seite=merkliste" data-seite="merkliste">Merkliste <span class="zahl" id="zahl-merkliste">0</span></a>
+      <a href="#seite=filter" data-seite="filter"><span class="nur-breit">Meine </span>Filter <span class="zahl" id="zahl-filter">0</span></a>
+      <a href="#seite=teilen" data-seite="teilen">Teilen</a>
+    </div>
+  </nav>
+
+  <main id="inhalt" class="breite" tabindex="-1">
+    <noscript><p class="hinweis">Für das Programm bitte JavaScript einschalten.</p></noscript>
+
+    <section id="seite-programm" aria-labelledby="h-programm" hidden>
+      <h2 id="h-programm" class="sr-only">Programm</h2>
+      <div id="banner-start"></div>
+
+      <form id="filter-form" class="filter" role="search" aria-label="Programm filtern">
+        <details class="filter-klappe" id="filter-klappe">
+          <summary><span>Filter und Suche</span> <span id="filter-aktiv" class="leise"></span></summary>
+          <div id="filter-felder" class="filter-felder"></div>
+          <div class="filter-aktionen">
+            <div id="gf-form" class="gf-speichern" hidden>
+              <label for="gf-name">Diesen Filter speichern als</label>
+              <div class="zeile">
+                <input id="gf-name" type="text" maxlength="40" placeholder="z. B. Netze am Dienstag" autocomplete="off" enterkeyhint="done">
+                <button type="button" class="knopf" id="knopf-gf-speichern">Speichern</button>
+              </div>
+              <p class="leise" id="gf-meldung" role="status"></p>
+            </div>
+            <button type="button" class="knopf knopf-leise" id="knopf-zuruecksetzen" hidden>Filter zurücksetzen</button>
+          </div>
+        </details>
+      </form>
+
+      <div class="werkzeuge">
+        <p id="ergebnis" class="ergebnis"></p>
+        <div class="werkzeuge-knoepfe">
+          <div class="umschalter" id="ansicht-wahl" role="group" aria-label="Ansicht">
+            <button type="button" data-ansicht="zeit" aria-pressed="true">Nach Uhrzeit</button>
+            <button type="button" data-ansicht="forum" aria-pressed="false">Nach Forum</button>
+          </div>
+          <button type="button" class="knopf knopf-leise" id="knopf-ics-filter">In den Kalender</button>
+        </div>
+      </div>
+
+      <div id="programm-liste"></div>
+    </section>
+
+    <section id="seite-merkliste" aria-labelledby="h-merkliste" hidden>
+      <h2 id="h-merkliste" tabindex="-1">Merkliste</h2>
+      <p class="infobox">Die Merkliste wird nirgends gespeichert, sie steht nur im Link dieser Seite.
+        Lege ein Lesezeichen an oder schicke dir den Link über „Teilen“, um sie wiederzufinden.</p>
+      <p id="merkliste-info"></p>
+      <div class="zeile">
+        <button type="button" class="knopf" id="knopf-ics-merkliste">Alle in den Kalender</button>
+        <button type="button" class="knopf knopf-leise" id="knopf-teilen-merkliste">Merkliste teilen</button>
+      </div>
+      <div id="merkliste-unbekannt"></div>
+      <div id="merkliste-liste"></div>
+    </section>
+
+    <section id="seite-filter" aria-labelledby="h-filter" hidden>
+      <h2 id="h-filter" tabindex="-1">Meine Filter</h2>
+      <p class="infobox">Gespeicherte Filter stehen nur im Link. Neue Filter speicherst du im Programm unter „Filter und Suche“.</p>
+      <ul id="gf-liste" class="gf-liste"></ul>
+    </section>
+
+    <section id="seite-teilen" aria-labelledby="h-teilen" hidden>
+      <h2 id="h-teilen" tabindex="-1">Teilen und aufs Handy übertragen</h2>
+      <p id="teilen-inhalt"></p>
+      <label for="teilen-link">Link zu dieser Ansicht</label>
+      <input id="teilen-link" type="text" readonly class="link-feld">
+      <div class="zeile">
+        <button type="button" class="knopf" id="knopf-kopieren">Link kopieren</button>
+        <button type="button" class="knopf knopf-leise" id="knopf-teilen-system" hidden>Teilen …</button>
+      </div>
+      <p class="leise" id="teilen-meldung" role="status"></p>
+      <h3>QR-Code</h3>
+      <p>Mit der Handykamera scannen, um diese Ansicht samt Merkliste auf dem Handy zu öffnen.</p>
+      <div id="qr" class="qr"></div>
+      <p class="leise" id="qr-info"></p>
+    </section>
+  </main>
+
+  <footer class="fuss">
+    <div class="breite">
+      <p class="stand"></p>
+      <p class="rechtliches"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+      <p class="leise">Ohne Anmeldung, ohne Cookies, ohne Tracking. Merkliste und Filter stehen nur im Link.</p>
+      <p class="leise">Forumnavi __APP_VERSION__</p>
+    </div>
+  </footer>
+
+  <div id="ansage" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

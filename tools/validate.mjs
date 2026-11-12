@@ -10,6 +10,7 @@ import { join, dirname, resolve, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
 import addFormats from 'ajv-formats';
+import { sessionCode } from '../app/js/codes.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const schemaPath = resolve(here, '../data/schema/event.schema.json');
@@ -55,9 +56,9 @@ function checkContent(d) {
 
   // 1. Eindeutige IDs je Liste
   const index = {};
-  for (const key of ['days', 'rooms', 'topics', 'organizers', 'speakers', 'forums', 'sessions', 'sponsors', 'sponsorSlots']) {
+  for (const key of ['days', 'rooms', 'topics', 'categories', 'organizers', 'speakers', 'forums', 'sessions', 'sponsors', 'sponsorSlots']) {
     index[key] = new Map();
-    for (const item of d[key]) {
+    for (const item of d[key] || []) {
       if (index[key].has(item.id)) err(`${key}: id "${item.id}" kommt doppelt vor`);
       index[key].set(item.id, item);
     }
@@ -95,6 +96,7 @@ function checkContent(d) {
     ref('forums', s.forumId, w);
     ref('rooms', s.roomId, w);
     (s.topicIds || []).forEach((id) => ref('topics', id, w));
+    ref('categories', s.categoryId, w);
     (s.speakerIds || []).forEach((id) => { ref('speakers', id, w); usedSpeakers.add(id); });
     if (s.end <= s.start) err(`${w}: Ende ${s.end} liegt nicht nach Beginn ${s.start}`);
     if (s.start.slice(0, 10) !== s.end.slice(0, 10)) warn(`${w}: geht über Mitternacht`);
@@ -132,7 +134,15 @@ function checkContent(d) {
     else seen.set(k, s.id);
   }
 
-  // 7. Sponsorflächen
+  // 7. Kurzcodes für Merklisten-Links müssen eindeutig sein (siehe docs/link_kodierung.md)
+  const codes = new Map();
+  for (const s of d.sessions) {
+    const c = sessionCode(s.id);
+    if (codes.has(c)) err(`Programmpunkte "${codes.get(c)}" und "${s.id}" ergeben denselben Link-Code "${c}". Bitte eine der beiden ids leicht ändern.`);
+    else codes.set(c, s.id);
+  }
+
+  // 8. Sponsorflächen
   for (const slot of d.sponsorSlots) {
     const w = `Sponsorfläche "${slot.id}"`;
     ref('sponsors', slot.sponsorId, w);

@@ -28,10 +28,11 @@ kommen sie erst nach schriftlicher Zustimmung des Veranstalters.
 | `days` | Veranstaltungstage | Datum, Anzeigename („Dienstag, 9. November“) |
 | `rooms` | Räume | Name, Etage |
 | `topics` | Themen für den Filter | Bezeichnung |
+| `categories` | Schwerpunkte (optional), farbig markiert, höchstens einer je Programmpunkt | Bezeichnung, Farbe |
 | `organizers` | Forenveranstalter | Name, Art (Verband, Unternehmen, ...) |
 | `speakers` | Referenten und Moderation | Name, Titel, Funktion, Firma |
 | `forums` | Foren und Plenum | Nummer, Titel, Tag, Raum, Forenveranstalter, Moderation, Themen |
-| `sessions` | Programmpunkte | Titel, Beginn, Ende, Forum, Referenten, Themen, Status |
+| `sessions` | Programmpunkte | Titel, Beginn, Ende, Forum, Referenten, Themen, Schwerpunkt, Status |
 | `sponsors` | Sponsoren | Name, Logo-Datei, Link |
 | `sponsorSlots` | Sponsorflächen | Art der Fläche, Sponsor, zugehöriges Forum oder Tag, Text |
 
@@ -75,6 +76,7 @@ Fehler (Datei wird nicht veröffentlicht):
 * Ende liegt nicht nach Beginn, Datum passt nicht zum Tag des Forums
 * ein Raum ist gleichzeitig von zwei Foren belegt
 * mehr als eine „präsentiert von“-Fläche je Forum oder mehr als ein Startseiten-Banner
+* zwei Programmpunkte ergeben denselben Link-Kurzcode (siehe `link_kodierung.md`)
 
 Hinweise (Datei ist gültig, aber bitte prüfen):
 * fehlender Raum, fehlender Forenveranstalter, Programmpunkt ohne Referenten
@@ -102,3 +104,11 @@ prüft eine einzelne Datei.
 npm run demo-daten
 ```
 erzeugt die erfundene Beispielveranstaltung neu.
+
+## Themen und Schwerpunkte: der Unterschied
+
+* **Themen** (`topics`) sind Schlagworte. Ein Forum oder Programmpunkt kann mehrere haben.
+  Sie stammen meist aus der Forenbeschreibung.
+* **Schwerpunkte** (`categories`) sind eine redaktionelle Auswahl mit Farbe, z. B. „Daten und KI“.
+  Je Programmpunkt höchstens einer. In der App erscheinen sie als farbiger Rand und als eigener Filter.
+  Viele Programmpunkte haben keinen Schwerpunkt, das ist gewollt.
