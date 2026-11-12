@@ -1,0 +1,5762 @@
+{
+  "$schema": "../../../schema/event.schema.json",
+  "schemaVersion": "1.0",
+  "event": {
+    "id": "demo-energietage-2027",
+    "name": "Demo-Energietage 2027",
+    "shortName": "Demo-Energietage",
+    "description": "Erfundene Beispielveranstaltung zur Vorführung. Alle Namen von Personen, Firmen und Organisationen sind frei erfunden.",
+    "timezone": "Europe/Berlin",
+    "startDate": "2027-11-09",
+    "endDate": "2027-11-11",
+    "isDemo": true,
+    "location": {
+      "venue": "Kongresszentrum Musterstadt",
+      "street": "Beispielallee 1",
+      "postalCode": "00000",
+      "city": "Musterstadt",
+      "country": "DE"
+    },
+    "programStatus": {
+      "date": "2026-11-12T23:30:00+01:00",
+      "version": "2026-11-12_01",
+      "source": "tools/generate_demo.mjs (erfundene Daten)"
+    }
+  },
+  "days": [
+    {
+      "id": "tag-1",
+      "date": "2027-11-09",
+      "label": "Dienstag, 9. November"
+    },
+    {
+      "id": "tag-2",
+      "date": "2027-11-10",
+      "label": "Mittwoch, 10. November"
+    },
+    {
+      "id": "tag-3",
+      "date": "2027-11-11",
+      "label": "Donnerstag, 11. November"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "plenarsaal",
+      "name": "Plenarsaal",
+      "floor": "EG"
+    },
+    {
+      "id": "saal-1",
+      "name": "Saal 1",
+      "floor": "EG"
+    },
+    {
+      "id": "saal-2",
+      "name": "Saal 2",
+      "floor": "EG"
+    },
+    {
+      "id": "saal-3",
+      "name": "Saal 3",
+      "floor": "1. OG"
+    },
+    {
+      "id": "saal-4",
+      "name": "Saal 4",
+      "floor": "1. OG"
+    },
+    {
+      "id": "raum-elbe",
+      "name": "Raum Elbe",
+      "floor": "1. OG"
+    },
+    {
+      "id": "raum-havel",
+      "name": "Raum Havel",
+      "floor": "2. OG"
+    },
+    {
+      "id": "raum-ostufer",
+      "name": "Raum Ostufer",
+      "floor": "2. OG"
+    }
+  ],
+  "topics": [
+    {
+      "id": "genehmigung",
+      "label": "Genehmigung"
+    },
+    {
+      "id": "repowering",
+      "label": "Repowering"
+    },
+    {
+      "id": "netz",
+      "label": "Netzanschluss und Netze"
+    },
+    {
+      "id": "naturschutz",
+      "label": "Natur- und Artenschutz"
+    },
+    {
+      "id": "akzeptanz",
+      "label": "Akzeptanz und Beteiligung"
+    },
+    {
+      "id": "vermarktung",
+      "label": "Vermarktung und PPA"
+    },
+    {
+      "id": "betrieb",
+      "label": "Betrieb und Wartung"
+    },
+    {
+      "id": "recht",
+      "label": "Recht"
+    },
+    {
+      "id": "speicher",
+      "label": "Speicher und Sektorkopplung"
+    },
+    {
+      "id": "finanzierung",
+      "label": "Finanzierung und Versicherung"
+    },
+    {
+      "id": "digital",
+      "label": "Digitalisierung und Daten"
+    },
+    {
+      "id": "rueckbau",
+      "label": "Rückbau und Recycling"
+    },
+    {
+      "id": "flaeche",
+      "label": "Flächen und Planung"
+    },
+    {
+      "id": "technik",
+      "label": "Anlagentechnik"
+    },
+    {
+      "id": "sicherheit",
+      "label": "Arbeitssicherheit"
+    },
+    {
+      "id": "logistik",
+      "label": "Transport und Logistik"
+    }
+  ],
+  "organizers": [
+    {
+      "id": "aeolis",
+      "name": "Fachverband Aeolis e.V.",
+      "type": "Verband"
+    },
+    {
+      "id": "brenner-lohmeyer",
+      "name": "Kanzlei Brenner Lohmeyer Partner",
+      "type": "Kanzlei"
+    },
+    {
+      "id": "inf-feldhaus",
+      "name": "Institut für Netzintegration Feldhaus",
+      "type": "Forschung"
+    },
+    {
+      "id": "nordbrise",
+      "name": "Nordbrise Projektentwicklung GmbH",
+      "type": "Unternehmen"
+    },
+    {
+      "id": "kranwerk",
+      "name": "Kranwerk Logistik AG",
+      "type": "Unternehmen"
+    },
+    {
+      "id": "sw-musterstadt",
+      "name": "Stadtwerke Musterstadt GmbH",
+      "type": "Unternehmen"
+    },
+    {
+      "id": "avifauna-seidel",
+      "name": "Gutachterbüro Avifauna Seidel",
+      "type": "Unternehmen"
+    },
+    {
+      "id": "lea-musterland",
+      "name": "Landesenergieagentur Musterland",
+      "type": "Behörde"
+    },
+    {
+      "id": "bk-heide-sued",
+      "name": "Betreiberkreis Heide-Süd e.V.",
+      "type": "Verband"
+    },
+    {
+      "id": "rotorline",
+      "name": "Rotorline Service GmbH",
+      "type": "Unternehmen"
+    },
+    {
+      "id": "kapitalwind",
+      "name": "Kapitalwind Finanzierungspartner AG",
+      "type": "Unternehmen"
+    },
+    {
+      "id": "sektorlink",
+      "name": "Sektorlink Speichersysteme GmbH",
+      "type": "Unternehmen"
+    },
+    {
+      "id": "vogt-asmussen",
+      "name": "Kanzlei Vogt & Asmussen",
+      "type": "Kanzlei"
+    },
+    {
+      "id": "hs-musterstadt",
+      "name": "Hochschule Musterstadt, Fachgebiet Windenergietechnik",
+      "type": "Forschung"
+    },
+    {
+      "id": "be-talgrund",
+      "name": "Bürgerenergie Talgrund eG",
+      "type": "Sonstige"
+    },
+    {
+      "id": "gridvolt",
+      "name": "Gridvolt Netzservice GmbH",
+      "type": "Unternehmen"
+    },
+    {
+      "id": "fliegerwacht",
+      "name": "Fliegerwacht Radartechnik GmbH",
+      "type": "Unternehmen"
+    },
+    {
+      "id": "recyclon",
+      "name": "Recyclon Rotorblattverwertung GmbH",
+      "type": "Unternehmen"
+    },
+    {
+      "id": "datafeld",
+      "name": "Datafeld Analytics GmbH",
+      "type": "Unternehmen"
+    },
+    {
+      "id": "flaechenkontor",
+      "name": "Flächenkontor Planungsgesellschaft mbH",
+      "type": "Unternehmen"
+    },
+    {
+      "id": "boeenschutz",
+      "name": "Böenschutz Versicherungskontor AG",
+      "type": "Unternehmen"
+    },
+    {
+      "id": "ak-sicherheit",
+      "name": "Arbeitskreis Sicherheit in der Windbranche",
+      "type": "Verband"
+    },
+    {
+      "id": "demo-veranstalter",
+      "name": "Demo-Veranstalter GmbH",
+      "type": "Veranstalter"
+    }
+  ],
+  "speakers": [
+    {
+      "id": "ref-001",
+      "name": "Miriam Jürgensen",
+      "position": "Projektleiterin",
+      "affiliation": "Demo-Veranstalter GmbH"
+    },
+    {
+      "id": "ref-002",
+      "name": "Ines Albrecht",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Sektorlink Speichersysteme GmbH"
+    },
+    {
+      "id": "ref-003",
+      "name": "Lukas Quast",
+      "position": "Wissenschaftlicher Mitarbeiter",
+      "affiliation": "Landesenergieagentur Musterland"
+    },
+    {
+      "id": "ref-004",
+      "name": "Johanna Wendt",
+      "position": "Referentin Netzplanung",
+      "affiliation": "Gutachterbüro Avifauna Seidel"
+    },
+    {
+      "id": "ref-005",
+      "name": "Jannik Iwersen",
+      "position": "Fachbereichsleiter",
+      "affiliation": "Recyclon Rotorblattverwertung GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-006",
+      "name": "Hanna Lüders",
+      "position": "Referentin Netzplanung",
+      "affiliation": "Fachverband Aeolis e.V."
+    },
+    {
+      "id": "ref-007",
+      "name": "Niklas Dreyer",
+      "position": "Rechtsanwalt",
+      "affiliation": "Fachverband Aeolis e.V.",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-008",
+      "name": "Katrin Gabler",
+      "position": "Vertriebsleiterin",
+      "affiliation": "Fachverband Aeolis e.V.",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-009",
+      "name": "Niklas Fehrs",
+      "position": "Fachbereichsleiter",
+      "affiliation": "Böenschutz Versicherungskontor AG"
+    },
+    {
+      "id": "ref-010",
+      "name": "Sarah Carstens",
+      "position": "Vorständin",
+      "affiliation": "Fliegerwacht Radartechnik GmbH"
+    },
+    {
+      "id": "ref-011",
+      "name": "Niklas Voß",
+      "position": "Rechtsanwalt",
+      "affiliation": "Gutachterbüro Avifauna Seidel"
+    },
+    {
+      "id": "ref-012",
+      "name": "Henrik Uhlig",
+      "position": "Wissenschaftlicher Mitarbeiter",
+      "affiliation": "Gutachterbüro Avifauna Seidel"
+    },
+    {
+      "id": "ref-013",
+      "name": "Fabian Lüders",
+      "position": "Geschäftsführer",
+      "affiliation": "Nordbrise Projektentwicklung GmbH"
+    },
+    {
+      "id": "ref-014",
+      "name": "Lukas Lüders",
+      "position": "Fachbereichsleiter",
+      "affiliation": "Nordbrise Projektentwicklung GmbH"
+    },
+    {
+      "id": "ref-015",
+      "name": "Henrik Pannek",
+      "position": "Geschäftsführer",
+      "affiliation": "Umweltplanung Kranichried"
+    },
+    {
+      "id": "ref-016",
+      "name": "Jannik Bartels",
+      "position": "Vorstand",
+      "affiliation": "Kanzlei Vogt & Asmussen"
+    },
+    {
+      "id": "ref-017",
+      "name": "Henrik Oltmanns",
+      "position": "Leiter Technik",
+      "affiliation": "Betreiberkreis Heide-Süd e.V.",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-018",
+      "name": "Anna Uhlig",
+      "position": "Referentin Netzplanung",
+      "affiliation": "Institut für Netzintegration Feldhaus",
+      "academicTitle": "Prof. Dr."
+    },
+    {
+      "id": "ref-019",
+      "name": "Katrin Mahnke",
+      "position": "Fachbereichsleiterin",
+      "affiliation": "Institut für Netzintegration Feldhaus"
+    },
+    {
+      "id": "ref-020",
+      "name": "Florian Lüders",
+      "position": "Referent Netzplanung",
+      "affiliation": "Institut für Netzintegration Feldhaus",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-021",
+      "name": "Moritz Pannek",
+      "position": "Wissenschaftlicher Mitarbeiter",
+      "affiliation": "Sektorlink Speichersysteme GmbH"
+    },
+    {
+      "id": "ref-022",
+      "name": "Leonie Oltmanns",
+      "position": "Wissenschaftliche Mitarbeiterin",
+      "affiliation": "Landesenergieagentur Musterland"
+    },
+    {
+      "id": "ref-023",
+      "name": "Tobias Yıldız",
+      "position": "Geschäftsführer",
+      "affiliation": "Landesenergieagentur Musterland"
+    },
+    {
+      "id": "ref-024",
+      "name": "Niklas Bartels",
+      "position": "Rechtsanwalt",
+      "affiliation": "Bürgerenergie Talgrund eG"
+    },
+    {
+      "id": "ref-025",
+      "name": "Svenja Hinrichs",
+      "position": "Teamleiterin Genehmigung",
+      "affiliation": "Gutachterbüro Avifauna Seidel"
+    },
+    {
+      "id": "ref-026",
+      "name": "Katrin Kehler",
+      "position": "Referentin Energiepolitik",
+      "affiliation": "Gutachterbüro Avifauna Seidel",
+      "academicTitle": "Prof. Dr."
+    },
+    {
+      "id": "ref-027",
+      "name": "Leonie Dreyer",
+      "position": "Gutachterin",
+      "affiliation": "Stadtwerke Musterstadt GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-028",
+      "name": "Bastian Tietjen",
+      "position": "Vertriebsleiter",
+      "affiliation": "Stadtwerke Musterstadt GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-029",
+      "name": "Jannik Kehler",
+      "position": "Rechtsanwalt",
+      "affiliation": "Turmwerk Beton AG"
+    },
+    {
+      "id": "ref-030",
+      "name": "Sarah Jürgensen",
+      "position": "Vorständin",
+      "affiliation": "Kapitalwind Finanzierungspartner AG"
+    },
+    {
+      "id": "ref-031",
+      "name": "Moritz Jürgensen",
+      "position": "Gutachter",
+      "affiliation": "Bürgerenergie Talgrund eG"
+    },
+    {
+      "id": "ref-032",
+      "name": "Hanna Tietjen",
+      "position": "Projektleiterin",
+      "affiliation": "Bürgerenergie Talgrund eG",
+      "academicTitle": "Prof. Dr."
+    },
+    {
+      "id": "ref-033",
+      "name": "Svenja Nolting",
+      "position": "Vertriebsleiterin",
+      "affiliation": "Ingenieurbüro Brisenfeld"
+    },
+    {
+      "id": "ref-034",
+      "name": "Moritz Oltmanns",
+      "position": "Projektleiter",
+      "affiliation": "Umweltplanung Kranichried"
+    },
+    {
+      "id": "ref-035",
+      "name": "Jonas Eggers",
+      "position": "Referent Energiepolitik",
+      "affiliation": "Ertragsgutachten Lorenzen GmbH"
+    },
+    {
+      "id": "ref-036",
+      "name": "Greta Rehder",
+      "position": "Projektleiterin",
+      "affiliation": "Stadtwerke Musterstadt GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-037",
+      "name": "Johanna Quast",
+      "position": "Wissenschaftliche Mitarbeiterin",
+      "affiliation": "Stadtwerke Musterstadt GmbH"
+    },
+    {
+      "id": "ref-038",
+      "name": "Niklas Eggers",
+      "position": "Rechtsanwalt",
+      "affiliation": "Ertragsgutachten Lorenzen GmbH"
+    },
+    {
+      "id": "ref-039",
+      "name": "Florian Voß",
+      "position": "Gutachter",
+      "affiliation": "Ertragsgutachten Lorenzen GmbH"
+    },
+    {
+      "id": "ref-040",
+      "name": "Lena Tietjen",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Stadtwerke Musterstadt GmbH"
+    },
+    {
+      "id": "ref-041",
+      "name": "Fabian Claßen",
+      "position": "Leiter Technik",
+      "affiliation": "Datafeld Analytics GmbH"
+    },
+    {
+      "id": "ref-042",
+      "name": "Leonie Wendt",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Kranwerk Logistik AG"
+    },
+    {
+      "id": "ref-043",
+      "name": "Miriam Mahnke",
+      "position": "Vorständin",
+      "affiliation": "Kranwerk Logistik AG"
+    },
+    {
+      "id": "ref-044",
+      "name": "Hanna Jürgensen",
+      "position": "Wissenschaftliche Mitarbeiterin",
+      "affiliation": "Kranwerk Logistik AG",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-045",
+      "name": "Henrik Ebeling",
+      "position": "Referent Netzplanung",
+      "affiliation": "Landkreis Musterkreis"
+    },
+    {
+      "id": "ref-046",
+      "name": "Timo Claßen",
+      "position": "Rechtsanwalt",
+      "affiliation": "Landesenergieagentur Musterland"
+    },
+    {
+      "id": "ref-047",
+      "name": "Hanna Rehder",
+      "position": "Vorständin",
+      "affiliation": "Landesenergieagentur Musterland"
+    },
+    {
+      "id": "ref-048",
+      "name": "Florian Iwersen",
+      "position": "Referent Netzplanung",
+      "affiliation": "Stadtwerke Musterstadt GmbH"
+    },
+    {
+      "id": "ref-049",
+      "name": "Lukas Fehrs",
+      "position": "Referent Netzplanung",
+      "affiliation": "Betreiberkreis Heide-Süd e.V.",
+      "academicTitle": "Prof. Dr."
+    },
+    {
+      "id": "ref-050",
+      "name": "Hanna Fehrs",
+      "position": "Fachbereichsleiterin",
+      "affiliation": "Betreiberkreis Heide-Süd e.V."
+    },
+    {
+      "id": "ref-051",
+      "name": "Carla Wendt",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Datafeld Analytics GmbH"
+    },
+    {
+      "id": "ref-052",
+      "name": "Johanna Iwersen",
+      "position": "Referentin Netzplanung",
+      "affiliation": "Kanzlei Brenner Lohmeyer Partner",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-053",
+      "name": "Kerem Claßen",
+      "position": "Gutachter",
+      "affiliation": "Gemeinde Talgrund"
+    },
+    {
+      "id": "ref-054",
+      "name": "Bastian Sommerfeld",
+      "position": "Leiter Technik",
+      "affiliation": "Landesenergieagentur Musterland"
+    },
+    {
+      "id": "ref-055",
+      "name": "Florian Wendt",
+      "position": "Vertriebsleiter",
+      "affiliation": "Landesenergieagentur Musterland"
+    },
+    {
+      "id": "ref-056",
+      "name": "Nele Tietjen",
+      "position": "Referentin Energiepolitik",
+      "affiliation": "Umweltplanung Kranichried"
+    },
+    {
+      "id": "ref-057",
+      "name": "Hanna Quast",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Gemeinde Talgrund"
+    },
+    {
+      "id": "ref-058",
+      "name": "Jannik Pannek",
+      "position": "Leiter Betriebsführung",
+      "affiliation": "Landesenergieagentur Musterland"
+    },
+    {
+      "id": "ref-059",
+      "name": "Ole Nolting",
+      "position": "Fachbereichsleiter",
+      "affiliation": "Landesenergieagentur Musterland"
+    },
+    {
+      "id": "ref-060",
+      "name": "Felix Brandt",
+      "position": "Geschäftsführer",
+      "affiliation": "Fliegerwacht Radartechnik GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-061",
+      "name": "Lukas Brandt",
+      "position": "Leiter Betriebsführung",
+      "affiliation": "Fliegerwacht Radartechnik GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-062",
+      "name": "Timo Nolting",
+      "position": "Projektleiter",
+      "affiliation": "Stadtwerke Musterstadt GmbH"
+    },
+    {
+      "id": "ref-063",
+      "name": "Ole Rehder",
+      "position": "Geschäftsführer",
+      "affiliation": "Fachverband Aeolis e.V."
+    },
+    {
+      "id": "ref-064",
+      "name": "Katrin Bartels",
+      "position": "Vorständin",
+      "affiliation": "Fliegerwacht Radartechnik GmbH"
+    },
+    {
+      "id": "ref-065",
+      "name": "Fabian Rehder",
+      "position": "Leiter Betriebsführung",
+      "affiliation": "Arbeitskreis Sicherheit in der Windbranche"
+    },
+    {
+      "id": "ref-066",
+      "name": "Bastian Iwersen",
+      "position": "Leiter Betriebsführung",
+      "affiliation": "Arbeitskreis Sicherheit in der Windbranche"
+    },
+    {
+      "id": "ref-067",
+      "name": "Nele Fehrs",
+      "position": "Teamleiterin Genehmigung",
+      "affiliation": "Arbeitskreis Sicherheit in der Windbranche"
+    },
+    {
+      "id": "ref-068",
+      "name": "Leonie Kehler",
+      "position": "Projektleiterin",
+      "affiliation": "Institut für Netzintegration Feldhaus"
+    },
+    {
+      "id": "ref-069",
+      "name": "Lukas Pannek",
+      "position": "Vorstand",
+      "affiliation": "Institut für Netzintegration Feldhaus"
+    },
+    {
+      "id": "ref-070",
+      "name": "Carla Pannek",
+      "position": "Vertriebsleiterin",
+      "affiliation": "Stadtwerke Musterstadt GmbH"
+    },
+    {
+      "id": "ref-071",
+      "name": "Tobias Tietjen",
+      "position": "Vertriebsleiter",
+      "affiliation": "Stadtwerke Musterstadt GmbH"
+    },
+    {
+      "id": "ref-072",
+      "name": "Katrin Dreyer",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Recyclon Rotorblattverwertung GmbH"
+    },
+    {
+      "id": "ref-073",
+      "name": "Paula Dreyer",
+      "position": "Geschäftsführerin",
+      "affiliation": "Demo-Veranstalter GmbH"
+    },
+    {
+      "id": "ref-074",
+      "name": "Moritz Fehrs",
+      "position": "Leiter Technik",
+      "affiliation": "Turmwerk Beton AG"
+    },
+    {
+      "id": "ref-075",
+      "name": "Lena Quast",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Sektorlink Speichersysteme GmbH"
+    },
+    {
+      "id": "ref-076",
+      "name": "Paula Ebeling",
+      "position": "Leiterin Technik",
+      "affiliation": "Nordbrise Projektentwicklung GmbH"
+    },
+    {
+      "id": "ref-077",
+      "name": "Lena Mahnke",
+      "position": "Vertriebsleiterin",
+      "affiliation": "Gridvolt Netzservice GmbH"
+    },
+    {
+      "id": "ref-078",
+      "name": "Henrik Quast",
+      "position": "Geschäftsführer",
+      "affiliation": "Kanzlei Brenner Lohmeyer Partner",
+      "academicTitle": "Prof. Dr."
+    },
+    {
+      "id": "ref-079",
+      "name": "Jonas Oltmanns",
+      "position": "Referent Netzplanung",
+      "affiliation": "Kanzlei Brenner Lohmeyer Partner"
+    },
+    {
+      "id": "ref-080",
+      "name": "Tobias Nolting",
+      "position": "Gutachter",
+      "affiliation": "Kranwerk Logistik AG"
+    },
+    {
+      "id": "ref-081",
+      "name": "Niklas Frerichs",
+      "position": "Leiter Technik",
+      "affiliation": "Böenschutz Versicherungskontor AG"
+    },
+    {
+      "id": "ref-082",
+      "name": "Sarah Ebeling",
+      "position": "Leiterin Technik",
+      "affiliation": "Datafeld Analytics GmbH"
+    },
+    {
+      "id": "ref-083",
+      "name": "Carla Frerichs",
+      "position": "Referentin Netzplanung",
+      "affiliation": "Kapitalwind Finanzierungspartner AG"
+    },
+    {
+      "id": "ref-084",
+      "name": "Timo Kehler",
+      "position": "Referent Energiepolitik",
+      "affiliation": "Kapitalwind Finanzierungspartner AG",
+      "academicTitle": "Prof. Dr."
+    },
+    {
+      "id": "ref-085",
+      "name": "Katrin Brandt",
+      "position": "Referentin Energiepolitik",
+      "affiliation": "Kapitalwind Finanzierungspartner AG"
+    },
+    {
+      "id": "ref-086",
+      "name": "Sarah Quast",
+      "position": "Wissenschaftliche Mitarbeiterin",
+      "affiliation": "Gridvolt Netzservice GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-087",
+      "name": "Jannik Dittmer",
+      "position": "Referent Energiepolitik",
+      "affiliation": "Gridvolt Netzservice GmbH"
+    },
+    {
+      "id": "ref-088",
+      "name": "Malte Pannek",
+      "position": "Leiter Technik",
+      "affiliation": "Fliegerwacht Radartechnik GmbH"
+    },
+    {
+      "id": "ref-089",
+      "name": "Fabian Jürgensen",
+      "position": "Vorstand",
+      "affiliation": "Windpark Hohe Geest GmbH & Co. KG"
+    },
+    {
+      "id": "ref-090",
+      "name": "Lena Iwersen",
+      "position": "Projektleiterin",
+      "affiliation": "Sektorlink Speichersysteme GmbH"
+    },
+    {
+      "id": "ref-091",
+      "name": "Fabian Sommerfeld",
+      "position": "Gutachter",
+      "affiliation": "Sektorlink Speichersysteme GmbH",
+      "academicTitle": "Prof. Dr."
+    },
+    {
+      "id": "ref-092",
+      "name": "Anna Frerichs",
+      "position": "Gutachterin",
+      "affiliation": "Ertragsgutachten Lorenzen GmbH"
+    },
+    {
+      "id": "ref-093",
+      "name": "Svenja Eggers",
+      "position": "Projektleiterin",
+      "affiliation": "Sektorlink Speichersysteme GmbH"
+    },
+    {
+      "id": "ref-094",
+      "name": "Sarah Bartels",
+      "position": "Leiterin Technik",
+      "affiliation": "Gutachterbüro Avifauna Seidel"
+    },
+    {
+      "id": "ref-095",
+      "name": "Lukas Oltmanns",
+      "position": "Geschäftsführer",
+      "affiliation": "Sektorlink Speichersysteme GmbH"
+    },
+    {
+      "id": "ref-096",
+      "name": "Florian Fehrs",
+      "position": "Referent Energiepolitik",
+      "affiliation": "Stadtwerke Musterstadt GmbH"
+    },
+    {
+      "id": "ref-097",
+      "name": "Svenja Lüders",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Fachverband Aeolis e.V."
+    },
+    {
+      "id": "ref-098",
+      "name": "Svenja Jürgensen",
+      "position": "Referentin Energiepolitik",
+      "affiliation": "Fachverband Aeolis e.V.",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-099",
+      "name": "Kerem Frerichs",
+      "position": "Wissenschaftlicher Mitarbeiter",
+      "affiliation": "Kanzlei Vogt & Asmussen"
+    },
+    {
+      "id": "ref-100",
+      "name": "Malte Quast",
+      "position": "Referent Energiepolitik",
+      "affiliation": "Arbeitskreis Sicherheit in der Windbranche"
+    },
+    {
+      "id": "ref-101",
+      "name": "Lukas Kehler",
+      "position": "Gutachter",
+      "affiliation": "Datafeld Analytics GmbH"
+    },
+    {
+      "id": "ref-102",
+      "name": "Kerem Lüders",
+      "position": "Gutachter",
+      "affiliation": "Datafeld Analytics GmbH"
+    },
+    {
+      "id": "ref-103",
+      "name": "Esra Quast",
+      "position": "Geschäftsführerin",
+      "affiliation": "Institut für Netzintegration Feldhaus"
+    },
+    {
+      "id": "ref-104",
+      "name": "Lena Kehler",
+      "position": "Projektleiterin",
+      "affiliation": "Sektorlink Speichersysteme GmbH"
+    },
+    {
+      "id": "ref-105",
+      "name": "Ines Mahnke",
+      "position": "Vertriebsleiterin",
+      "affiliation": "Flächenkontor Planungsgesellschaft mbH"
+    },
+    {
+      "id": "ref-106",
+      "name": "Hanna Dittmer",
+      "position": "Projektleiterin",
+      "affiliation": "Flächenkontor Planungsgesellschaft mbH"
+    },
+    {
+      "id": "ref-107",
+      "name": "Anna Brandt",
+      "position": "Gutachterin",
+      "affiliation": "Rotorline Service GmbH"
+    },
+    {
+      "id": "ref-108",
+      "name": "Anna Rehder",
+      "position": "Referentin Energiepolitik",
+      "affiliation": "Rotorline Service GmbH"
+    },
+    {
+      "id": "ref-109",
+      "name": "Carla Voß",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Windpark Hohe Geest GmbH & Co. KG",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-110",
+      "name": "Johanna Yıldız",
+      "position": "Teamleiterin Genehmigung",
+      "affiliation": "Kanzlei Brenner Lohmeyer Partner"
+    },
+    {
+      "id": "ref-111",
+      "name": "Anna Albrecht",
+      "position": "Referentin Energiepolitik",
+      "affiliation": "Stadtwerke Musterstadt GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-112",
+      "name": "Malte Voß",
+      "position": "Referent Netzplanung",
+      "affiliation": "Hochschule Musterstadt, Fachgebiet Windenergietechnik"
+    },
+    {
+      "id": "ref-113",
+      "name": "Kerem Iwersen",
+      "position": "Leiter Technik",
+      "affiliation": "Hochschule Musterstadt, Fachgebiet Windenergietechnik"
+    },
+    {
+      "id": "ref-114",
+      "name": "Felix Albrecht",
+      "position": "Teamleiter Genehmigung",
+      "affiliation": "Kapitalwind Finanzierungspartner AG"
+    },
+    {
+      "id": "ref-115",
+      "name": "Felix Pannek",
+      "position": "Leiter Betriebsführung",
+      "affiliation": "Hochschule Musterstadt, Fachgebiet Windenergietechnik",
+      "academicTitle": "Prof. Dr."
+    },
+    {
+      "id": "ref-116",
+      "name": "Sarah Nolting",
+      "position": "Vorständin",
+      "affiliation": "Gutachterbüro Avifauna Seidel"
+    },
+    {
+      "id": "ref-117",
+      "name": "Miriam Carstens",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Gutachterbüro Avifauna Seidel"
+    },
+    {
+      "id": "ref-118",
+      "name": "Henrik Brandt",
+      "position": "Fachbereichsleiter",
+      "affiliation": "Böenschutz Versicherungskontor AG"
+    },
+    {
+      "id": "ref-119",
+      "name": "Ole Oltmanns",
+      "position": "Teamleiter Genehmigung",
+      "affiliation": "Böenschutz Versicherungskontor AG"
+    },
+    {
+      "id": "ref-120",
+      "name": "Moritz Quast",
+      "position": "Rechtsanwalt",
+      "affiliation": "Kapitalwind Finanzierungspartner AG",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-121",
+      "name": "Esra Rehder",
+      "position": "Leiterin Technik",
+      "affiliation": "Kapitalwind Finanzierungspartner AG"
+    },
+    {
+      "id": "ref-122",
+      "name": "Sarah Oltmanns",
+      "position": "Vorständin",
+      "affiliation": "Kranwerk Logistik AG",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-123",
+      "name": "Hanna Zander",
+      "position": "Geschäftsführerin",
+      "affiliation": "Kranwerk Logistik AG"
+    },
+    {
+      "id": "ref-124",
+      "name": "Greta Uhlig",
+      "position": "Vorständin",
+      "affiliation": "Gridvolt Netzservice GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-125",
+      "name": "Bastian Dreyer",
+      "position": "Geschäftsführer",
+      "affiliation": "Gridvolt Netzservice GmbH"
+    },
+    {
+      "id": "ref-126",
+      "name": "Katrin Jürgensen",
+      "position": "Referentin Netzplanung",
+      "affiliation": "Gridvolt Netzservice GmbH"
+    },
+    {
+      "id": "ref-127",
+      "name": "Moritz Uhlig",
+      "position": "Leiter Technik",
+      "affiliation": "Ertragsgutachten Lorenzen GmbH"
+    },
+    {
+      "id": "ref-128",
+      "name": "Katrin Frerichs",
+      "position": "Vorständin",
+      "affiliation": "Ertragsgutachten Lorenzen GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-129",
+      "name": "Timo Carstens",
+      "position": "Projektleiter",
+      "affiliation": "Energiehandel Westmark GmbH"
+    },
+    {
+      "id": "ref-130",
+      "name": "Svenja Tietjen",
+      "position": "Geschäftsführerin",
+      "affiliation": "Gemeinde Talgrund",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-131",
+      "name": "Sarah Kehler",
+      "position": "Fachbereichsleiterin",
+      "affiliation": "Kanzlei Vogt & Asmussen"
+    },
+    {
+      "id": "ref-132",
+      "name": "Greta Lüders",
+      "position": "Referentin Energiepolitik",
+      "affiliation": "Kanzlei Vogt & Asmussen"
+    },
+    {
+      "id": "ref-133",
+      "name": "Kerem Ebeling",
+      "position": "Wissenschaftlicher Mitarbeiter",
+      "affiliation": "Turmwerk Beton AG"
+    },
+    {
+      "id": "ref-134",
+      "name": "Jonas Tietjen",
+      "position": "Rechtsanwalt",
+      "affiliation": "Kranwerk Logistik AG",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-135",
+      "name": "Esra Mahnke",
+      "position": "Gutachterin",
+      "affiliation": "Betreiberkreis Heide-Süd e.V."
+    },
+    {
+      "id": "ref-136",
+      "name": "Miriam Albrecht",
+      "position": "Referentin Energiepolitik",
+      "affiliation": "Hochschule Musterstadt, Fachgebiet Windenergietechnik"
+    },
+    {
+      "id": "ref-137",
+      "name": "Jannik Rehder",
+      "position": "Gutachter",
+      "affiliation": "Hochschule Musterstadt, Fachgebiet Windenergietechnik"
+    },
+    {
+      "id": "ref-138",
+      "name": "Esra Voß",
+      "position": "Referentin Netzplanung",
+      "affiliation": "Betreiberkreis Heide-Süd e.V."
+    },
+    {
+      "id": "ref-139",
+      "name": "Carla Gabler",
+      "position": "Rechtsanwältin",
+      "affiliation": "Gutachterbüro Avifauna Seidel"
+    },
+    {
+      "id": "ref-140",
+      "name": "Malte Bartels",
+      "position": "Vertriebsleiter",
+      "affiliation": "Fachverband Aeolis e.V."
+    },
+    {
+      "id": "ref-141",
+      "name": "Greta Ebeling",
+      "position": "Referentin Energiepolitik",
+      "affiliation": "Demo-Veranstalter GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-142",
+      "name": "Paula Tietjen",
+      "position": "Wissenschaftliche Mitarbeiterin",
+      "affiliation": "Kanzlei Brenner Lohmeyer Partner"
+    },
+    {
+      "id": "ref-143",
+      "name": "Moritz Sommerfeld",
+      "position": "Leiter Betriebsführung",
+      "affiliation": "Landkreis Musterkreis"
+    },
+    {
+      "id": "ref-144",
+      "name": "Tobias Jürgensen",
+      "position": "Rechtsanwalt",
+      "affiliation": "Nordbrise Projektentwicklung GmbH"
+    },
+    {
+      "id": "ref-145",
+      "name": "Miriam Kehler",
+      "position": "Fachbereichsleiterin",
+      "affiliation": "Gridvolt Netzservice GmbH"
+    },
+    {
+      "id": "ref-146",
+      "name": "Katrin Ebeling",
+      "position": "Vorständin",
+      "affiliation": "Recyclon Rotorblattverwertung GmbH"
+    },
+    {
+      "id": "ref-147",
+      "name": "Florian Quast",
+      "position": "Vorstand",
+      "affiliation": "Recyclon Rotorblattverwertung GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-148",
+      "name": "Henrik Eggers",
+      "position": "Geschäftsführer",
+      "affiliation": "Recyclon Rotorblattverwertung GmbH",
+      "academicTitle": "Prof. Dr."
+    },
+    {
+      "id": "ref-149",
+      "name": "Miriam Nolting",
+      "position": "Geschäftsführerin",
+      "affiliation": "Turmwerk Beton AG"
+    },
+    {
+      "id": "ref-150",
+      "name": "Esra Dittmer",
+      "position": "Vertriebsleiterin",
+      "affiliation": "Turmwerk Beton AG"
+    },
+    {
+      "id": "ref-151",
+      "name": "Hanna Wendt",
+      "position": "Referentin Netzplanung",
+      "affiliation": "Arbeitskreis Sicherheit in der Windbranche"
+    },
+    {
+      "id": "ref-152",
+      "name": "Sarah Voß",
+      "position": "Teamleiterin Genehmigung",
+      "affiliation": "Arbeitskreis Sicherheit in der Windbranche"
+    },
+    {
+      "id": "ref-153",
+      "name": "Hanna Sommerfeld",
+      "position": "Wissenschaftliche Mitarbeiterin",
+      "affiliation": "Umweltplanung Kranichried"
+    },
+    {
+      "id": "ref-154",
+      "name": "Esra Oltmanns",
+      "position": "Gutachterin",
+      "affiliation": "Umweltplanung Kranichried",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-155",
+      "name": "Henrik Zander",
+      "position": "Leiter Technik",
+      "affiliation": "Hochschule Musterstadt, Fachgebiet Windenergietechnik"
+    },
+    {
+      "id": "ref-156",
+      "name": "Carla Claßen",
+      "position": "Wissenschaftliche Mitarbeiterin",
+      "affiliation": "Hochschule Musterstadt, Fachgebiet Windenergietechnik",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-157",
+      "name": "Carla Fehrs",
+      "position": "Wissenschaftliche Mitarbeiterin",
+      "affiliation": "Umweltplanung Kranichried"
+    },
+    {
+      "id": "ref-158",
+      "name": "Johanna Hinrichs",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Landkreis Musterkreis"
+    },
+    {
+      "id": "ref-159",
+      "name": "Leonie Sommerfeld",
+      "position": "Vorständin",
+      "affiliation": "Landkreis Musterkreis"
+    },
+    {
+      "id": "ref-160",
+      "name": "Ines Iwersen",
+      "position": "Vorständin",
+      "affiliation": "Windpark Hohe Geest GmbH & Co. KG"
+    },
+    {
+      "id": "ref-161",
+      "name": "Kerem Sommerfeld",
+      "position": "Fachbereichsleiter",
+      "affiliation": "Windpark Hohe Geest GmbH & Co. KG"
+    },
+    {
+      "id": "ref-162",
+      "name": "Jonas Kehler",
+      "position": "Referent Energiepolitik",
+      "affiliation": "Fachverband Aeolis e.V."
+    },
+    {
+      "id": "ref-163",
+      "name": "Paula Uhlig",
+      "position": "Referentin Energiepolitik",
+      "affiliation": "Fachverband Aeolis e.V."
+    },
+    {
+      "id": "ref-164",
+      "name": "Henrik Claßen",
+      "position": "Leiter Technik",
+      "affiliation": "Fachverband Aeolis e.V."
+    },
+    {
+      "id": "ref-165",
+      "name": "Bastian Dittmer",
+      "position": "Fachbereichsleiter",
+      "affiliation": "Fachverband Aeolis e.V."
+    },
+    {
+      "id": "ref-166",
+      "name": "Greta Tietjen",
+      "position": "Leiterin Technik",
+      "affiliation": "Bürgerenergie Talgrund eG"
+    },
+    {
+      "id": "ref-167",
+      "name": "Nele Oltmanns",
+      "position": "Teamleiterin Genehmigung",
+      "affiliation": "Datafeld Analytics GmbH"
+    },
+    {
+      "id": "ref-168",
+      "name": "Paula Voß",
+      "position": "Gutachterin",
+      "affiliation": "Rotorline Service GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-169",
+      "name": "Nele Rehder",
+      "position": "Referentin Energiepolitik",
+      "affiliation": "Rotorline Service GmbH"
+    },
+    {
+      "id": "ref-170",
+      "name": "Katrin Oltmanns",
+      "position": "Projektleiterin",
+      "affiliation": "Kanzlei Vogt & Asmussen"
+    },
+    {
+      "id": "ref-171",
+      "name": "Timo Mahnke",
+      "position": "Geschäftsführer",
+      "affiliation": "Turmwerk Beton AG"
+    },
+    {
+      "id": "ref-172",
+      "name": "Timo Zander",
+      "position": "Geschäftsführer",
+      "affiliation": "Windpark Hohe Geest GmbH & Co. KG"
+    },
+    {
+      "id": "ref-173",
+      "name": "Timo Yıldız",
+      "position": "Leiter Betriebsführung",
+      "affiliation": "Flächenkontor Planungsgesellschaft mbH"
+    },
+    {
+      "id": "ref-174",
+      "name": "Jannik Eggers",
+      "position": "Wissenschaftlicher Mitarbeiter",
+      "affiliation": "Flächenkontor Planungsgesellschaft mbH"
+    },
+    {
+      "id": "ref-175",
+      "name": "Jonas Zander",
+      "position": "Teamleiter Genehmigung",
+      "affiliation": "Flächenkontor Planungsgesellschaft mbH"
+    },
+    {
+      "id": "ref-176",
+      "name": "Lena Voß",
+      "position": "Wissenschaftliche Mitarbeiterin",
+      "affiliation": "Landesenergieagentur Musterland"
+    },
+    {
+      "id": "ref-177",
+      "name": "Johanna Uhlig",
+      "position": "Rechtsanwältin",
+      "affiliation": "Gutachterbüro Avifauna Seidel"
+    },
+    {
+      "id": "ref-178",
+      "name": "Ole Dittmer",
+      "position": "Fachbereichsleiter",
+      "affiliation": "Gutachterbüro Avifauna Seidel"
+    },
+    {
+      "id": "ref-179",
+      "name": "Paula Albrecht",
+      "position": "Projektleiterin",
+      "affiliation": "Bürgerenergie Talgrund eG"
+    },
+    {
+      "id": "ref-180",
+      "name": "Katrin Sommerfeld",
+      "position": "Vertriebsleiterin",
+      "affiliation": "Fachverband Aeolis e.V."
+    },
+    {
+      "id": "ref-181",
+      "name": "Fabian Quast",
+      "position": "Vorstand",
+      "affiliation": "Rotorline Service GmbH",
+      "academicTitle": "Prof. Dr."
+    },
+    {
+      "id": "ref-182",
+      "name": "Moritz Kehler",
+      "position": "Rechtsanwalt",
+      "affiliation": "Stadtwerke Musterstadt GmbH"
+    },
+    {
+      "id": "ref-183",
+      "name": "Leonie Zander",
+      "position": "Vorständin",
+      "affiliation": "Stadtwerke Musterstadt GmbH",
+      "academicTitle": "Prof. Dr."
+    },
+    {
+      "id": "ref-184",
+      "name": "Florian Hinrichs",
+      "position": "Vertriebsleiter",
+      "affiliation": "Fachverband Aeolis e.V."
+    },
+    {
+      "id": "ref-185",
+      "name": "Johanna Dreyer",
+      "position": "Wissenschaftliche Mitarbeiterin",
+      "affiliation": "Fachverband Aeolis e.V."
+    },
+    {
+      "id": "ref-186",
+      "name": "Lena Pannek",
+      "position": "Wissenschaftliche Mitarbeiterin",
+      "affiliation": "Institut für Netzintegration Feldhaus"
+    },
+    {
+      "id": "ref-187",
+      "name": "Svenja Gabler",
+      "position": "Leiterin Technik",
+      "affiliation": "Gridvolt Netzservice GmbH"
+    },
+    {
+      "id": "ref-188",
+      "name": "Ines Tietjen",
+      "position": "Fachbereichsleiterin",
+      "affiliation": "Nordbrise Projektentwicklung GmbH",
+      "academicTitle": "Prof. Dr."
+    },
+    {
+      "id": "ref-189",
+      "name": "Johanna Oltmanns",
+      "position": "Gutachterin",
+      "affiliation": "Ingenieurbüro Brisenfeld"
+    },
+    {
+      "id": "ref-190",
+      "name": "Henrik Frerichs",
+      "position": "Projektleiter",
+      "affiliation": "Kapitalwind Finanzierungspartner AG",
+      "academicTitle": "Prof. Dr."
+    },
+    {
+      "id": "ref-191",
+      "name": "Svenja Dreyer",
+      "position": "Leiterin Technik",
+      "affiliation": "Kapitalwind Finanzierungspartner AG"
+    },
+    {
+      "id": "ref-192",
+      "name": "Fabian Wendt",
+      "position": "Projektleiter",
+      "affiliation": "Datafeld Analytics GmbH"
+    },
+    {
+      "id": "ref-193",
+      "name": "Tobias Hinrichs",
+      "position": "Gutachter",
+      "affiliation": "Datafeld Analytics GmbH"
+    },
+    {
+      "id": "ref-194",
+      "name": "Ole Bartels",
+      "position": "Wissenschaftlicher Mitarbeiter",
+      "affiliation": "Gemeinde Talgrund"
+    },
+    {
+      "id": "ref-195",
+      "name": "Johanna Zander",
+      "position": "Gutachterin",
+      "affiliation": "Recyclon Rotorblattverwertung GmbH",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-196",
+      "name": "Sarah Rehder",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Bürgerenergie Talgrund eG",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-197",
+      "name": "Greta Quast",
+      "position": "Leiterin Technik",
+      "affiliation": "Recyclon Rotorblattverwertung GmbH"
+    },
+    {
+      "id": "ref-198",
+      "name": "Katrin Yıldız",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Kranwerk Logistik AG",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-199",
+      "name": "Lukas Wendt",
+      "position": "Projektleiter",
+      "affiliation": "Bürgerenergie Talgrund eG"
+    },
+    {
+      "id": "ref-200",
+      "name": "Henrik Dreyer",
+      "position": "Vertriebsleiter",
+      "affiliation": "Kanzlei Vogt & Asmussen"
+    },
+    {
+      "id": "ref-201",
+      "name": "Ines Zander",
+      "position": "Wissenschaftliche Mitarbeiterin",
+      "affiliation": "Bürgerenergie Talgrund eG"
+    },
+    {
+      "id": "ref-202",
+      "name": "Carla Lüders",
+      "position": "Referentin Energiepolitik",
+      "affiliation": "Landesenergieagentur Musterland",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-203",
+      "name": "Lukas Jürgensen",
+      "position": "Vorstand",
+      "affiliation": "Landesenergieagentur Musterland",
+      "academicTitle": "Dr."
+    },
+    {
+      "id": "ref-204",
+      "name": "Timo Oltmanns",
+      "position": "Referent Energiepolitik",
+      "affiliation": "Landkreis Musterkreis"
+    },
+    {
+      "id": "ref-205",
+      "name": "Henrik Fehrs",
+      "position": "Leiter Technik",
+      "affiliation": "Betreiberkreis Heide-Süd e.V."
+    },
+    {
+      "id": "ref-206",
+      "name": "Anna Iwersen",
+      "position": "Leiterin Technik",
+      "affiliation": "Energiehandel Westmark GmbH"
+    },
+    {
+      "id": "ref-207",
+      "name": "Carla Yıldız",
+      "position": "Fachbereichsleiterin",
+      "affiliation": "Bürgerenergie Talgrund eG"
+    },
+    {
+      "id": "ref-208",
+      "name": "Carla Dittmer",
+      "position": "Leiterin Betriebsführung",
+      "affiliation": "Bürgerenergie Talgrund eG"
+    },
+    {
+      "id": "ref-209",
+      "name": "Felix Rehder",
+      "position": "Vertriebsleiter",
+      "affiliation": "Bürgerenergie Talgrund eG"
+    },
+    {
+      "id": "ref-210",
+      "name": "Ole Fehrs",
+      "position": "Teamleiter Genehmigung",
+      "affiliation": "Windpark Hohe Geest GmbH & Co. KG"
+    },
+    {
+      "id": "ref-211",
+      "name": "Jonas Lüders",
+      "position": "Vorstand",
+      "affiliation": "Institut für Netzintegration Feldhaus"
+    },
+    {
+      "id": "ref-212",
+      "name": "Felix Voß",
+      "position": "Geschäftsführer",
+      "affiliation": "Arbeitskreis Sicherheit in der Windbranche"
+    }
+  ],
+  "forums": [
+    {
+      "id": "plenum-1",
+      "number": "P1",
+      "title": "Eröffnung und Keynote",
+      "kind": "plenum",
+      "dayId": "tag-1",
+      "roomId": "plenarsaal",
+      "organizerIds": [
+        "demo-veranstalter"
+      ],
+      "moderatorIds": [
+        "ref-001"
+      ],
+      "topicIds": []
+    },
+    {
+      "id": "forum-01",
+      "number": "1",
+      "title": "Genehmigungsverfahren beschleunigen",
+      "description": "Wo Verfahren heute hängen und welche Stellschrauben Projektierer und Behörden selbst in der Hand haben.",
+      "kind": "forum",
+      "dayId": "tag-1",
+      "roomId": "saal-1",
+      "organizerIds": [
+        "aeolis"
+      ],
+      "moderatorIds": [
+        "ref-006"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "recht"
+      ]
+    },
+    {
+      "id": "forum-02",
+      "number": "2",
+      "title": "Repowering an Bestandsstandorten",
+      "description": "Erfahrungen mit dem Ersatz älterer Anlagen durch leistungsstärkere Technik.",
+      "kind": "forum",
+      "dayId": "tag-1",
+      "roomId": "saal-2",
+      "organizerIds": [
+        "nordbrise"
+      ],
+      "moderatorIds": [
+        "ref-013"
+      ],
+      "topicIds": [
+        "repowering",
+        "genehmigung"
+      ]
+    },
+    {
+      "id": "forum-03",
+      "number": "3",
+      "title": "Netzanschluss: Kapazitäten und Wartezeiten",
+      "description": "Wie Projekte trotz knapper Netzkapazitäten ans Netz kommen.",
+      "kind": "forum",
+      "dayId": "tag-1",
+      "roomId": "saal-3",
+      "organizerIds": [
+        "inf-feldhaus"
+      ],
+      "moderatorIds": [
+        "ref-018"
+      ],
+      "topicIds": [
+        "netz"
+      ]
+    },
+    {
+      "id": "forum-04",
+      "number": "4",
+      "title": "Artenschutz und Abschaltalgorithmen",
+      "description": "Technische und planerische Lösungen für den Schutz von Vögeln und Fledermäusen.",
+      "kind": "forum",
+      "dayId": "tag-1",
+      "roomId": "saal-4",
+      "organizerIds": [
+        "avifauna-seidel"
+      ],
+      "moderatorIds": [
+        "ref-025"
+      ],
+      "topicIds": [
+        "naturschutz",
+        "technik"
+      ]
+    },
+    {
+      "id": "forum-05",
+      "number": "5",
+      "title": "Kommunale Teilhabe und Akzeptanz",
+      "description": "Wie Gemeinden und Anwohner vom Windpark vor Ort profitieren.",
+      "kind": "forum",
+      "dayId": "tag-1",
+      "roomId": "raum-elbe",
+      "organizerIds": [
+        "be-talgrund"
+      ],
+      "moderatorIds": [
+        "ref-031"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ]
+    },
+    {
+      "id": "forum-06",
+      "number": "6",
+      "title": "Direktvermarktung und PPA",
+      "description": "Erlösmodelle jenseits der festen Vergütung.",
+      "kind": "forum",
+      "dayId": "tag-1",
+      "roomId": "raum-havel",
+      "organizerIds": [
+        "sw-musterstadt"
+      ],
+      "moderatorIds": [
+        "ref-036"
+      ],
+      "topicIds": [
+        "vermarktung"
+      ]
+    },
+    {
+      "id": "forum-07",
+      "number": "7",
+      "title": "Schwertransporte und Baulogistik",
+      "description": "Vom Hafen bis zur Kranstellfläche: Logistik großer Komponenten.",
+      "kind": "forum",
+      "dayId": "tag-1",
+      "roomId": "saal-1",
+      "organizerIds": [
+        "kranwerk"
+      ],
+      "moderatorIds": [
+        "ref-042"
+      ],
+      "topicIds": [
+        "logistik"
+      ]
+    },
+    {
+      "id": "forum-08",
+      "number": "8",
+      "title": "Betriebsführung im Wandel",
+      "description": "Aufgaben, Kennzahlen und Verträge in der Betriebsführung.",
+      "kind": "forum",
+      "dayId": "tag-1",
+      "roomId": "saal-2",
+      "organizerIds": [
+        "bk-heide-sued"
+      ],
+      "moderatorIds": [
+        "ref-049"
+      ],
+      "topicIds": [
+        "betrieb",
+        "digital"
+      ]
+    },
+    {
+      "id": "forum-09",
+      "number": "9",
+      "title": "Flächenausweisung in den Ländern",
+      "description": "Wie Länder und Regionen Flächen ausweisen und was das für Projekte bedeutet.",
+      "kind": "forum",
+      "dayId": "tag-1",
+      "roomId": "saal-3",
+      "organizerIds": [
+        "lea-musterland"
+      ],
+      "moderatorIds": [
+        "ref-054"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ]
+    },
+    {
+      "id": "forum-10",
+      "number": "10",
+      "title": "Radar, Luftfahrt und Wetterdienst",
+      "description": "Luftverkehrliche Belange in Planung und Betrieb.",
+      "kind": "forum",
+      "dayId": "tag-1",
+      "roomId": "saal-4",
+      "organizerIds": [
+        "fliegerwacht"
+      ],
+      "moderatorIds": [
+        "ref-060"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "technik"
+      ]
+    },
+    {
+      "id": "forum-11",
+      "number": "11",
+      "title": "Arbeitssicherheit auf der Anlage",
+      "description": "Schutz der Menschen, die auf und an Windenergieanlagen arbeiten.",
+      "kind": "forum",
+      "dayId": "tag-1",
+      "roomId": "raum-ostufer",
+      "organizerIds": [
+        "ak-sicherheit"
+      ],
+      "moderatorIds": [
+        "ref-065"
+      ],
+      "topicIds": [
+        "sicherheit",
+        "betrieb"
+      ]
+    },
+    {
+      "id": "plenum-2",
+      "number": "P2",
+      "title": "Plenum am zweiten Tag",
+      "kind": "plenum",
+      "dayId": "tag-2",
+      "roomId": "plenarsaal",
+      "organizerIds": [
+        "demo-veranstalter"
+      ],
+      "moderatorIds": [
+        "ref-073"
+      ],
+      "topicIds": []
+    },
+    {
+      "id": "forum-12",
+      "number": "12",
+      "title": "Rechtsprechung aktuell",
+      "description": "Überblick über aktuelle Gerichtsentscheidungen mit Praxisbezug.",
+      "kind": "forum",
+      "dayId": "tag-2",
+      "roomId": "saal-1",
+      "organizerIds": [
+        "brenner-lohmeyer"
+      ],
+      "moderatorIds": [
+        "ref-078"
+      ],
+      "topicIds": [
+        "recht",
+        "genehmigung"
+      ]
+    },
+    {
+      "id": "forum-13",
+      "number": "13",
+      "title": "Finanzierung von Windprojekten",
+      "description": "Was Kapitalgeber erwarten und wie Projekte finanzierbar bleiben.",
+      "kind": "forum",
+      "dayId": "tag-2",
+      "roomId": "saal-2",
+      "organizerIds": [
+        "kapitalwind"
+      ],
+      "moderatorIds": [
+        "ref-083"
+      ],
+      "topicIds": [
+        "finanzierung"
+      ]
+    },
+    {
+      "id": "forum-14",
+      "number": "14",
+      "title": "Speicher am Windpark",
+      "description": "Kombination von Windenergie und Batteriespeichern.",
+      "kind": "forum",
+      "dayId": "tag-2",
+      "roomId": "saal-3",
+      "organizerIds": [
+        "sektorlink"
+      ],
+      "moderatorIds": [
+        "ref-090"
+      ],
+      "topicIds": [
+        "speicher",
+        "netz"
+      ]
+    },
+    {
+      "id": "forum-15",
+      "number": "15",
+      "title": "Wasserstoff aus Windstrom",
+      "description": "Ansätze, Windstrom in Wasserstoff umzuwandeln.",
+      "kind": "forum",
+      "dayId": "tag-2",
+      "roomId": "saal-4",
+      "organizerIds": [
+        "sektorlink",
+        "sw-musterstadt"
+      ],
+      "moderatorIds": [
+        "ref-095"
+      ],
+      "topicIds": [
+        "speicher",
+        "vermarktung"
+      ]
+    },
+    {
+      "id": "forum-16",
+      "number": "16",
+      "title": "Digitale Zwillinge und Zustandsüberwachung",
+      "description": "Daten aus dem Betrieb für Wartung und Ertrag nutzen.",
+      "kind": "forum",
+      "dayId": "tag-2",
+      "roomId": "raum-elbe",
+      "organizerIds": [
+        "datafeld"
+      ],
+      "moderatorIds": [
+        "ref-101"
+      ],
+      "topicIds": [
+        "digital",
+        "betrieb"
+      ]
+    },
+    {
+      "id": "forum-17",
+      "number": "17",
+      "title": "Weiterbetrieb nach 20 Jahren",
+      "description": "Technische und wirtschaftliche Fragen bei älteren Anlagen.",
+      "kind": "forum",
+      "dayId": "tag-2",
+      "roomId": "raum-havel",
+      "organizerIds": [
+        "rotorline"
+      ],
+      "moderatorIds": [
+        "ref-107"
+      ],
+      "topicIds": [
+        "betrieb",
+        "repowering"
+      ]
+    },
+    {
+      "id": "forum-18",
+      "number": "18",
+      "title": "Schall, Schatten und Abstand",
+      "description": "Immissionsschutzfragen von der Prognose bis zur Messung.",
+      "kind": "forum",
+      "dayId": "tag-2",
+      "roomId": "saal-1",
+      "organizerIds": [
+        "hs-musterstadt"
+      ],
+      "moderatorIds": [
+        "ref-112"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "akzeptanz"
+      ]
+    },
+    {
+      "id": "forum-19",
+      "number": "19",
+      "title": "Versicherung von Windparks",
+      "description": "Risiken im Lebenszyklus eines Windparks absichern.",
+      "kind": "forum",
+      "dayId": "tag-2",
+      "roomId": "saal-2",
+      "organizerIds": [
+        "boeenschutz"
+      ],
+      "moderatorIds": [
+        "ref-118"
+      ],
+      "topicIds": [
+        "finanzierung",
+        "betrieb"
+      ]
+    },
+    {
+      "id": "forum-20",
+      "number": "20",
+      "title": "Netzbetreiber im Dialog",
+      "description": "Zusammenarbeit von Netz- und Anlagenbetreibern.",
+      "kind": "forum",
+      "dayId": "tag-2",
+      "roomId": "saal-3",
+      "organizerIds": [
+        "gridvolt"
+      ],
+      "moderatorIds": [
+        "ref-124"
+      ],
+      "topicIds": [
+        "netz"
+      ]
+    },
+    {
+      "id": "forum-21",
+      "number": "21",
+      "title": "Pachtverträge und Flächensicherung",
+      "description": "Vertragliche Grundlagen für die Flächennutzung.",
+      "kind": "forum",
+      "dayId": "tag-2",
+      "roomId": "saal-4",
+      "organizerIds": [
+        "vogt-asmussen"
+      ],
+      "moderatorIds": [
+        "ref-131"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ]
+    },
+    {
+      "id": "forum-22",
+      "number": "22",
+      "title": "Forum der Nachwuchskräfte",
+      "description": "Junge Fachleute stellen Arbeiten vor und berichten vom Einstieg.",
+      "kind": "forum",
+      "dayId": "tag-2",
+      "roomId": "raum-ostufer",
+      "organizerIds": [
+        "hs-musterstadt"
+      ],
+      "moderatorIds": [
+        "ref-136"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "technik"
+      ]
+    },
+    {
+      "id": "plenum-3",
+      "number": "P3",
+      "title": "Plenum am dritten Tag",
+      "kind": "plenum",
+      "dayId": "tag-3",
+      "roomId": "plenarsaal",
+      "organizerIds": [
+        "demo-veranstalter"
+      ],
+      "moderatorIds": [
+        "ref-141"
+      ],
+      "topicIds": []
+    },
+    {
+      "id": "forum-23",
+      "number": "23",
+      "title": "Rückbau und Rotorblattrecycling",
+      "description": "Was am Ende der Betriebszeit mit Anlagen und Material passiert.",
+      "kind": "forum",
+      "dayId": "tag-3",
+      "roomId": "saal-1",
+      "organizerIds": [
+        "recyclon"
+      ],
+      "moderatorIds": [
+        "ref-146"
+      ],
+      "topicIds": [
+        "rueckbau"
+      ]
+    },
+    {
+      "id": "forum-24",
+      "number": "24",
+      "title": "Anlagentechnik: Neue Plattformen",
+      "description": "Technische Entwicklungen bei Windenergieanlagen an Land.",
+      "kind": "forum",
+      "dayId": "tag-3",
+      "roomId": "saal-2",
+      "organizerIds": [
+        "hs-musterstadt"
+      ],
+      "moderatorIds": [
+        "ref-155"
+      ],
+      "topicIds": [
+        "technik"
+      ]
+    },
+    {
+      "id": "forum-25",
+      "number": "25",
+      "title": "Ausschreibungen und Marktdesign",
+      "description": "Ausschreibungen, Zuschläge und die Entwicklung des Strommarkts.",
+      "kind": "forum",
+      "dayId": "tag-3",
+      "roomId": "saal-3",
+      "organizerIds": [
+        "aeolis"
+      ],
+      "moderatorIds": [
+        "ref-162"
+      ],
+      "topicIds": [
+        "vermarktung",
+        "recht"
+      ]
+    },
+    {
+      "id": "forum-26",
+      "number": "26",
+      "title": "Wartung und Instandhaltung",
+      "description": "Wartungskonzepte und Instandsetzung im Betrieb.",
+      "kind": "forum",
+      "dayId": "tag-3",
+      "roomId": "saal-4",
+      "organizerIds": [
+        "rotorline"
+      ],
+      "moderatorIds": [
+        "ref-168"
+      ],
+      "topicIds": [
+        "betrieb",
+        "sicherheit"
+      ]
+    },
+    {
+      "id": "forum-27",
+      "number": "27",
+      "title": "Windenergie im Wald",
+      "description": "Planung und Bau von Windenergieanlagen auf Waldflächen.",
+      "kind": "forum",
+      "dayId": "tag-3",
+      "roomId": "raum-elbe",
+      "organizerIds": [
+        "flaechenkontor"
+      ],
+      "moderatorIds": [
+        "ref-173"
+      ],
+      "topicIds": [
+        "flaeche",
+        "naturschutz"
+      ]
+    },
+    {
+      "id": "forum-28",
+      "number": "28",
+      "title": "Kommunikation in Konfliktfällen",
+      "description": "Wie Projektträger in schwierigen Situationen kommunizieren.",
+      "kind": "forum",
+      "dayId": "tag-3",
+      "roomId": "raum-havel",
+      "organizerIds": [
+        "be-talgrund",
+        "aeolis"
+      ],
+      "moderatorIds": [
+        "ref-179"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ]
+    },
+    {
+      "id": "forum-29",
+      "number": "29",
+      "title": "Netzdienliche Windparks",
+      "description": "Beiträge von Windparks zur Stabilität des Stromnetzes.",
+      "kind": "forum",
+      "dayId": "tag-3",
+      "roomId": "saal-1",
+      "organizerIds": [
+        "inf-feldhaus",
+        "gridvolt"
+      ],
+      "moderatorIds": [
+        "ref-186"
+      ],
+      "topicIds": [
+        "netz",
+        "speicher"
+      ]
+    },
+    {
+      "id": "forum-30",
+      "number": "30",
+      "title": "Daten und IT-Sicherheit",
+      "description": "Schutz von Steuerungs- und Betriebsdaten.",
+      "kind": "forum",
+      "dayId": "tag-3",
+      "roomId": "saal-2",
+      "organizerIds": [
+        "datafeld"
+      ],
+      "moderatorIds": [
+        "ref-192"
+      ],
+      "topicIds": [
+        "digital",
+        "sicherheit"
+      ]
+    },
+    {
+      "id": "forum-31",
+      "number": "31",
+      "title": "Kreislaufwirtschaft in der Lieferkette",
+      "description": "Ressourcen schonen vom Bau bis zur Verwertung.",
+      "kind": "forum",
+      "dayId": "tag-3",
+      "roomId": "saal-3",
+      "organizerIds": [
+        "recyclon",
+        "kranwerk"
+      ],
+      "moderatorIds": [
+        "ref-197"
+      ],
+      "topicIds": [
+        "rueckbau",
+        "technik"
+      ]
+    },
+    {
+      "id": "forum-32",
+      "number": "32",
+      "title": "Genehmigungsbehörden im Gespräch",
+      "description": "Behördenvertreter berichten aus ihrer Arbeit.",
+      "kind": "forum",
+      "dayId": "tag-3",
+      "roomId": "saal-4",
+      "organizerIds": [
+        "lea-musterland"
+      ],
+      "moderatorIds": [
+        "ref-202"
+      ],
+      "topicIds": [
+        "genehmigung"
+      ]
+    },
+    {
+      "id": "forum-33",
+      "number": "33",
+      "title": "Bürgerenergie und Genossenschaften",
+      "description": "Wie Bürgerinnen und Bürger selbst Windparks betreiben.",
+      "kind": "forum",
+      "dayId": "tag-3",
+      "roomId": "raum-ostufer",
+      "organizerIds": [
+        "be-talgrund"
+      ],
+      "moderatorIds": [
+        "ref-207"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "finanzierung"
+      ]
+    }
+  ],
+  "sessions": [
+    {
+      "id": "plenum-1-1",
+      "forumId": "plenum-1",
+      "title": "Begrüßung",
+      "type": "Begrüßung",
+      "start": "2027-11-09T09:00",
+      "end": "2027-11-09T09:15",
+      "speakerIds": [
+        "ref-001"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "plenum-1-2",
+      "forumId": "plenum-1",
+      "title": "Windenergie an Land: Bilanz und Ausblick",
+      "type": "Keynote",
+      "start": "2027-11-09T09:15",
+      "end": "2027-11-09T09:50",
+      "speakerIds": [
+        "ref-002"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "plenum-1-3",
+      "forumId": "plenum-1",
+      "title": "Podium: Was die nächsten Jahre bringen",
+      "type": "Diskussion",
+      "start": "2027-11-09T09:50",
+      "end": "2027-11-09T10:30",
+      "speakerIds": [
+        "ref-003",
+        "ref-004",
+        "ref-005"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-01-0",
+      "forumId": "forum-01",
+      "title": "Einführung: Genehmigungsverfahren beschleunigen",
+      "type": "Begrüßung",
+      "start": "2027-11-09T11:00",
+      "end": "2027-11-09T11:05",
+      "speakerIds": [
+        "ref-006"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-01-1",
+      "forumId": "forum-01",
+      "title": "Fristen im Genehmigungsverfahren: Erfahrungen aus dem ersten Jahr",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:05",
+      "end": "2027-11-09T11:20",
+      "speakerIds": [
+        "ref-007",
+        "ref-008"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-01-2",
+      "forumId": "forum-01",
+      "title": "Vollständigkeitsprüfung ohne Nachforderungsschleifen",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:20",
+      "end": "2027-11-09T11:35",
+      "speakerIds": [
+        "ref-009"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-01-3",
+      "forumId": "forum-01",
+      "title": "Digitale Antragsunterlagen in der Praxis",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:35",
+      "end": "2027-11-09T11:50",
+      "speakerIds": [
+        "ref-010"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-01-4",
+      "forumId": "forum-01",
+      "title": "Was Behörden von Projektierern brauchen",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:50",
+      "end": "2027-11-09T12:05",
+      "speakerIds": [
+        "ref-011",
+        "ref-012"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-01-d",
+      "forumId": "forum-01",
+      "title": "Diskussion: Genehmigungsverfahren beschleunigen",
+      "type": "Diskussion",
+      "start": "2027-11-09T12:05",
+      "end": "2027-11-09T12:30",
+      "speakerIds": [
+        "ref-006",
+        "ref-007",
+        "ref-008",
+        "ref-009",
+        "ref-010",
+        "ref-011",
+        "ref-012"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-02-0",
+      "forumId": "forum-02",
+      "title": "Einführung: Repowering an Bestandsstandorten",
+      "type": "Begrüßung",
+      "start": "2027-11-09T11:00",
+      "end": "2027-11-09T11:05",
+      "speakerIds": [
+        "ref-013"
+      ],
+      "topicIds": [
+        "repowering",
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-02-1",
+      "forumId": "forum-02",
+      "title": "Repowering-Potenziale im Altbestand bewerten",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:05",
+      "end": "2027-11-09T11:20",
+      "speakerIds": [
+        "ref-014"
+      ],
+      "topicIds": [
+        "repowering",
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-02-2",
+      "forumId": "forum-02",
+      "title": "Änderungsgenehmigung oder Neugenehmigung?",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:20",
+      "end": "2027-11-09T11:35",
+      "speakerIds": [
+        "ref-015"
+      ],
+      "topicIds": [
+        "repowering",
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-02-3",
+      "forumId": "forum-02",
+      "title": "Rückbau und Neubau zeitlich verzahnen",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:35",
+      "end": "2027-11-09T11:50",
+      "speakerIds": [
+        "ref-016"
+      ],
+      "topicIds": [
+        "repowering",
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-02-4",
+      "forumId": "forum-02",
+      "title": "Fallbeispiel: Drei Altanlagen, eine neue Anlage",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:50",
+      "end": "2027-11-09T12:05",
+      "speakerIds": [
+        "ref-017"
+      ],
+      "topicIds": [
+        "repowering",
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-02-d",
+      "forumId": "forum-02",
+      "title": "Diskussion: Repowering an Bestandsstandorten",
+      "type": "Diskussion",
+      "start": "2027-11-09T12:05",
+      "end": "2027-11-09T12:30",
+      "speakerIds": [
+        "ref-013",
+        "ref-014",
+        "ref-015",
+        "ref-016",
+        "ref-017"
+      ],
+      "topicIds": [
+        "repowering",
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-03-0",
+      "forumId": "forum-03",
+      "title": "Einführung: Netzanschluss: Kapazitäten und Wartezeiten",
+      "type": "Begrüßung",
+      "start": "2027-11-09T11:00",
+      "end": "2027-11-09T11:05",
+      "speakerIds": [
+        "ref-018"
+      ],
+      "topicIds": [
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-03-1",
+      "forumId": "forum-03",
+      "title": "Netzanschlussbegehren richtig stellen",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:05",
+      "end": "2027-11-09T11:20",
+      "speakerIds": [
+        "ref-019",
+        "ref-020"
+      ],
+      "topicIds": [
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-03-2",
+      "forumId": "forum-03",
+      "title": "Überbauung von Netzverknüpfungspunkten",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:20",
+      "end": "2027-11-09T11:35",
+      "speakerIds": [
+        "ref-021"
+      ],
+      "topicIds": [
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-03-3",
+      "forumId": "forum-03",
+      "title": "Gemeinsame Umspannwerke mehrerer Projekte",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:35",
+      "end": "2027-11-09T11:50",
+      "speakerIds": [
+        "ref-022",
+        "ref-023"
+      ],
+      "topicIds": [
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-03-4",
+      "forumId": "forum-03",
+      "title": "Datenlage zu freien Kapazitäten",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:50",
+      "end": "2027-11-09T12:05",
+      "speakerIds": [
+        "ref-024"
+      ],
+      "topicIds": [
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-03-d",
+      "forumId": "forum-03",
+      "title": "Diskussion: Netzanschluss: Kapazitäten und Wartezeiten",
+      "type": "Diskussion",
+      "start": "2027-11-09T12:05",
+      "end": "2027-11-09T12:30",
+      "speakerIds": [
+        "ref-018",
+        "ref-019",
+        "ref-020",
+        "ref-021",
+        "ref-022",
+        "ref-023",
+        "ref-024"
+      ],
+      "topicIds": [
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-04-0",
+      "forumId": "forum-04",
+      "title": "Einführung: Artenschutz und Abschaltalgorithmen",
+      "type": "Begrüßung",
+      "start": "2027-11-09T11:00",
+      "end": "2027-11-09T11:05",
+      "speakerIds": [
+        "ref-025"
+      ],
+      "topicIds": [
+        "naturschutz",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-04-1",
+      "forumId": "forum-04",
+      "title": "Antikollisionssysteme im Feldtest",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:05",
+      "end": "2027-11-09T11:20",
+      "speakerIds": [
+        "ref-026"
+      ],
+      "topicIds": [
+        "naturschutz",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-04-2",
+      "forumId": "forum-04",
+      "title": "Fledermausabschaltung: Daten aus drei Betriebsjahren",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:20",
+      "end": "2027-11-09T11:35",
+      "speakerIds": [
+        "ref-027",
+        "ref-028"
+      ],
+      "topicIds": [
+        "naturschutz",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-04-3",
+      "forumId": "forum-04",
+      "title": "Habitatpotenzialanalyse als Planungsinstrument",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:35",
+      "end": "2027-11-09T11:50",
+      "speakerIds": [
+        "ref-029"
+      ],
+      "topicIds": [
+        "naturschutz",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-04-4",
+      "forumId": "forum-04",
+      "title": "Ertragsverluste durch Abschaltauflagen beziffern",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:50",
+      "end": "2027-11-09T12:05",
+      "speakerIds": [
+        "ref-030"
+      ],
+      "topicIds": [
+        "naturschutz",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-04-d",
+      "forumId": "forum-04",
+      "title": "Diskussion: Artenschutz und Abschaltalgorithmen",
+      "type": "Diskussion",
+      "start": "2027-11-09T12:05",
+      "end": "2027-11-09T12:30",
+      "speakerIds": [
+        "ref-025",
+        "ref-026",
+        "ref-027",
+        "ref-028",
+        "ref-029",
+        "ref-030"
+      ],
+      "topicIds": [
+        "naturschutz",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-05-0",
+      "forumId": "forum-05",
+      "title": "Einführung: Kommunale Teilhabe und Akzeptanz",
+      "type": "Begrüßung",
+      "start": "2027-11-09T11:00",
+      "end": "2027-11-09T11:05",
+      "speakerIds": [
+        "ref-031"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-05-1",
+      "forumId": "forum-05",
+      "title": "Finanzielle Beteiligung von Gemeinden umsetzen",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:05",
+      "end": "2027-11-09T11:20",
+      "speakerIds": [
+        "ref-032"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-05-2",
+      "forumId": "forum-05",
+      "title": "Bürgerstromtarife als Akzeptanzinstrument",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:20",
+      "end": "2027-11-09T11:35",
+      "speakerIds": [
+        "ref-033"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-05-3",
+      "forumId": "forum-05",
+      "title": "Informationsabende, die funktionieren",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:35",
+      "end": "2027-11-09T11:50",
+      "speakerIds": [
+        "ref-034"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-05-4",
+      "forumId": "forum-05",
+      "title": "Konflikte früh erkennen und moderieren",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:50",
+      "end": "2027-11-09T12:05",
+      "speakerIds": [
+        "ref-035"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-05-d",
+      "forumId": "forum-05",
+      "title": "Diskussion: Kommunale Teilhabe und Akzeptanz",
+      "type": "Diskussion",
+      "start": "2027-11-09T12:05",
+      "end": "2027-11-09T12:30",
+      "speakerIds": [
+        "ref-031",
+        "ref-032",
+        "ref-033",
+        "ref-034",
+        "ref-035"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-06-0",
+      "forumId": "forum-06",
+      "title": "Einführung: Direktvermarktung und PPA",
+      "type": "Begrüßung",
+      "start": "2027-11-09T11:00",
+      "end": "2027-11-09T11:05",
+      "speakerIds": [
+        "ref-036"
+      ],
+      "topicIds": [
+        "vermarktung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-06-1",
+      "forumId": "forum-06",
+      "title": "PPA-Modelle für mittelgroße Windparks",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:05",
+      "end": "2027-11-09T11:20",
+      "speakerIds": [
+        "ref-037"
+      ],
+      "topicIds": [
+        "vermarktung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-06-2",
+      "forumId": "forum-06",
+      "title": "Preisrisiken in langfristigen Lieferverträgen",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:20",
+      "end": "2027-11-09T11:35",
+      "speakerIds": [
+        "ref-038",
+        "ref-039"
+      ],
+      "topicIds": [
+        "vermarktung"
+      ],
+      "status": "geändert",
+      "statusNote": "Neue Referentin"
+    },
+    {
+      "id": "forum-06-3",
+      "forumId": "forum-06",
+      "title": "Herkunftsnachweise richtig nutzen",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:35",
+      "end": "2027-11-09T11:50",
+      "speakerIds": [
+        "ref-040"
+      ],
+      "topicIds": [
+        "vermarktung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-06-4",
+      "forumId": "forum-06",
+      "title": "Direktvermarktung bei negativen Preisen",
+      "type": "Vortrag",
+      "start": "2027-11-09T11:50",
+      "end": "2027-11-09T12:05",
+      "speakerIds": [
+        "ref-041"
+      ],
+      "topicIds": [
+        "vermarktung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-06-d",
+      "forumId": "forum-06",
+      "title": "Diskussion: Direktvermarktung und PPA",
+      "type": "Diskussion",
+      "start": "2027-11-09T12:05",
+      "end": "2027-11-09T12:30",
+      "speakerIds": [
+        "ref-036",
+        "ref-037",
+        "ref-038",
+        "ref-039",
+        "ref-040",
+        "ref-041"
+      ],
+      "topicIds": [
+        "vermarktung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-07-0",
+      "forumId": "forum-07",
+      "title": "Einführung: Schwertransporte und Baulogistik",
+      "type": "Begrüßung",
+      "start": "2027-11-09T14:30",
+      "end": "2027-11-09T14:35",
+      "speakerIds": [
+        "ref-042"
+      ],
+      "topicIds": [
+        "logistik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-07-1",
+      "forumId": "forum-07",
+      "title": "Transportgenehmigungen für Großkomponenten",
+      "type": "Vortrag",
+      "start": "2027-11-09T14:35",
+      "end": "2027-11-09T14:50",
+      "speakerIds": [
+        "ref-043",
+        "ref-044"
+      ],
+      "topicIds": [
+        "logistik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-07-2",
+      "forumId": "forum-07",
+      "title": "Zuwegung und Kranstellflächen planen",
+      "type": "Vortrag",
+      "start": "2027-11-09T14:50",
+      "end": "2027-11-09T15:05",
+      "speakerIds": [
+        "ref-045"
+      ],
+      "topicIds": [
+        "logistik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-07-3",
+      "forumId": "forum-07",
+      "title": "Logistik für Rotorblätter über 80 Meter",
+      "type": "Vortrag",
+      "start": "2027-11-09T15:05",
+      "end": "2027-11-09T15:20",
+      "speakerIds": [
+        "ref-046",
+        "ref-047"
+      ],
+      "topicIds": [
+        "logistik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-07-4",
+      "forumId": "forum-07",
+      "title": "Bauzeitenplanung mit Wetterfenstern",
+      "type": "Vortrag",
+      "start": "2027-11-09T15:20",
+      "end": "2027-11-09T15:35",
+      "speakerIds": [
+        "ref-048"
+      ],
+      "topicIds": [
+        "logistik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-07-d",
+      "forumId": "forum-07",
+      "title": "Diskussion: Schwertransporte und Baulogistik",
+      "type": "Diskussion",
+      "start": "2027-11-09T15:35",
+      "end": "2027-11-09T16:00",
+      "speakerIds": [
+        "ref-042",
+        "ref-043",
+        "ref-044",
+        "ref-045",
+        "ref-046",
+        "ref-047",
+        "ref-048"
+      ],
+      "topicIds": [
+        "logistik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-08-0",
+      "forumId": "forum-08",
+      "title": "Einführung: Betriebsführung im Wandel",
+      "type": "Begrüßung",
+      "start": "2027-11-09T14:30",
+      "end": "2027-11-09T14:35",
+      "speakerIds": [
+        "ref-049"
+      ],
+      "topicIds": [
+        "betrieb",
+        "digital"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-08-1",
+      "forumId": "forum-08",
+      "title": "Technische und kaufmännische Betriebsführung trennen?",
+      "type": "Vortrag",
+      "start": "2027-11-09T14:35",
+      "end": "2027-11-09T14:50",
+      "speakerIds": [
+        "ref-050"
+      ],
+      "topicIds": [
+        "betrieb",
+        "digital"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-08-2",
+      "forumId": "forum-08",
+      "title": "Kennzahlen für Betreiber",
+      "type": "Vortrag",
+      "start": "2027-11-09T14:50",
+      "end": "2027-11-09T15:05",
+      "speakerIds": [
+        "ref-051"
+      ],
+      "topicIds": [
+        "betrieb",
+        "digital"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-08-3",
+      "forumId": "forum-08",
+      "title": "Wechsel des Betriebsführers ohne Datenverlust",
+      "type": "Vortrag",
+      "start": "2027-11-09T15:05",
+      "end": "2027-11-09T15:20",
+      "speakerIds": [
+        "ref-052"
+      ],
+      "topicIds": [
+        "betrieb",
+        "digital"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-08-4",
+      "forumId": "forum-08",
+      "title": "Betreiberpflichten nach Ende der Förderung",
+      "type": "Vortrag",
+      "start": "2027-11-09T15:20",
+      "end": "2027-11-09T15:35",
+      "speakerIds": [
+        "ref-053"
+      ],
+      "topicIds": [
+        "betrieb",
+        "digital"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-08-d",
+      "forumId": "forum-08",
+      "title": "Diskussion: Betriebsführung im Wandel",
+      "type": "Diskussion",
+      "start": "2027-11-09T15:35",
+      "end": "2027-11-09T16:00",
+      "speakerIds": [
+        "ref-049",
+        "ref-050",
+        "ref-051",
+        "ref-052",
+        "ref-053"
+      ],
+      "topicIds": [
+        "betrieb",
+        "digital"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-09-0",
+      "forumId": "forum-09",
+      "title": "Einführung: Flächenausweisung in den Ländern",
+      "type": "Begrüßung",
+      "start": "2027-11-09T14:30",
+      "end": "2027-11-09T14:35",
+      "speakerIds": [
+        "ref-054"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-09-1",
+      "forumId": "forum-09",
+      "title": "Stand der Regionalplanung",
+      "type": "Vortrag",
+      "start": "2027-11-09T14:35",
+      "end": "2027-11-09T14:50",
+      "speakerIds": [
+        "ref-055"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-09-2",
+      "forumId": "forum-09",
+      "title": "Flächenziele und kommunale Steuerung",
+      "type": "Vortrag",
+      "start": "2027-11-09T14:50",
+      "end": "2027-11-09T15:05",
+      "speakerIds": [
+        "ref-056"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-09-3",
+      "forumId": "forum-09",
+      "title": "Sicherung von Flächen durch Pachtverträge",
+      "type": "Vortrag",
+      "start": "2027-11-09T15:05",
+      "end": "2027-11-09T15:20",
+      "speakerIds": [
+        "ref-057"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-09-4",
+      "forumId": "forum-09",
+      "title": "Konkurrierende Nutzungen auf ausgewiesenen Flächen",
+      "type": "Vortrag",
+      "start": "2027-11-09T15:20",
+      "end": "2027-11-09T15:35",
+      "speakerIds": [
+        "ref-058",
+        "ref-059"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-09-d",
+      "forumId": "forum-09",
+      "title": "Diskussion: Flächenausweisung in den Ländern",
+      "type": "Diskussion",
+      "start": "2027-11-09T15:35",
+      "end": "2027-11-09T16:00",
+      "speakerIds": [
+        "ref-054",
+        "ref-055",
+        "ref-056",
+        "ref-057",
+        "ref-058",
+        "ref-059"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-10-0",
+      "forumId": "forum-10",
+      "title": "Einführung: Radar, Luftfahrt und Wetterdienst",
+      "type": "Begrüßung",
+      "start": "2027-11-09T14:30",
+      "end": "2027-11-09T14:35",
+      "speakerIds": [
+        "ref-060"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-10-1",
+      "forumId": "forum-10",
+      "title": "Drehfunkfeuer und Anlagenschutzbereiche",
+      "type": "Vortrag",
+      "start": "2027-11-09T14:35",
+      "end": "2027-11-09T14:50",
+      "speakerIds": [
+        "ref-061"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-10-2",
+      "forumId": "forum-10",
+      "title": "Militärische Belange frühzeitig klären",
+      "type": "Vortrag",
+      "start": "2027-11-09T14:50",
+      "end": "2027-11-09T15:05",
+      "speakerIds": [
+        "ref-062"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-10-3",
+      "forumId": "forum-10",
+      "title": "Bedarfsgesteuerte Nachtkennzeichnung im Betrieb",
+      "type": "Vortrag",
+      "start": "2027-11-09T15:05",
+      "end": "2027-11-09T15:20",
+      "speakerIds": [
+        "ref-063"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-10-4",
+      "forumId": "forum-10",
+      "title": "Wetterradar und Windenergie",
+      "type": "Vortrag",
+      "start": "2027-11-09T15:20",
+      "end": "2027-11-09T15:35",
+      "speakerIds": [
+        "ref-064"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-10-d",
+      "forumId": "forum-10",
+      "title": "Diskussion: Radar, Luftfahrt und Wetterdienst",
+      "type": "Diskussion",
+      "start": "2027-11-09T15:35",
+      "end": "2027-11-09T16:00",
+      "speakerIds": [
+        "ref-060",
+        "ref-061",
+        "ref-062",
+        "ref-063",
+        "ref-064"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-11-0",
+      "forumId": "forum-11",
+      "title": "Einführung: Arbeitssicherheit auf der Anlage",
+      "type": "Begrüßung",
+      "start": "2027-11-09T14:30",
+      "end": "2027-11-09T14:35",
+      "speakerIds": [
+        "ref-065"
+      ],
+      "topicIds": [
+        "sicherheit",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-11-1",
+      "forumId": "forum-11",
+      "title": "Rettung aus der Gondel: Übungsergebnisse",
+      "type": "Vortrag",
+      "start": "2027-11-09T14:35",
+      "end": "2027-11-09T14:50",
+      "speakerIds": [
+        "ref-066",
+        "ref-067"
+      ],
+      "topicIds": [
+        "sicherheit",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-11-2",
+      "forumId": "forum-11",
+      "title": "Gefährdungsbeurteilung für Servicetechniker",
+      "type": "Vortrag",
+      "start": "2027-11-09T14:50",
+      "end": "2027-11-09T15:05",
+      "speakerIds": [
+        "ref-068",
+        "ref-069"
+      ],
+      "topicIds": [
+        "sicherheit",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-11-3",
+      "forumId": "forum-11",
+      "title": "Unterweisung mehrsprachiger Teams",
+      "type": "Vortrag",
+      "start": "2027-11-09T15:05",
+      "end": "2027-11-09T15:20",
+      "speakerIds": [
+        "ref-070",
+        "ref-071"
+      ],
+      "topicIds": [
+        "sicherheit",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-11-4",
+      "forumId": "forum-11",
+      "title": "Unfallanalyse: Was lässt sich lernen?",
+      "type": "Vortrag",
+      "start": "2027-11-09T15:20",
+      "end": "2027-11-09T15:35",
+      "speakerIds": [
+        "ref-072"
+      ],
+      "topicIds": [
+        "sicherheit",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-11-d",
+      "forumId": "forum-11",
+      "title": "Diskussion: Arbeitssicherheit auf der Anlage",
+      "type": "Diskussion",
+      "start": "2027-11-09T15:35",
+      "end": "2027-11-09T16:00",
+      "speakerIds": [
+        "ref-065",
+        "ref-066",
+        "ref-067",
+        "ref-068",
+        "ref-069",
+        "ref-070",
+        "ref-071",
+        "ref-072"
+      ],
+      "topicIds": [
+        "sicherheit",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "plenum-2-1",
+      "forumId": "plenum-2",
+      "title": "Einführung in den Tag",
+      "type": "Begrüßung",
+      "start": "2027-11-10T09:00",
+      "end": "2027-11-10T09:15",
+      "speakerIds": [
+        "ref-073"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "plenum-2-2",
+      "forumId": "plenum-2",
+      "title": "Netze, Speicher, Märkte: Wie das System zusammenwächst",
+      "type": "Keynote",
+      "start": "2027-11-10T09:15",
+      "end": "2027-11-10T09:50",
+      "speakerIds": [
+        "ref-074"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "plenum-2-3",
+      "forumId": "plenum-2",
+      "title": "Podium: Akzeptanz als Standortfaktor",
+      "type": "Diskussion",
+      "start": "2027-11-10T09:50",
+      "end": "2027-11-10T10:30",
+      "speakerIds": [
+        "ref-075",
+        "ref-076",
+        "ref-077"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-12-0",
+      "forumId": "forum-12",
+      "title": "Einführung: Rechtsprechung aktuell",
+      "type": "Begrüßung",
+      "start": "2027-11-10T11:00",
+      "end": "2027-11-10T11:05",
+      "speakerIds": [
+        "ref-078"
+      ],
+      "topicIds": [
+        "recht",
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-12-1",
+      "forumId": "forum-12",
+      "title": "Entscheidungen zum Immissionsschutzrecht",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:05",
+      "end": "2027-11-10T11:20",
+      "speakerIds": [
+        "ref-079"
+      ],
+      "topicIds": [
+        "recht",
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-12-2",
+      "forumId": "forum-12",
+      "title": "Klagen gegen Genehmigungen: Erfolgsquoten und Gründe",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:20",
+      "end": "2027-11-10T11:35",
+      "speakerIds": [
+        "ref-080"
+      ],
+      "topicIds": [
+        "recht",
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-12-3",
+      "forumId": "forum-12",
+      "title": "Denkmalschutz und Windenergie vor Gericht",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:35",
+      "end": "2027-11-10T11:50",
+      "speakerIds": [
+        "ref-081"
+      ],
+      "topicIds": [
+        "recht",
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-12-4",
+      "forumId": "forum-12",
+      "title": "Was die Urteile für laufende Verfahren bedeuten",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:50",
+      "end": "2027-11-10T12:05",
+      "speakerIds": [
+        "ref-082"
+      ],
+      "topicIds": [
+        "recht",
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-12-d",
+      "forumId": "forum-12",
+      "title": "Diskussion: Rechtsprechung aktuell",
+      "type": "Diskussion",
+      "start": "2027-11-10T12:05",
+      "end": "2027-11-10T12:30",
+      "speakerIds": [
+        "ref-078",
+        "ref-079",
+        "ref-080",
+        "ref-081",
+        "ref-082"
+      ],
+      "topicIds": [
+        "recht",
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-13-0",
+      "forumId": "forum-13",
+      "title": "Einführung: Finanzierung von Windprojekten",
+      "type": "Begrüßung",
+      "start": "2027-11-10T11:00",
+      "end": "2027-11-10T11:05",
+      "speakerIds": [
+        "ref-083"
+      ],
+      "topicIds": [
+        "finanzierung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-13-1",
+      "forumId": "forum-13",
+      "title": "Bankenanforderungen an Ertragsgutachten",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:05",
+      "end": "2027-11-10T11:20",
+      "speakerIds": [
+        "ref-084",
+        "ref-085"
+      ],
+      "topicIds": [
+        "finanzierung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-13-2",
+      "forumId": "forum-13",
+      "title": "Eigenkapital von Bürgern und Kommunen",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:20",
+      "end": "2027-11-10T11:35",
+      "speakerIds": [
+        "ref-086",
+        "ref-087"
+      ],
+      "topicIds": [
+        "finanzierung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-13-3",
+      "forumId": "forum-13",
+      "title": "Finanzierung von Repowering-Projekten",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:35",
+      "end": "2027-11-10T11:50",
+      "speakerIds": [
+        "ref-088"
+      ],
+      "topicIds": [
+        "finanzierung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-13-4",
+      "forumId": "forum-13",
+      "title": "Zinsumfeld und Projektrenditen",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:50",
+      "end": "2027-11-10T12:05",
+      "speakerIds": [
+        "ref-089"
+      ],
+      "topicIds": [
+        "finanzierung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-13-d",
+      "forumId": "forum-13",
+      "title": "Diskussion: Finanzierung von Windprojekten",
+      "type": "Diskussion",
+      "start": "2027-11-10T12:05",
+      "end": "2027-11-10T12:30",
+      "speakerIds": [
+        "ref-083",
+        "ref-084",
+        "ref-085",
+        "ref-086",
+        "ref-087",
+        "ref-088",
+        "ref-089"
+      ],
+      "topicIds": [
+        "finanzierung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-14-0",
+      "forumId": "forum-14",
+      "title": "Einführung: Speicher am Windpark",
+      "type": "Begrüßung",
+      "start": "2027-11-10T11:00",
+      "end": "2027-11-10T11:05",
+      "speakerIds": [
+        "ref-090"
+      ],
+      "topicIds": [
+        "speicher",
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-14-1",
+      "forumId": "forum-14",
+      "title": "Batteriespeicher am gemeinsamen Netzverknüpfungspunkt",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:05",
+      "end": "2027-11-10T11:20",
+      "speakerIds": [
+        "ref-091"
+      ],
+      "topicIds": [
+        "speicher",
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-14-2",
+      "forumId": "forum-14",
+      "title": "Abregelung vermeiden durch Speicher",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:20",
+      "end": "2027-11-10T11:35",
+      "speakerIds": [
+        "ref-092"
+      ],
+      "topicIds": [
+        "speicher",
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-14-3",
+      "forumId": "forum-14",
+      "title": "Erlösstapel für Co-Location-Speicher",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:35",
+      "end": "2027-11-10T11:50",
+      "speakerIds": [
+        "ref-093"
+      ],
+      "topicIds": [
+        "speicher",
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-14-4",
+      "forumId": "forum-14",
+      "title": "Genehmigung von Großbatteriespeichern",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:50",
+      "end": "2027-11-10T12:05",
+      "speakerIds": [
+        "ref-094"
+      ],
+      "topicIds": [
+        "speicher",
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-14-d",
+      "forumId": "forum-14",
+      "title": "Diskussion: Speicher am Windpark",
+      "type": "Diskussion",
+      "start": "2027-11-10T12:05",
+      "end": "2027-11-10T12:30",
+      "speakerIds": [
+        "ref-090",
+        "ref-091",
+        "ref-092",
+        "ref-093",
+        "ref-094"
+      ],
+      "topicIds": [
+        "speicher",
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-15-0",
+      "forumId": "forum-15",
+      "title": "Einführung: Wasserstoff aus Windstrom",
+      "type": "Begrüßung",
+      "start": "2027-11-10T11:00",
+      "end": "2027-11-10T11:05",
+      "speakerIds": [
+        "ref-095"
+      ],
+      "topicIds": [
+        "speicher",
+        "vermarktung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-15-1",
+      "forumId": "forum-15",
+      "title": "Elektrolyse direkt am Windpark",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:05",
+      "end": "2027-11-10T11:20",
+      "speakerIds": [
+        "ref-096"
+      ],
+      "topicIds": [
+        "speicher",
+        "vermarktung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-15-2",
+      "forumId": "forum-15",
+      "title": "Strombezugskriterien für grünen Wasserstoff",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:20",
+      "end": "2027-11-10T11:35",
+      "speakerIds": [
+        "ref-097",
+        "ref-098"
+      ],
+      "topicIds": [
+        "speicher",
+        "vermarktung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-15-3",
+      "forumId": "forum-15",
+      "title": "Wärmenutzung aus der Elektrolyse",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:35",
+      "end": "2027-11-10T11:50",
+      "speakerIds": [
+        "ref-099"
+      ],
+      "topicIds": [
+        "speicher",
+        "vermarktung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-15-4",
+      "forumId": "forum-15",
+      "title": "Wirtschaftlichkeit kleiner Elektrolyseure",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:50",
+      "end": "2027-11-10T12:05",
+      "speakerIds": [
+        "ref-100"
+      ],
+      "topicIds": [
+        "speicher",
+        "vermarktung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-15-d",
+      "forumId": "forum-15",
+      "title": "Diskussion: Wasserstoff aus Windstrom",
+      "type": "Diskussion",
+      "start": "2027-11-10T12:05",
+      "end": "2027-11-10T12:30",
+      "speakerIds": [
+        "ref-095",
+        "ref-096",
+        "ref-097",
+        "ref-098",
+        "ref-099",
+        "ref-100"
+      ],
+      "topicIds": [
+        "speicher",
+        "vermarktung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-16-0",
+      "forumId": "forum-16",
+      "title": "Einführung: Digitale Zwillinge und Zustandsüberwachung",
+      "type": "Begrüßung",
+      "start": "2027-11-10T11:00",
+      "end": "2027-11-10T11:05",
+      "speakerIds": [
+        "ref-101"
+      ],
+      "topicIds": [
+        "digital",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-16-1",
+      "forumId": "forum-16",
+      "title": "Schwingungsdaten für die Schadensfrüherkennung",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:05",
+      "end": "2027-11-10T11:20",
+      "speakerIds": [
+        "ref-102"
+      ],
+      "topicIds": [
+        "digital",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-16-2",
+      "forumId": "forum-16",
+      "title": "Digitale Zwillinge von Rotorblättern",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:20",
+      "end": "2027-11-10T11:35",
+      "speakerIds": [
+        "ref-103"
+      ],
+      "topicIds": [
+        "digital",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-16-3",
+      "forumId": "forum-16",
+      "title": "Datenzugang beim Hersteller verhandeln",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:35",
+      "end": "2027-11-10T11:50",
+      "speakerIds": [
+        "ref-104"
+      ],
+      "topicIds": [
+        "digital",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-16-4",
+      "forumId": "forum-16",
+      "title": "Vom Alarm zur Instandsetzung",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:50",
+      "end": "2027-11-10T12:05",
+      "speakerIds": [
+        "ref-105",
+        "ref-106"
+      ],
+      "topicIds": [
+        "digital",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-16-d",
+      "forumId": "forum-16",
+      "title": "Diskussion: Digitale Zwillinge und Zustandsüberwachung",
+      "type": "Diskussion",
+      "start": "2027-11-10T12:05",
+      "end": "2027-11-10T12:30",
+      "speakerIds": [
+        "ref-101",
+        "ref-102",
+        "ref-103",
+        "ref-104",
+        "ref-105",
+        "ref-106"
+      ],
+      "topicIds": [
+        "digital",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-17-0",
+      "forumId": "forum-17",
+      "title": "Einführung: Weiterbetrieb nach 20 Jahren",
+      "type": "Begrüßung",
+      "start": "2027-11-10T11:00",
+      "end": "2027-11-10T11:05",
+      "speakerIds": [
+        "ref-107"
+      ],
+      "topicIds": [
+        "betrieb",
+        "repowering"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-17-1",
+      "forumId": "forum-17",
+      "title": "Gutachten zum Weiterbetrieb",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:05",
+      "end": "2027-11-10T11:20",
+      "speakerIds": [
+        "ref-108"
+      ],
+      "topicIds": [
+        "betrieb",
+        "repowering"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-17-2",
+      "forumId": "forum-17",
+      "title": "Ersatzteilversorgung für Altanlagen",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:20",
+      "end": "2027-11-10T11:35",
+      "speakerIds": [
+        "ref-109"
+      ],
+      "topicIds": [
+        "betrieb",
+        "repowering"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-17-3",
+      "forumId": "forum-17",
+      "title": "Wirtschaftlichkeit des Weiterbetriebs",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:35",
+      "end": "2027-11-10T11:50",
+      "speakerIds": [
+        "ref-110"
+      ],
+      "topicIds": [
+        "betrieb",
+        "repowering"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-17-4",
+      "forumId": "forum-17",
+      "title": "Weiterbetrieb oder Repowering: Entscheidungskriterien",
+      "type": "Vortrag",
+      "start": "2027-11-10T11:50",
+      "end": "2027-11-10T12:05",
+      "speakerIds": [
+        "ref-111"
+      ],
+      "topicIds": [
+        "betrieb",
+        "repowering"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-17-d",
+      "forumId": "forum-17",
+      "title": "Diskussion: Weiterbetrieb nach 20 Jahren",
+      "type": "Diskussion",
+      "start": "2027-11-10T12:05",
+      "end": "2027-11-10T12:30",
+      "speakerIds": [
+        "ref-107",
+        "ref-108",
+        "ref-109",
+        "ref-110",
+        "ref-111"
+      ],
+      "topicIds": [
+        "betrieb",
+        "repowering"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-18-0",
+      "forumId": "forum-18",
+      "title": "Einführung: Schall, Schatten und Abstand",
+      "type": "Begrüßung",
+      "start": "2027-11-10T14:30",
+      "end": "2027-11-10T14:35",
+      "speakerIds": [
+        "ref-112"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-18-1",
+      "forumId": "forum-18",
+      "title": "Schallprognosen für große Rotoren",
+      "type": "Vortrag",
+      "start": "2027-11-10T14:35",
+      "end": "2027-11-10T14:50",
+      "speakerIds": [
+        "ref-113"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-18-2",
+      "forumId": "forum-18",
+      "title": "Schattenwurfabschaltung in der Praxis",
+      "type": "Vortrag",
+      "start": "2027-11-10T14:50",
+      "end": "2027-11-10T15:05",
+      "speakerIds": [
+        "ref-114"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-18-3",
+      "forumId": "forum-18",
+      "title": "Optisch bedrängende Wirkung",
+      "type": "Vortrag",
+      "start": "2027-11-10T15:05",
+      "end": "2027-11-10T15:20",
+      "speakerIds": [
+        "ref-115"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-18-4",
+      "forumId": "forum-18",
+      "title": "Messkampagnen nach Inbetriebnahme",
+      "type": "Vortrag",
+      "start": "2027-11-10T15:20",
+      "end": "2027-11-10T15:35",
+      "speakerIds": [
+        "ref-116",
+        "ref-117"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-18-d",
+      "forumId": "forum-18",
+      "title": "Diskussion: Schall, Schatten und Abstand",
+      "type": "Diskussion",
+      "start": "2027-11-10T15:35",
+      "end": "2027-11-10T16:00",
+      "speakerIds": [
+        "ref-112",
+        "ref-113",
+        "ref-114",
+        "ref-115",
+        "ref-116",
+        "ref-117"
+      ],
+      "topicIds": [
+        "genehmigung",
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-19-0",
+      "forumId": "forum-19",
+      "title": "Einführung: Versicherung von Windparks",
+      "type": "Begrüßung",
+      "start": "2027-11-10T14:30",
+      "end": "2027-11-10T14:35",
+      "speakerIds": [
+        "ref-118"
+      ],
+      "topicIds": [
+        "finanzierung",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-19-1",
+      "forumId": "forum-19",
+      "title": "Schadenstatistik: Häufige Ursachen",
+      "type": "Vortrag",
+      "start": "2027-11-10T14:35",
+      "end": "2027-11-10T14:50",
+      "speakerIds": [
+        "ref-119"
+      ],
+      "topicIds": [
+        "finanzierung",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-19-2",
+      "forumId": "forum-19",
+      "title": "Versicherbarkeit neuer Anlagentypen",
+      "type": "Vortrag",
+      "start": "2027-11-10T14:50",
+      "end": "2027-11-10T15:05",
+      "speakerIds": [
+        "ref-120"
+      ],
+      "topicIds": [
+        "finanzierung",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-19-3",
+      "forumId": "forum-19",
+      "title": "Betriebsunterbrechung richtig absichern",
+      "type": "Vortrag",
+      "start": "2027-11-10T15:05",
+      "end": "2027-11-10T15:20",
+      "speakerIds": [
+        "ref-121"
+      ],
+      "topicIds": [
+        "finanzierung",
+        "betrieb"
+      ],
+      "status": "entfällt",
+      "statusNote": "Vortrag entfällt ersatzlos"
+    },
+    {
+      "id": "forum-19-4",
+      "forumId": "forum-19",
+      "title": "Brandschutz und Versicherungsprämien",
+      "type": "Vortrag",
+      "start": "2027-11-10T15:20",
+      "end": "2027-11-10T15:35",
+      "speakerIds": [
+        "ref-122",
+        "ref-123"
+      ],
+      "topicIds": [
+        "finanzierung",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-19-d",
+      "forumId": "forum-19",
+      "title": "Diskussion: Versicherung von Windparks",
+      "type": "Diskussion",
+      "start": "2027-11-10T15:35",
+      "end": "2027-11-10T16:00",
+      "speakerIds": [
+        "ref-118",
+        "ref-119",
+        "ref-120",
+        "ref-121",
+        "ref-122",
+        "ref-123"
+      ],
+      "topicIds": [
+        "finanzierung",
+        "betrieb"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-20-0",
+      "forumId": "forum-20",
+      "title": "Einführung: Netzbetreiber im Dialog",
+      "type": "Begrüßung",
+      "start": "2027-11-10T14:30",
+      "end": "2027-11-10T14:35",
+      "speakerIds": [
+        "ref-124"
+      ],
+      "topicIds": [
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-20-1",
+      "forumId": "forum-20",
+      "title": "Redispatch aus Sicht der Anlagenbetreiber",
+      "type": "Vortrag",
+      "start": "2027-11-10T14:35",
+      "end": "2027-11-10T14:50",
+      "speakerIds": [
+        "ref-125",
+        "ref-126"
+      ],
+      "topicIds": [
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-20-2",
+      "forumId": "forum-20",
+      "title": "Blindleistungsbereitstellung durch Windparks",
+      "type": "Vortrag",
+      "start": "2027-11-10T14:50",
+      "end": "2027-11-10T15:05",
+      "speakerIds": [
+        "ref-127",
+        "ref-128"
+      ],
+      "topicIds": [
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-20-3",
+      "forumId": "forum-20",
+      "title": "Netzanschlusszusagen verbindlich machen",
+      "type": "Vortrag",
+      "start": "2027-11-10T15:05",
+      "end": "2027-11-10T15:20",
+      "speakerIds": [
+        "ref-129"
+      ],
+      "topicIds": [
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-20-4",
+      "forumId": "forum-20",
+      "title": "Kommunikation zwischen Netz- und Anlagenbetreiber",
+      "type": "Vortrag",
+      "start": "2027-11-10T15:20",
+      "end": "2027-11-10T15:35",
+      "speakerIds": [
+        "ref-130"
+      ],
+      "topicIds": [
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-20-d",
+      "forumId": "forum-20",
+      "title": "Diskussion: Netzbetreiber im Dialog",
+      "type": "Diskussion",
+      "start": "2027-11-10T15:35",
+      "end": "2027-11-10T16:00",
+      "speakerIds": [
+        "ref-124",
+        "ref-125",
+        "ref-126",
+        "ref-127",
+        "ref-128",
+        "ref-129",
+        "ref-130"
+      ],
+      "topicIds": [
+        "netz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-21-0",
+      "forumId": "forum-21",
+      "title": "Einführung: Pachtverträge und Flächensicherung",
+      "type": "Begrüßung",
+      "start": "2027-11-10T14:30",
+      "end": "2027-11-10T14:35",
+      "speakerIds": [
+        "ref-131"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-21-1",
+      "forumId": "forum-21",
+      "title": "Pachtmodelle mit Flächenpool",
+      "type": "Vortrag",
+      "start": "2027-11-10T14:35",
+      "end": "2027-11-10T14:50",
+      "speakerIds": [
+        "ref-132"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-21-2",
+      "forumId": "forum-21",
+      "title": "Laufzeiten und Verlängerungsoptionen",
+      "type": "Vortrag",
+      "start": "2027-11-10T14:50",
+      "end": "2027-11-10T15:05",
+      "speakerIds": [
+        "ref-133"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-21-3",
+      "forumId": "forum-21",
+      "title": "Dienstbarkeiten und Grundbuch",
+      "type": "Vortrag",
+      "start": "2027-11-10T15:05",
+      "end": "2027-11-10T15:20",
+      "speakerIds": [
+        "ref-134"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-21-4",
+      "forumId": "forum-21",
+      "title": "Konflikte zwischen Eigentümern lösen",
+      "type": "Vortrag",
+      "start": "2027-11-10T15:20",
+      "end": "2027-11-10T15:35",
+      "speakerIds": [
+        "ref-135"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-21-d",
+      "forumId": "forum-21",
+      "title": "Diskussion: Pachtverträge und Flächensicherung",
+      "type": "Diskussion",
+      "start": "2027-11-10T15:35",
+      "end": "2027-11-10T16:00",
+      "speakerIds": [
+        "ref-131",
+        "ref-132",
+        "ref-133",
+        "ref-134",
+        "ref-135"
+      ],
+      "topicIds": [
+        "flaeche",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-22-0",
+      "forumId": "forum-22",
+      "title": "Einführung: Forum der Nachwuchskräfte",
+      "type": "Begrüßung",
+      "start": "2027-11-10T14:30",
+      "end": "2027-11-10T14:35",
+      "speakerIds": [
+        "ref-136"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-22-1",
+      "forumId": "forum-22",
+      "title": "Abschlussarbeit: Eisansatz an Rotorblättern",
+      "type": "Vortrag",
+      "start": "2027-11-10T14:35",
+      "end": "2027-11-10T14:50",
+      "speakerIds": [
+        "ref-137"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-22-2",
+      "forumId": "forum-22",
+      "title": "Abschlussarbeit: Akzeptanzbefragung in zwei Gemeinden",
+      "type": "Vortrag",
+      "start": "2027-11-10T14:50",
+      "end": "2027-11-10T15:05",
+      "speakerIds": [
+        "ref-138"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-22-3",
+      "forumId": "forum-22",
+      "title": "Berufseinstieg in der Projektierung",
+      "type": "Vortrag",
+      "start": "2027-11-10T15:05",
+      "end": "2027-11-10T15:20",
+      "speakerIds": [
+        "ref-139"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-22-4",
+      "forumId": "forum-22",
+      "title": "Fachkräfte gewinnen und halten",
+      "type": "Vortrag",
+      "start": "2027-11-10T15:20",
+      "end": "2027-11-10T15:35",
+      "speakerIds": [
+        "ref-140"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-22-d",
+      "forumId": "forum-22",
+      "title": "Diskussion: Forum der Nachwuchskräfte",
+      "type": "Diskussion",
+      "start": "2027-11-10T15:35",
+      "end": "2027-11-10T16:00",
+      "speakerIds": [
+        "ref-136",
+        "ref-137",
+        "ref-138",
+        "ref-139",
+        "ref-140"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "plenum-3-1",
+      "forumId": "plenum-3",
+      "title": "Einführung in den Tag",
+      "type": "Begrüßung",
+      "start": "2027-11-11T09:00",
+      "end": "2027-11-11T09:15",
+      "speakerIds": [
+        "ref-141"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "plenum-3-2",
+      "forumId": "plenum-3",
+      "title": "Lebenszyklus einer Windenergieanlage",
+      "type": "Keynote",
+      "start": "2027-11-11T09:15",
+      "end": "2027-11-11T09:50",
+      "speakerIds": [
+        "ref-142"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "plenum-3-3",
+      "forumId": "plenum-3",
+      "title": "Abschlussdiskussion",
+      "type": "Diskussion",
+      "start": "2027-11-11T09:50",
+      "end": "2027-11-11T10:30",
+      "speakerIds": [
+        "ref-143",
+        "ref-144",
+        "ref-145"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-23-0",
+      "forumId": "forum-23",
+      "title": "Einführung: Rückbau und Rotorblattrecycling",
+      "type": "Begrüßung",
+      "start": "2027-11-11T11:00",
+      "end": "2027-11-11T11:05",
+      "speakerIds": [
+        "ref-146"
+      ],
+      "topicIds": [
+        "rueckbau"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-23-1",
+      "forumId": "forum-23",
+      "title": "Rückbaukosten realistisch kalkulieren",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:05",
+      "end": "2027-11-11T11:20",
+      "speakerIds": [
+        "ref-147",
+        "ref-148"
+      ],
+      "topicIds": [
+        "rueckbau"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-23-2",
+      "forumId": "forum-23",
+      "title": "Verwertungswege für Rotorblätter",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:20",
+      "end": "2027-11-11T11:35",
+      "speakerIds": [
+        "ref-149",
+        "ref-150"
+      ],
+      "topicIds": [
+        "rueckbau"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-23-3",
+      "forumId": "forum-23",
+      "title": "Fundamente: vollständiger oder teilweiser Rückbau?",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:35",
+      "end": "2027-11-11T11:50",
+      "speakerIds": [
+        "ref-151",
+        "ref-152"
+      ],
+      "topicIds": [
+        "rueckbau"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-23-4",
+      "forumId": "forum-23",
+      "title": "Sicherheitsleistungen für den Rückbau",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:50",
+      "end": "2027-11-11T12:05",
+      "speakerIds": [
+        "ref-153",
+        "ref-154"
+      ],
+      "topicIds": [
+        "rueckbau"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-23-d",
+      "forumId": "forum-23",
+      "title": "Diskussion: Rückbau und Rotorblattrecycling",
+      "type": "Diskussion",
+      "start": "2027-11-11T12:05",
+      "end": "2027-11-11T12:30",
+      "speakerIds": [
+        "ref-146",
+        "ref-147",
+        "ref-148",
+        "ref-149",
+        "ref-150",
+        "ref-151",
+        "ref-152",
+        "ref-153",
+        "ref-154"
+      ],
+      "topicIds": [
+        "rueckbau"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-24-0",
+      "forumId": "forum-24",
+      "title": "Einführung: Anlagentechnik: Neue Plattformen",
+      "type": "Begrüßung",
+      "start": "2027-11-11T11:00",
+      "end": "2027-11-11T11:05",
+      "speakerIds": [
+        "ref-155"
+      ],
+      "topicIds": [
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-24-1",
+      "forumId": "forum-24",
+      "title": "Entwicklung der Rotordurchmesser an Land",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:05",
+      "end": "2027-11-11T11:20",
+      "speakerIds": [
+        "ref-156"
+      ],
+      "topicIds": [
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-24-2",
+      "forumId": "forum-24",
+      "title": "Hybridtürme und Stahltürme im Vergleich",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:20",
+      "end": "2027-11-11T11:35",
+      "speakerIds": [
+        "ref-157"
+      ],
+      "topicIds": [
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-24-3",
+      "forumId": "forum-24",
+      "title": "Getriebe oder Direktantrieb?",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:35",
+      "end": "2027-11-11T11:50",
+      "speakerIds": [
+        "ref-158",
+        "ref-159"
+      ],
+      "topicIds": [
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-24-4",
+      "forumId": "forum-24",
+      "title": "Typenprüfung neuer Anlagentypen",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:50",
+      "end": "2027-11-11T12:05",
+      "speakerIds": [
+        "ref-160",
+        "ref-161"
+      ],
+      "topicIds": [
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-24-d",
+      "forumId": "forum-24",
+      "title": "Diskussion: Anlagentechnik: Neue Plattformen",
+      "type": "Diskussion",
+      "start": "2027-11-11T12:05",
+      "end": "2027-11-11T12:30",
+      "speakerIds": [
+        "ref-155",
+        "ref-156",
+        "ref-157",
+        "ref-158",
+        "ref-159",
+        "ref-160",
+        "ref-161"
+      ],
+      "topicIds": [
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-25-0",
+      "forumId": "forum-25",
+      "title": "Einführung: Ausschreibungen und Marktdesign",
+      "type": "Begrüßung",
+      "start": "2027-11-11T11:00",
+      "end": "2027-11-11T11:05",
+      "speakerIds": [
+        "ref-162"
+      ],
+      "topicIds": [
+        "vermarktung",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-25-1",
+      "forumId": "forum-25",
+      "title": "Auswertung der letzten Ausschreibungsrunden",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:05",
+      "end": "2027-11-11T11:20",
+      "speakerIds": [
+        "ref-163"
+      ],
+      "topicIds": [
+        "vermarktung",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-25-2",
+      "forumId": "forum-25",
+      "title": "Gebotsstrategie für mittelgroße Projekte",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:20",
+      "end": "2027-11-11T11:35",
+      "speakerIds": [
+        "ref-164",
+        "ref-165"
+      ],
+      "topicIds": [
+        "vermarktung",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-25-3",
+      "forumId": "forum-25",
+      "title": "Realisierungsfristen und Pönalen",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:35",
+      "end": "2027-11-11T11:50",
+      "speakerIds": [
+        "ref-166"
+      ],
+      "topicIds": [
+        "vermarktung",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-25-4",
+      "forumId": "forum-25",
+      "title": "Diskussionsstand zum künftigen Marktdesign",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:50",
+      "end": "2027-11-11T12:05",
+      "speakerIds": [
+        "ref-167"
+      ],
+      "topicIds": [
+        "vermarktung",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-25-d",
+      "forumId": "forum-25",
+      "title": "Diskussion: Ausschreibungen und Marktdesign",
+      "type": "Diskussion",
+      "start": "2027-11-11T12:05",
+      "end": "2027-11-11T12:30",
+      "speakerIds": [
+        "ref-162",
+        "ref-163",
+        "ref-164",
+        "ref-165",
+        "ref-166",
+        "ref-167"
+      ],
+      "topicIds": [
+        "vermarktung",
+        "recht"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-26-0",
+      "forumId": "forum-26",
+      "title": "Einführung: Wartung und Instandhaltung",
+      "type": "Begrüßung",
+      "start": "2027-11-11T11:00",
+      "end": "2027-11-11T11:05",
+      "speakerIds": [
+        "ref-168"
+      ],
+      "topicIds": [
+        "betrieb",
+        "sicherheit"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-26-1",
+      "forumId": "forum-26",
+      "title": "Wartungsverträge im Vergleich",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:05",
+      "end": "2027-11-11T11:20",
+      "speakerIds": [
+        "ref-169"
+      ],
+      "topicIds": [
+        "betrieb",
+        "sicherheit"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-26-2",
+      "forumId": "forum-26",
+      "title": "Rotorblattinspektion mit Drohnen",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:20",
+      "end": "2027-11-11T11:35",
+      "speakerIds": [
+        "ref-170"
+      ],
+      "topicIds": [
+        "betrieb",
+        "sicherheit"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-26-3",
+      "forumId": "forum-26",
+      "title": "Großkomponententausch planen",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:35",
+      "end": "2027-11-11T11:50",
+      "speakerIds": [
+        "ref-171"
+      ],
+      "topicIds": [
+        "betrieb",
+        "sicherheit"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-26-4",
+      "forumId": "forum-26",
+      "title": "Servicekapazitäten in der Hochsaison",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:50",
+      "end": "2027-11-11T12:05",
+      "speakerIds": [
+        "ref-172"
+      ],
+      "topicIds": [
+        "betrieb",
+        "sicherheit"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-26-d",
+      "forumId": "forum-26",
+      "title": "Diskussion: Wartung und Instandhaltung",
+      "type": "Diskussion",
+      "start": "2027-11-11T12:05",
+      "end": "2027-11-11T12:30",
+      "speakerIds": [
+        "ref-168",
+        "ref-169",
+        "ref-170",
+        "ref-171",
+        "ref-172"
+      ],
+      "topicIds": [
+        "betrieb",
+        "sicherheit"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-27-0",
+      "forumId": "forum-27",
+      "title": "Einführung: Windenergie im Wald",
+      "type": "Begrüßung",
+      "start": "2027-11-11T11:00",
+      "end": "2027-11-11T11:05",
+      "speakerIds": [
+        "ref-173"
+      ],
+      "topicIds": [
+        "flaeche",
+        "naturschutz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-27-1",
+      "forumId": "forum-27",
+      "title": "Standortwahl auf Kalamitätsflächen",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:05",
+      "end": "2027-11-11T11:20",
+      "speakerIds": [
+        "ref-174",
+        "ref-175"
+      ],
+      "topicIds": [
+        "flaeche",
+        "naturschutz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-27-2",
+      "forumId": "forum-27",
+      "title": "Ausgleichsmaßnahmen im Forst",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:20",
+      "end": "2027-11-11T11:35",
+      "speakerIds": [
+        "ref-176"
+      ],
+      "topicIds": [
+        "flaeche",
+        "naturschutz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-27-3",
+      "forumId": "forum-27",
+      "title": "Brandschutz bei Anlagen im Wald",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:35",
+      "end": "2027-11-11T11:50",
+      "speakerIds": [
+        "ref-177"
+      ],
+      "topicIds": [
+        "flaeche",
+        "naturschutz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-27-4",
+      "forumId": "forum-27",
+      "title": "Erfahrungen mit Forstbehörden",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:50",
+      "end": "2027-11-11T12:05",
+      "speakerIds": [
+        "ref-178"
+      ],
+      "topicIds": [
+        "flaeche",
+        "naturschutz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-27-d",
+      "forumId": "forum-27",
+      "title": "Diskussion: Windenergie im Wald",
+      "type": "Diskussion",
+      "start": "2027-11-11T12:05",
+      "end": "2027-11-11T12:30",
+      "speakerIds": [
+        "ref-173",
+        "ref-174",
+        "ref-175",
+        "ref-176",
+        "ref-177",
+        "ref-178"
+      ],
+      "topicIds": [
+        "flaeche",
+        "naturschutz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-28-0",
+      "forumId": "forum-28",
+      "title": "Einführung: Kommunikation in Konfliktfällen",
+      "type": "Begrüßung",
+      "start": "2027-11-11T11:00",
+      "end": "2027-11-11T11:05",
+      "speakerIds": [
+        "ref-179"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-28-1",
+      "forumId": "forum-28",
+      "title": "Umgang mit Falschinformationen vor Ort",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:05",
+      "end": "2027-11-11T11:20",
+      "speakerIds": [
+        "ref-180"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-28-2",
+      "forumId": "forum-28",
+      "title": "Pressearbeit während der Bauphase",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:20",
+      "end": "2027-11-11T11:35",
+      "speakerIds": [
+        "ref-181"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-28-3",
+      "forumId": "forum-28",
+      "title": "Beschwerdemanagement im Betrieb",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:35",
+      "end": "2027-11-11T11:50",
+      "speakerIds": [
+        "ref-182",
+        "ref-183"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-28-4",
+      "forumId": "forum-28",
+      "title": "Rolle der Bürgermeisterinnen und Bürgermeister",
+      "type": "Vortrag",
+      "start": "2027-11-11T11:50",
+      "end": "2027-11-11T12:05",
+      "speakerIds": [
+        "ref-184",
+        "ref-185"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-28-d",
+      "forumId": "forum-28",
+      "title": "Diskussion: Kommunikation in Konfliktfällen",
+      "type": "Diskussion",
+      "start": "2027-11-11T12:05",
+      "end": "2027-11-11T12:30",
+      "speakerIds": [
+        "ref-179",
+        "ref-180",
+        "ref-181",
+        "ref-182",
+        "ref-183",
+        "ref-184",
+        "ref-185"
+      ],
+      "topicIds": [
+        "akzeptanz"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-29-0",
+      "forumId": "forum-29",
+      "title": "Einführung: Netzdienliche Windparks",
+      "type": "Begrüßung",
+      "start": "2027-11-11T14:30",
+      "end": "2027-11-11T14:35",
+      "speakerIds": [
+        "ref-186"
+      ],
+      "topicIds": [
+        "netz",
+        "speicher"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-29-1",
+      "forumId": "forum-29",
+      "title": "Netzbildende Umrichter",
+      "type": "Vortrag",
+      "start": "2027-11-11T14:35",
+      "end": "2027-11-11T14:50",
+      "speakerIds": [
+        "ref-187"
+      ],
+      "topicIds": [
+        "netz",
+        "speicher"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-29-2",
+      "forumId": "forum-29",
+      "title": "Windparks als Regelleistungsanbieter",
+      "type": "Vortrag",
+      "start": "2027-11-11T14:50",
+      "end": "2027-11-11T15:05",
+      "speakerIds": [
+        "ref-188"
+      ],
+      "topicIds": [
+        "netz",
+        "speicher"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-29-3",
+      "forumId": "forum-29",
+      "title": "Systemdienstleistungen vergüten",
+      "type": "Vortrag",
+      "start": "2027-11-11T15:05",
+      "end": "2027-11-11T15:20",
+      "speakerIds": [
+        "ref-189"
+      ],
+      "topicIds": [
+        "netz",
+        "speicher"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-29-4",
+      "forumId": "forum-29",
+      "title": "Netzstabilität mit hohem Windanteil",
+      "type": "Vortrag",
+      "start": "2027-11-11T15:20",
+      "end": "2027-11-11T15:35",
+      "speakerIds": [
+        "ref-190",
+        "ref-191"
+      ],
+      "topicIds": [
+        "netz",
+        "speicher"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-29-d",
+      "forumId": "forum-29",
+      "title": "Diskussion: Netzdienliche Windparks",
+      "type": "Diskussion",
+      "start": "2027-11-11T15:35",
+      "end": "2027-11-11T16:00",
+      "speakerIds": [
+        "ref-186",
+        "ref-187",
+        "ref-188",
+        "ref-189",
+        "ref-190",
+        "ref-191"
+      ],
+      "topicIds": [
+        "netz",
+        "speicher"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-30-0",
+      "forumId": "forum-30",
+      "title": "Einführung: Daten und IT-Sicherheit",
+      "type": "Begrüßung",
+      "start": "2027-11-11T14:30",
+      "end": "2027-11-11T14:35",
+      "speakerIds": [
+        "ref-192"
+      ],
+      "topicIds": [
+        "digital",
+        "sicherheit"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-30-1",
+      "forumId": "forum-30",
+      "title": "Cyberangriffe auf Parkregler",
+      "type": "Vortrag",
+      "start": "2027-11-11T14:35",
+      "end": "2027-11-11T14:50",
+      "speakerIds": [
+        "ref-193"
+      ],
+      "topicIds": [
+        "digital",
+        "sicherheit"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-30-2",
+      "forumId": "forum-30",
+      "title": "Anforderungen an kritische Infrastruktur",
+      "type": "Vortrag",
+      "start": "2027-11-11T14:50",
+      "end": "2027-11-11T15:05",
+      "speakerIds": [
+        "ref-194"
+      ],
+      "topicIds": [
+        "digital",
+        "sicherheit"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-30-3",
+      "forumId": "forum-30",
+      "title": "Fernzugriff sicher organisieren",
+      "type": "Vortrag",
+      "start": "2027-11-11T15:05",
+      "end": "2027-11-11T15:20",
+      "speakerIds": [
+        "ref-195"
+      ],
+      "topicIds": [
+        "digital",
+        "sicherheit"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-30-4",
+      "forumId": "forum-30",
+      "title": "Notfallpläne für Steuerungsausfälle",
+      "type": "Vortrag",
+      "start": "2027-11-11T15:20",
+      "end": "2027-11-11T15:35",
+      "speakerIds": [
+        "ref-196"
+      ],
+      "topicIds": [
+        "digital",
+        "sicherheit"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-30-d",
+      "forumId": "forum-30",
+      "title": "Diskussion: Daten und IT-Sicherheit",
+      "type": "Diskussion",
+      "start": "2027-11-11T15:35",
+      "end": "2027-11-11T16:00",
+      "speakerIds": [
+        "ref-192",
+        "ref-193",
+        "ref-194",
+        "ref-195",
+        "ref-196"
+      ],
+      "topicIds": [
+        "digital",
+        "sicherheit"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-31-0",
+      "forumId": "forum-31",
+      "title": "Einführung: Kreislaufwirtschaft in der Lieferkette",
+      "type": "Begrüßung",
+      "start": "2027-11-11T14:30",
+      "end": "2027-11-11T14:35",
+      "speakerIds": [
+        "ref-197"
+      ],
+      "topicIds": [
+        "rueckbau",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-31-1",
+      "forumId": "forum-31",
+      "title": "CO2-Bilanz einer Windenergieanlage",
+      "type": "Vortrag",
+      "start": "2027-11-11T14:35",
+      "end": "2027-11-11T14:50",
+      "speakerIds": [
+        "ref-198"
+      ],
+      "topicIds": [
+        "rueckbau",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-31-2",
+      "forumId": "forum-31",
+      "title": "Recyclingfähige Rotorblätter",
+      "type": "Vortrag",
+      "start": "2027-11-11T14:50",
+      "end": "2027-11-11T15:05",
+      "speakerIds": [
+        "ref-199"
+      ],
+      "topicIds": [
+        "rueckbau",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-31-3",
+      "forumId": "forum-31",
+      "title": "Gebrauchtanlagen im Zweitmarkt",
+      "type": "Vortrag",
+      "start": "2027-11-11T15:05",
+      "end": "2027-11-11T15:20",
+      "speakerIds": [
+        "ref-200"
+      ],
+      "topicIds": [
+        "rueckbau",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-31-4",
+      "forumId": "forum-31",
+      "title": "Materialpässe für Komponenten",
+      "type": "Vortrag",
+      "start": "2027-11-11T15:20",
+      "end": "2027-11-11T15:35",
+      "speakerIds": [
+        "ref-201"
+      ],
+      "topicIds": [
+        "rueckbau",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-31-d",
+      "forumId": "forum-31",
+      "title": "Diskussion: Kreislaufwirtschaft in der Lieferkette",
+      "type": "Diskussion",
+      "start": "2027-11-11T15:35",
+      "end": "2027-11-11T16:00",
+      "speakerIds": [
+        "ref-197",
+        "ref-198",
+        "ref-199",
+        "ref-200",
+        "ref-201"
+      ],
+      "topicIds": [
+        "rueckbau",
+        "technik"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-32-0",
+      "forumId": "forum-32",
+      "title": "Einführung: Genehmigungsbehörden im Gespräch",
+      "type": "Begrüßung",
+      "start": "2027-11-11T14:30",
+      "end": "2027-11-11T14:35",
+      "speakerIds": [
+        "ref-202"
+      ],
+      "topicIds": [
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-32-1",
+      "forumId": "forum-32",
+      "title": "Personalausstattung der Behörden",
+      "type": "Vortrag",
+      "start": "2027-11-11T14:35",
+      "end": "2027-11-11T14:50",
+      "speakerIds": [
+        "ref-203"
+      ],
+      "topicIds": [
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-32-2",
+      "forumId": "forum-32",
+      "title": "Standardisierte Prüfvorlagen",
+      "type": "Vortrag",
+      "start": "2027-11-11T14:50",
+      "end": "2027-11-11T15:05",
+      "speakerIds": [
+        "ref-204"
+      ],
+      "topicIds": [
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-32-3",
+      "forumId": "forum-32",
+      "title": "Externe Projektmanager im Verfahren",
+      "type": "Vortrag",
+      "start": "2027-11-11T15:05",
+      "end": "2027-11-11T15:20",
+      "speakerIds": [
+        "ref-205"
+      ],
+      "topicIds": [
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-32-4",
+      "forumId": "forum-32",
+      "title": "Erfahrungsaustausch zwischen Landkreisen",
+      "type": "Vortrag",
+      "start": "2027-11-11T15:20",
+      "end": "2027-11-11T15:35",
+      "speakerIds": [
+        "ref-206"
+      ],
+      "topicIds": [
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-32-d",
+      "forumId": "forum-32",
+      "title": "Diskussion: Genehmigungsbehörden im Gespräch",
+      "type": "Diskussion",
+      "start": "2027-11-11T15:35",
+      "end": "2027-11-11T16:00",
+      "speakerIds": [
+        "ref-202",
+        "ref-203",
+        "ref-204",
+        "ref-205",
+        "ref-206"
+      ],
+      "topicIds": [
+        "genehmigung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-33-0",
+      "forumId": "forum-33",
+      "title": "Einführung: Bürgerenergie und Genossenschaften",
+      "type": "Begrüßung",
+      "start": "2027-11-11T14:30",
+      "end": "2027-11-11T14:35",
+      "speakerIds": [
+        "ref-207"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "finanzierung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-33-1",
+      "forumId": "forum-33",
+      "title": "Gründung einer Energiegenossenschaft",
+      "type": "Vortrag",
+      "start": "2027-11-11T14:35",
+      "end": "2027-11-11T14:50",
+      "speakerIds": [
+        "ref-208",
+        "ref-209"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "finanzierung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-33-2",
+      "forumId": "forum-33",
+      "title": "Bürgerwindpark mit Kommune als Partner",
+      "type": "Vortrag",
+      "start": "2027-11-11T14:50",
+      "end": "2027-11-11T15:05",
+      "speakerIds": [
+        "ref-210"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "finanzierung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-33-3",
+      "forumId": "forum-33",
+      "title": "Mitgliederwerbung und Informationspflichten",
+      "type": "Vortrag",
+      "start": "2027-11-11T15:05",
+      "end": "2027-11-11T15:20",
+      "speakerIds": [
+        "ref-211"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "finanzierung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-33-4",
+      "forumId": "forum-33",
+      "title": "Regionale Stromvermarktung durch Genossenschaften",
+      "type": "Vortrag",
+      "start": "2027-11-11T15:20",
+      "end": "2027-11-11T15:35",
+      "speakerIds": [
+        "ref-212"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "finanzierung"
+      ],
+      "status": "geplant"
+    },
+    {
+      "id": "forum-33-d",
+      "forumId": "forum-33",
+      "title": "Diskussion: Bürgerenergie und Genossenschaften",
+      "type": "Diskussion",
+      "start": "2027-11-11T15:35",
+      "end": "2027-11-11T16:00",
+      "speakerIds": [
+        "ref-207",
+        "ref-208",
+        "ref-209",
+        "ref-210",
+        "ref-211",
+        "ref-212"
+      ],
+      "topicIds": [
+        "akzeptanz",
+        "finanzierung"
+      ],
+      "status": "geplant"
+    }
+  ],
+  "sponsors": [
+    {
+      "id": "sp-windmuehle",
+      "name": "Windmühle Beispiel AG",
+      "logo": "sponsoren/sp-windmuehle.svg",
+      "url": "https://example.com/"
+    },
+    {
+      "id": "sp-turmwerk",
+      "name": "Turmwerk Beton AG",
+      "logo": "sponsoren/sp-turmwerk.svg",
+      "url": "https://example.com/"
+    },
+    {
+      "id": "sp-netzfluss",
+      "name": "Netzfluss GmbH",
+      "logo": "sponsoren/sp-netzfluss.svg",
+      "url": "https://example.com/"
+    },
+    {
+      "id": "sp-kapitalwind",
+      "name": "Kapitalwind Finanzierungspartner AG",
+      "logo": "sponsoren/sp-kapitalwind.svg",
+      "url": "https://example.com/"
+    }
+  ],
+  "sponsorSlots": [
+    {
+      "id": "slot-start",
+      "placement": "home_banner",
+      "sponsorId": "sp-windmuehle",
+      "text": "Beispielbanner: Hier steht die Botschaft eines Hauptsponsors.",
+      "active": true
+    },
+    {
+      "id": "slot-tag-2",
+      "placement": "day_banner",
+      "sponsorId": "sp-netzfluss",
+      "dayId": "tag-2",
+      "text": "Der zweite Veranstaltungstag wird unterstützt von Netzfluss GmbH.",
+      "active": true
+    },
+    {
+      "id": "slot-forum-03",
+      "placement": "forum_presented_by",
+      "sponsorId": "sp-netzfluss",
+      "forumId": "forum-03",
+      "active": true
+    },
+    {
+      "id": "slot-forum-07",
+      "placement": "forum_presented_by",
+      "sponsorId": "sp-turmwerk",
+      "forumId": "forum-07",
+      "active": true
+    },
+    {
+      "id": "slot-forum-13",
+      "placement": "forum_presented_by",
+      "sponsorId": "sp-kapitalwind",
+      "forumId": "forum-13",
+      "active": true
+    },
+    {
+      "id": "slot-forum-24",
+      "placement": "forum_presented_by",
+      "sponsorId": "sp-turmwerk",
+      "forumId": "forum-24",
+      "active": true
+    },
+    {
+      "id": "slot-forum-31",
+      "placement": "forum_presented_by",
+      "sponsorId": "sp-windmuehle",
+      "forumId": "forum-31",
+      "active": true
+    },
+    {
+      "id": "slot-kalender",
+      "placement": "calendar_note",
+      "sponsorId": "sp-windmuehle",
+      "text": "Programm-App unterstützt von Windmühle Beispiel AG (Anzeige)",
+      "active": true
+    }
+  ]
+}
