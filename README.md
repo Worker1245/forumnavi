@@ -1,92 +1,59 @@
 # Forumnavi
 
-Filterbares Programm für Fachveranstaltungen mit vielen parallelen Foren.
-Mobil nutzbar, ohne Login, ohne Nutzerkonten. Merkliste und Filter stehen nur im Link.
+**Das Programm Ihrer Fachtagung, filterbar auf jedem Handy. Ohne App, ohne Anmeldung.**
 
-**Demo:** https://worker1245.github.io/forumnavi/
+Demo ansehen: **https://worker1245.github.io/forumnavi/**
+(Die Demo zeigt eine erfundene Veranstaltung. Alle Namen, Firmen und Vorträge sind ausgedacht.)
 
-Alle Daten in diesem Repo sind **erfunden**. Echte Programmdaten liegen im privaten Repo
-`forumnavi-intern` und kommen erst nach Zustimmung des Veranstalters hierher.
+## Das Problem
 
-## Wer braucht was?
+Bei Fachtagungen mit vielen parallelen Foren müssen Teilnehmende aus Hunderten Programmpunkten die
+passenden finden. Ein PDF oder eine lange Programmseite hilft dabei auf dem Handy wenig: Es gibt keine
+Filter, keine Merkliste und keinen Kalendereintrag. Kurzfristige Änderungen erreichen viele nicht.
 
-| Wer | Was nötig ist |
-|---|---|
-| **Teilnehmer** | Nur einen Browser (Handy oder Laptop). Link öffnen, fertig. Keine App, keine Installation, kein Konto. |
-| **Veranstalter** | Nichts. Er liefert das Programm (PDF, Website oder Tabelle) und die Sponsorlogos. |
-| **Du (Betreiber)** | Für die tägliche Arbeit nichts: Den Import erledigt Claude Code, die Website baut GitHub automatisch. Node.js brauchst du nur, wenn du Skripte selbst auf deinem Mac starten willst (siehe unten). |
+## Was Teilnehmende bekommen
 
-## Wozu dieses öffentliche Repo?
+* **Programm auf einen Blick:** nach Uhrzeit oder nach Forum, gegliedert nach Tagen
+* **Filter:** Tag, Uhrzeit, Schwerpunkt, Thema, Forum, Forenveranstalter, Freitextsuche, beliebig kombinierbar
+* **Merkliste:** Programmpunkte mit einem Stern merken, mit Hinweis bei zeitlichen Überschneidungen
+* **Eigene Filter speichern:** z. B. „Netze am Dienstag“
+* **Kalender:** einzelne Termine, die ganze Merkliste oder alle Treffer eines Filters in den eigenen Kalender übernehmen
+* **Vom Laptop aufs Handy:** per Link oder QR-Code
+* **Aktueller Stand:** „Programmstand vom …“ auf jeder Seite, Änderungen und entfallene Vorträge deutlich markiert
+* **Schwaches Messe-WLAN:** Die ganze Anwendung ist sehr klein und funktioniert nach dem ersten Aufruf auch ohne Netz
 
-Aus diesem Repo baut GitHub die Website und stellt sie kostenlos unter der Demo-Adresse online (GitHub Pages).
-Bei einem kostenlosen GitHub-Konto geht das nur mit öffentlichen Repos. Deshalb liegt hier nur, was ohnehin
-öffentlich sein darf: der Code der App und erfundene Demo-Daten.
-Alles Vertrauliche (Angebote, Preise, echte Programme vor der Freigabe) liegt im privaten Repo `forumnavi-intern`.
+Teilnehmende brauchen nur einen Browser. Es gibt nichts zu installieren und kein Konto.
 
-Bei jedem Push auf `main` passiert automatisch (`.github/workflows/pages.yml`):
-1. Push-Prüfung: keine Schlüssel oder Passwörter, nur Demo-Daten, Repo-Sichtbarkeit korrekt
-2. Prüfung aller Programmdaten
-3. Website bauen und veröffentlichen
+## Was Sie als Veranstalter tun müssen
 
-Schlägt ein Schritt fehl, bleibt die alte Fassung online.
+Sehr wenig. Sie liefern:
+* das Programm in der Form, in der es ohnehin vorliegt (PDF, Website oder Tabelle)
+* Änderungen, sobald sie bekannt sind
+* falls gewünscht: Logos und Texte Ihrer Sponsoren
 
-## Ordner
+Übernahme des Programms, Prüfung, Veröffentlichung und Pflege bis zum Veranstaltungstag übernehmen wir.
+Sie brauchen keinen Zugang zu einem System und müssen nichts einpflegen.
 
-| Ordner | Inhalt |
-|---|---|
-| `app/` | Quellcode der Web-App (HTML, CSS, JavaScript ohne Framework) |
-| `data/schema/` | Regeln für das Datenformat (JSON-Schema) |
-| `data/events/` | ein Ordner je Veranstaltung mit allen freigegebenen Versionen |
-| `tools/` | Skripte: Prüfung, Bauen, Beispieldaten, Push-Prüfung |
-| `docs/` | Anleitungen und Begründungen |
+## Sponsorflächen für Ihre Sponsoren
 
-## Funktionen der App
+Die Flächen gehören Ihnen. Sie können sie an Ihre Sponsoren weitergeben oder verkaufen:
+* Banner auf der Startseite
+* Banner über einem Veranstaltungstag
+* „Forum präsentiert von …“ beim jeweiligen Forum
+* Hinweiszeile in jedem Kalendereintrag
 
-* Programm nach Uhrzeit oder nach Forum, gegliedert nach Tagen
-* Filter: Tag, Uhrzeit, Schwerpunkt, Thema, Forum, Forenveranstalter, Freitextsuche (kombinierbar)
-* Merkliste mit Stern, Hinweis bei zeitlichen Überschneidungen
-* Gespeicherte Filter mit eigenem Namen
-* Teilen per Link oder QR-Code
-* Kalenderexport (.ics): einzelner Termin, ganze Merkliste, alle Treffer des aktuellen Filters
-* Programmstand auf jeder Seite, Änderungen und entfallene Punkte deutlich markiert
-* Sponsorflächen, immer als „Anzeige“ gekennzeichnet, ohne Tracking
-* Funktioniert nach dem ersten Aufruf auch offline
+Alle Flächen sind deutlich als „Anzeige“ gekennzeichnet. Sponsoren erhalten keine Tracking-Pixel und keine
+Daten über Teilnehmende.
 
-## Optional: Skripte auf dem Mac ausführen
+## Datenschutz
 
-1. **Node.js installieren:** Auf https://nodejs.org die Version „LTS“ für macOS laden und installieren. Prüfen im Terminal:
-   ```bash
-   node --version
-   ```
-   Die Ausgabe muss mit v20 oder höher beginnen.
-2. **Projekt holen:**
-   ```bash
-   cd ~/"6_Arbeit/Claude Code"
-   ```
-   ```bash
-   git clone https://github.com/Worker1245/forumnavi.git
-   ```
-3. **Einmalig einrichten:**
-   ```bash
-   cd forumnavi && npm install
-   ```
+* keine Anmeldung, keine Nutzerkonten
+* keine Cookies, kein Tracking einzelner Personen
+* Merkliste und Filter stehen nur im Link auf dem Gerät der Teilnehmenden und werden auf keinem Server gespeichert
+* Kalenderdateien und QR-Codes entstehen direkt im Browser
 
-| Befehl | Wirkung |
-|---|---|
-| `npm run pruefen` | alle Programmdateien prüfen |
-| `npm run bauen` | Website in den Ordner `dist/` bauen |
-| `npm run vorschau` | bauen und unter http://localhost:8080 im Browser ansehen |
-| `npm run push-pruefung` | vor dem Hochladen: keine Schlüssel, nur Demo-Daten |
-| `npm run demo-daten` | Beispielveranstaltung neu erzeugen |
+Für den Echtbetrieb ist Hosting in der EU vorgesehen.
 
-## Technische Entscheidungen (kurz begründet)
+## Kontakt
 
-* **Kein Framework:** reines HTML, CSS und JavaScript. Die ganze App ist komprimiert rund 57 KB groß und lädt
-  auch im schwachen Messe-WLAN schnell. Es gibt keine Bibliotheken, die veralten oder Sicherheitslücken mitbringen.
-  Einzige Fremdbibliothek: QR-Code-Generator (MIT-Lizenz), wird nur beim Teilen geladen.
-* **Zustand im Link hinter `#`:** Dieser Teil wird nie an den Server geschickt. Begründung der Kodierung und
-  Messwerte: [docs/link_kodierung.md](docs/link_kodierung.md)
-* **Offline-Speicher (Service Worker):** Nach dem ersten Aufruf läuft die App ohne Netz. Bei Netz wird immer
-  zuerst geprüft, ob es einen neueren Programmstand gibt.
-* **JSON-Schema und Prüfskript:** Jede Programmdatei wird vor dem Veröffentlichen geprüft.
-  Details: [docs/datenmodell.md](docs/datenmodell.md)
+[Name, E-Mail, Telefon]
