@@ -161,6 +161,8 @@ input[type="search"], input[type="text"], select {
 .anzeige-banner { background: var(--flaeche); border: 1px dashed #8a959f; border-radius: var(--radius); padding: .45rem .7rem; margin: 0 0 .6rem; }
 .anzeige-banner img { height: 30px; width: auto; }
 .anzeige-text { flex: 1 1 12rem; font-size: .85rem; }
+.pp-sponsor { font-size: .78rem; color: var(--leise); }
+.pp-sponsor .anzeige-label { font-size: .65rem; }
 .anzeige-forum { font-size: .85rem; color: var(--leise); margin: .2rem 0 .4rem; }
 .anzeige-forum img { height: 26px; width: auto; }
 

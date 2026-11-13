@@ -492,7 +492,7 @@ function sessionHtml(s, opts = {}) {
   return `<li class="pp${cancelled ? ' pp-entfaellt' : ''}${s.category ? ' pp-mit-kategorie' : ''}" id="pp-${s.code}"${s.category ? ` style="--farbe:${esc(s.category.color)}"` : ''}>
     <div class="pp-zeit"><time datetime="${s.start}">${hm(s.start)}</time>–<time datetime="${s.end}">${hm(s.end)}</time></div>
     <div class="pp-inhalt">
-      ${opts.inForum ? '' : `<p class="pp-forum">${esc(forumLabel(f))}</p>`}
+      ${opts.inForum ? '' : `<p class="pp-forum">${esc(forumLabel(f))}</p>${f.sponsorSlot ? `<p class="pp-sponsor"><span class="anzeige-label">Anzeige</span> präsentiert von ${esc(f.sponsorSlot.sponsor.name)}</p>` : ''}`}
       <h${opts.level || 4} class="pp-titel">${esc(s.title)}</h${opts.level || 4}>
       ${cat}
       ${statusBadge}

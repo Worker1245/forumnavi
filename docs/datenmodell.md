@@ -63,13 +63,14 @@ damit, damit Termine auch auf Handys mit anderer Zeitzone richtig erscheinen.
 
 | `placement` | Wo sie erscheint |
 |---|---|
-| `forum_presented_by` | „Forum präsentiert von ...“ beim Forum (höchstens eine je Forum) |
-| `home_banner` | Banner auf der Startseite (höchstens eines) |
-| `day_banner` | Banner über einem Veranstaltungstag |
-| `calendar_note` | Hinweiszeile im Kalenderexport |
+| `forum_presented_by` | „Forum präsentiert von ...“ mit Logo beim Forum, als Textzeile bei jedem Programmpunkt des Forums (höchstens eine je Forum) |
+| `home_banner` | Banner oben im Programm der Veranstaltung (höchstens eines) |
+| `day_banner` | Banner über einem Veranstaltungstag (höchstens eines je Tag) |
+| `calendar_note` | Hinweiszeile im Kalenderexport (höchstens eine) |
 
 Logos liegen als Datei im Veranstaltungsordner. Externe Bild-Adressen sind nicht erlaubt.
-So kann ein Sponsor keine Tracking-Pixel einschleusen. Details folgen in Etappe 4.
+So kann ein Sponsor keine Tracking-Pixel einschleusen. Beschreibung für Veranstalter:
+`forumnavi-intern/vertrieb/sponsorflaechen.md`
 
 ## Was das Prüfskript kontrolliert
 
@@ -78,7 +79,8 @@ Fehler (Datei wird nicht veröffentlicht):
 * doppelte IDs, Verweise auf nicht vorhandene IDs
 * Ende liegt nicht nach Beginn, Datum passt nicht zum Tag des Forums
 * ein Raum ist gleichzeitig von zwei Foren belegt
-* mehr als eine „präsentiert von“-Fläche je Forum oder mehr als ein Startseiten-Banner
+* mehr als eine Fläche einer Art an derselben Stelle (je Forum, je Tag, je Veranstaltung)
+* Sponsor-Logo fehlt, ist größer als 200 KB oder enthält als SVG Skripte bzw. Verweise auf fremde Server
 * zwei Programmpunkte ergeben denselben Link-Kurzcode (siehe `link_kodierung.md`)
 
 Hinweise (Datei ist gültig, aber bitte prüfen):

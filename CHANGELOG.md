@@ -4,6 +4,20 @@ Versionen nach Semantic Versioning: erste veröffentlichte Demo v0.1.0, Pilotver
 Vor jeder neuen Version wird der alte Stand als ZIP im internen Repo unter `archive/` abgelegt und
 die Version per Git-Tag markiert.
 
+## [0.3.0] (2026-11-13)
+
+Etappe 4: Sponsorflächen.
+
+### Hinzugefügt
+* „Forum präsentiert von …“ jetzt auch als gekennzeichnete Textzeile bei jedem Programmpunkt in der Ansicht nach Uhrzeit
+* Prüfung der Sponsor-Logos vor jeder Veröffentlichung: Datei vorhanden, höchstens 200 KB,
+  SVG ohne Skripte und ohne Verweise auf fremde Server (kein Tracking)
+* Prüfung: höchstens ein Tagesbanner je Tag, höchstens ein Kalenderhinweis je Veranstaltung
+* Beschreibung der Flächen für Veranstalter mit Bildschirmfotos (internes Repo, `vertrieb/sponsorflaechen.md`)
+* Sponsorflächen ohne KI aus einer Tabelle übernehmen (`tools/sponsoren_uebernehmen.mjs`): Texte und Links 1:1,
+  Logos byte-genau mit Prüfsumme, Fehler werden mit Zeilennummer abgelehnt
+* Prüfbericht listet jede Sponsorfläche einzeln mit Sponsor, Text, Link und Logo
+
 ## [0.2.0] (2026-11-13)
 
 Etappe 3: Import-Werkzeug, Veranstaltungscodes, Speicherung auf dem Gerät.

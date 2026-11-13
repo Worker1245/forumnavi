@@ -11,7 +11,7 @@ import { createHash } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { validateData, validateAnnouncement } from './validate.mjs';
+import { validateData, validateAnnouncement, checkSponsorAssets } from './validate.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const arg = (name, def) => {
@@ -53,6 +53,7 @@ for (const id of readdirSync(eventsDir).sort()) {
   if (!existsSync(file)) continue;
   const data = JSON.parse(readFileSync(file, 'utf8'));
   const { errors } = validateData(data);
+  if (!errors.length) errors.push(...checkSponsorAssets(data, join(eventsDir, id)).errors);
   if (errors.length) {
     console.error(`ABBRUCH: ${relative(root, file)} hat ${errors.length} Fehler. Erst "npm run pruefen" ausführen und beheben.`);
     process.exit(1);

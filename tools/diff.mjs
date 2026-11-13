@@ -83,9 +83,31 @@ export function diffPrograms(oldData, newData) {
   const sponsorsChanged = JSON.stringify(oldData.sponsorSlots || []) !== JSON.stringify(newData.sponsorSlots || [])
     || JSON.stringify(oldData.sponsors || []) !== JSON.stringify(newData.sponsors || []);
 
+  // Sponsorflächen einzeln vergleichen: Stelle -> Sponsor, Text, Link, Logo, aktiv
+  const PL = { home_banner: 'Banner oben im Programm', day_banner: 'Banner Tag', forum_presented_by: 'Forum präsentiert von', calendar_note: 'Kalenderhinweis' };
+  function slotMap(d) {
+    const sp = new Map((d.sponsors || []).map((s) => [s.id, s]));
+    const days = new Map((d.days || []).map((x) => [x.id, x]));
+    const forums = new Map((d.forums || []).map((x) => [x.id, x]));
+    const m = new Map();
+    for (const s of d.sponsorSlots || []) {
+      const where = PL[s.placement] + (s.dayId ? ` ${days.get(s.dayId)?.label || s.dayId}` : '') + (s.forumId ? ` Forum ${forums.get(s.forumId)?.number || s.forumId}` : '');
+      const o = sp.get(s.sponsorId) || {};
+      m.set(where, `${o.name || s.sponsorId} | Text: ${s.text || '(keiner)'} | Link: ${o.url || '(keiner)'} | Logo: ${o.logo || '(keins)'}${s.active === false ? ' | INAKTIV' : ''}`);
+    }
+    return m;
+  }
+  const SA = slotMap(oldData), SB = slotMap(newData);
+  const sponsorChanges = [];
+  for (const [k, v] of SB) {
+    if (!SA.has(k)) sponsorChanges.push(`Neu: ${k}: ${v}`);
+    else if (SA.get(k) !== v) sponsorChanges.push(`Geändert: ${k}: ${SA.get(k)} → ${v}`);
+  }
+  for (const [k, v] of SA) if (!SB.has(k)) sponsorChanges.push(`Entfallen: ${k}: ${v}`);
+
   const byTime = (x, y) => x.fields.Beginn.localeCompare(y.fields.Beginn) || x.id.localeCompare(y.id);
   added.sort(byTime); removed.sort(byTime); changed.sort(byTime);
-  return { added, removed, changed, idChanges, forumChanges, sponsorsChanged };
+  return { added, removed, changed, idChanges, forumChanges, sponsorsChanged, sponsorChanges };
 }
 
 const short = (v) => (String(v).length > 80 ? String(v).slice(0, 77) + '...' : String(v));
@@ -125,6 +147,14 @@ export function diffMarkdown(r, labels = { old: 'alt', new: 'neu' }) {
     L.push('### Foren', '');
     for (const f of r.forumChanges) L.push(`* ${f}`);
     L.push('');
+  }
+  if (r.sponsorChanges.length) {
+    L.push('### Sponsorflächen', '');
+    L.push('Bitte jede Zeile mit dem Auftrag des Sponsors vergleichen. Logos werden unverändert übernommen.', '');
+    for (const s of r.sponsorChanges) L.push(`* ${s}`);
+    L.push('');
+  } else if (r.sponsorsChanged) {
+    L.push('### Sponsorflächen', '', '* Zuordnung unverändert, nur interne Kennungen geändert', '');
   }
   if (!r.added.length && !r.changed.length && !r.removed.length && !r.forumChanges.length && !r.sponsorsChanged) L.push('Keine inhaltlichen Änderungen.', '');
   return L.join('\n');

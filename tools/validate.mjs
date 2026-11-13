@@ -5,7 +5,7 @@
 // Exit-Code 0 = keine Fehler (Warnungen erlaubt), 1 = Fehler gefunden.
 // Arbeitet ohne KI und ohne Netzwerk: gleiche Eingabe ergibt immer gleiches Ergebnis.
 
-import { readFileSync, readdirSync, statSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, dirname, resolve, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import Ajv2020 from 'ajv/dist/2020.js';
@@ -155,9 +155,40 @@ function checkContent(d) {
     perForum.set(slot.forumId, slot.id);
   }
   if (d.sponsorSlots.filter((x) => x.placement === 'home_banner' && x.active !== false).length > 1) {
-    err('Mehr als ein aktives Startseiten-Banner');
+    err('Mehr als ein aktives Banner oben im Programm (home_banner)');
+  }
+  if (d.sponsorSlots.filter((x) => x.placement === 'calendar_note' && x.active !== false).length > 1) {
+    err('Mehr als ein aktiver Hinweis im Kalenderexport (calendar_note)');
+  }
+  const perDay = new Map();
+  for (const slot of d.sponsorSlots.filter((x) => x.placement === 'day_banner' && x.active !== false)) {
+    if (perDay.has(slot.dayId)) err(`Tag "${slot.dayId}" hat mehr als ein aktives Tagesbanner`);
+    perDay.set(slot.dayId, slot.id);
   }
 
+  return { errors, warnings };
+}
+
+// Sponsor-Dateien prüfen: Logo vorhanden, nicht zu groß, SVG ohne Skripte und ohne externe Verweise.
+// Externe Verweise würden beim Anzeigen fremde Server kontaktieren (Tracking-Gefahr).
+export const LOGO_MAX_KB = 200;
+export function checkSponsorAssets(data, eventDir) {
+  const errors = [];
+  const warnings = [];
+  for (const sp of data.sponsors || []) {
+    if (!sp.logo) { warnings.push(`Sponsor "${sp.id}" (${sp.name}): kein Logo, es wird nur der Name angezeigt`); continue; }
+    const p = join(eventDir, sp.logo);
+    if (!existsSync(p)) { errors.push(`Sponsor "${sp.id}": Logo-Datei ${sp.logo} fehlt`); continue; }
+    const kb = statSync(p).size / 1024;
+    if (kb > LOGO_MAX_KB) errors.push(`Sponsor "${sp.id}": Logo ist ${kb.toFixed(0)} KB groß, erlaubt sind ${LOGO_MAX_KB} KB`);
+    if (p.endsWith('.svg')) {
+      const svg = readFileSync(p, 'utf8');
+      if (/<script|\son\w+\s*=|javascript:/i.test(svg)) errors.push(`Sponsor "${sp.id}": SVG-Logo enthält Skript-Code und ist nicht erlaubt`);
+      if (/(href|src)\s*=\s*["']\s*(https?:)?\/\//i.test(svg) || /url\(\s*["']?\s*(https?:)?\/\//i.test(svg) || /@import/i.test(svg)) {
+        errors.push(`Sponsor "${sp.id}": SVG-Logo lädt Inhalte von fremden Servern und ist nicht erlaubt (Tracking-Gefahr)`);
+      }
+    }
+  }
   return { errors, warnings };
 }
 
@@ -207,6 +238,12 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
       continue;
     }
     const { errors, warnings } = validateData(data);
+    if (!errors.length && data.sponsors?.length) {
+      // Logos liegen im Veranstaltungsordner; Dateien unter versionen/ verweisen auf denselben Ordner
+      const eventDir = dirname(file).endsWith('versionen') ? dirname(dirname(file)) : dirname(file);
+      const a = checkSponsorAssets(data, eventDir);
+      errors.push(...a.errors); warnings.push(...a.warnings);
+    }
     const n = data.sessions?.length ?? 0;
     const fo = data.forums?.length ?? 0;
     if (errors.length) failed++;

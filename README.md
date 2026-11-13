@@ -51,10 +51,13 @@ Sie brauchen keinen Zugang zu einem System und müssen nichts einpflegen.
 ## Sponsorflächen für Ihre Sponsoren
 
 Die Flächen gehören Ihnen. Sie können sie an Ihre Sponsoren weitergeben oder verkaufen:
-* Banner auf der Startseite
+* Banner oben im Programm
 * Banner über einem Veranstaltungstag
-* „Forum präsentiert von …“ beim jeweiligen Forum
+* „Forum präsentiert von …“ beim jeweiligen Forum und bei jedem seiner Programmpunkte
 * Hinweiszeile in jedem Kalendereintrag
+
+Logos werden von unserem Server ausgeliefert, nie vom Server des Sponsors. Skripte, Tracking-Pixel und
+eingebettete Fremdinhalte werden vor jeder Veröffentlichung automatisch abgelehnt.
 
 Alle Flächen sind deutlich als „Anzeige“ gekennzeichnet. Sponsoren erhalten keine Tracking-Pixel und keine
 Daten über Teilnehmende.
