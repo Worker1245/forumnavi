@@ -4,6 +4,11 @@ Versionen nach Semantic Versioning: erste veröffentlichte Demo v0.1.0, Pilotver
 Vor jeder neuen Version wird der alte Stand als ZIP im internen Repo unter `archive/` abgelegt und
 die Version per Git-Tag markiert.
 
+## [0.4.1] (2026-11-13)
+
+### Hinzugefügt
+* Urheberrechtshinweis: LICENSE „Alle Rechte vorbehalten“, Hinweis in App, Veranstalter-Demo und README
+
 ## [0.4.0] (2026-11-13)
 
 ### Hinzugefügt

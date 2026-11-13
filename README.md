@@ -76,3 +76,7 @@ Für den Echtbetrieb ist Hosting in der EU vorgesehen.
 ## Kontakt
 
 [Name, E-Mail, Telefon]
+
+---
+
+© 2026 Forumnavi. Alle Rechte vorbehalten. Siehe [LICENSE](LICENSE).
