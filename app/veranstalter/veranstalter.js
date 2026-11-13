@@ -116,6 +116,8 @@ document.addEventListener('click', (e) => {
   const b = e.target.closest('button');
   if (!b) return;
   if (b.hasAttribute('data-weiter')) return zeige(schritt + 1);
+  // Zurück: die Aufbereitung (Schritt 5) wird übersprungen, sie läuft nur einmal nach der Zahlung
+  if (b.hasAttribute('data-zurueck')) return zeige(schritt - 1 === 5 ? 4 : schritt - 1);
   if (b.dataset.entfernen) { codes = codes.filter((c) => c !== b.dataset.entfernen); zeigeCodes(); announce(`Code ${b.dataset.entfernen} entfernt`); return; }
   if (b.id === 'vb-aktivieren') {
     $('#vb-status').textContent = 'Aktiv'; $('#vb-status').classList.add('an');
@@ -163,6 +165,17 @@ $('#vb-dok-datei').addEventListener('change', async () => {
 
 ['#vb-sponsor', '#vb-text', '#vb-logo', '#vb-flaeche'].forEach((s) => $(s).addEventListener('input', sponsorVorschau));
 $('#vb-logo').addEventListener('change', sponsorVorschau);
+
+// Zurück-Knopf in jedem Schritt ab Schritt 2, links neben „Weiter“
+$$('.vb-schritt').forEach((sec) => {
+  const n = Number(sec.dataset.schritt);
+  if (n < 2) return;
+  const weiter = sec.querySelector(':scope > [data-weiter]') || sec.querySelector(':scope > #vb-neu');
+  const nav = document.createElement('div');
+  nav.className = 'vb-nav';
+  nav.innerHTML = '<button type="button" class="knopf knopf-leise" data-zurueck>← Zurück</button>';
+  if (weiter) { weiter.before(nav); nav.append(weiter); } else sec.append(nav);
+});
 
 zeige(1);
 // Beim ersten Aufruf nicht in die Seite springen

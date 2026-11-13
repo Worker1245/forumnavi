@@ -10,6 +10,8 @@
 .vb-schritt label { display: block; font-weight: 600; margin: .6rem 0 .3rem; }
 .vb-schritt .zeile input { flex: 1 1 14rem; width: auto; }
 .vb-schritt > .knopf, .vb-schritt > p > .knopf { margin-top: 1rem; }
+.vb-nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; align-items: center; }
+.vb-start { margin: 0 0 .5rem; }
 .vb-raster { display: grid; gap: 0 1rem; grid-template-columns: 1fr; margin-bottom: .75rem; }
 @media (min-width: 48rem) { .vb-raster { grid-template-columns: 1fr 1fr; } }
 .vb-upload { border: 2px dashed #8a959f; border-radius: var(--radius); padding: .5rem 1rem; margin: .5rem 0; }
