@@ -120,7 +120,6 @@ function renderAnnouncement(meta) {
   $('#titel').textContent = meta.name;
   $('#ort').textContent = `${formatDateRange(meta.startDate, meta.endDate)}${meta.venue ? ` · ${meta.venue}` : ''}${meta.city ? `, ${meta.city}` : ''}${meta.code ? ` · Code ${meta.code}` : ''}`;
   rememberEvent({ id: meta.id, name: meta.name, city: meta.city, startDate: meta.startDate, endDate: meta.endDate });
-  $$('.kopf-wechsel').forEach((a) => { a.hidden = false; });
   $('#inhalt').innerHTML = `<section aria-labelledby="h-folgt"><h2 id="h-folgt">Programm folgt</h2>
     <p class="infobox">${esc(meta.hinweis)}</p>
     <p>Diese Veranstaltung ist auf diesem Gerät vorgemerkt. Sobald das Programm da ist, findest du es hier unter derselben Adresse
@@ -287,7 +286,6 @@ function renderShell() {
   $$('.stand').forEach((el) => { el.textContent = statusText(); });
   $('#demo-hinweis').hidden = !ev.isDemo;
   $('#reiter').hidden = false;
-  $$('.kopf-wechsel').forEach((a) => { a.hidden = false; });
   buildFilterForm();
 
   $('#reiter').addEventListener('click', (e) => {

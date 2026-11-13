@@ -4,6 +4,11 @@ Versionen nach Semantic Versioning: erste veröffentlichte Demo v0.1.0, Pilotver
 Vor jeder neuen Version wird der alte Stand als ZIP im internen Repo unter `archive/` abgelegt und
 die Version per Git-Tag markiert.
 
+## [0.3.2] (2026-11-13)
+
+### Geändert
+* „Veranstaltung wechseln“ als Symbol rechts in der Reiterleiste statt im Kopf; Fußzeilen-Link gekürzt
+
 ## [0.3.1] (2026-11-13)
 
 ### Hinzugefügt
