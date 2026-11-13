@@ -46,6 +46,14 @@ img, svg { max-width: 100%; }
 .kopf-meta { margin: 0; font-size: .82rem; line-height: 1.35; }
 .demo-hinweis { background: #fff3d1; color: #3d2b00; text-align: center; padding: .25rem 1rem; font-size: .8rem; margin: -.5rem 0 .4rem; }
 .nur-breit { display: none; }
+.kopf-zeile { display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; }
+.kopf-wechsel {
+  flex: 0 0 auto; display: inline-flex; align-items: center; gap: .3rem; margin-top: .2rem;
+  color: #fff; text-decoration: none; font-size: .8rem; font-weight: 600; line-height: 1.2;
+  border: 1px solid rgba(255,255,255,.7); border-radius: 2rem; padding: .35rem .65rem; min-height: 36px;
+}
+.kopf-wechsel:hover { background: rgba(255,255,255,.15); }
+.kopf-wechsel:focus-visible { outline-color: #fff; }
 
 /* Reiter */
 .reiter { position: sticky; top: 0; z-index: 5; background: var(--flaeche); border-bottom: 1px solid var(--linie); }
@@ -201,6 +209,7 @@ input[type="search"], input[type="text"], select {
 @media (min-width: 48rem) {
   .kopf h1 { font-size: 1.6rem; }
   .nur-breit { display: inline; }
+  .nur-schmal { display: none; }
   .reiter a { flex: 0 0 auto; padding: .8rem .8rem .65rem; }
   .anzeige-banner img { height: 40px; }
   .pp { grid-template-columns: 6rem 1fr auto; }

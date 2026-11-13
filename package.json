@@ -1,6 +1,6 @@
 {
   "name": "forumnavi",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "private": true,
   "description": "Filterbares Programm für Fachveranstaltungen mit vielen parallelen Foren",
   "type": "module",
