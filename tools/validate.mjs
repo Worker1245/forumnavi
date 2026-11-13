@@ -192,6 +192,29 @@ export function checkSponsorAssets(data, eventDir) {
   return { errors, warnings };
 }
 
+// Pläne und Dokumente (PDF): vorhanden, echte PDF-Datei, höchstens 10 MB, keine eingebetteten Skripte oder Programmstarts.
+// Hinweis: In komprimierten Objektströmen versteckte Skripte erkennt diese einfache Prüfung nicht sicher.
+export const DOC_MAX_MB = 10;
+export function checkDocuments(data, eventDir) {
+  const errors = [];
+  const warnings = [];
+  const seen = new Set();
+  for (const doc of data.documents || []) {
+    if (seen.has(doc.id)) errors.push(`Dokument-id "${doc.id}" doppelt`);
+    seen.add(doc.id);
+    const p = join(eventDir, doc.file);
+    if (!existsSync(p)) { errors.push(`Dokument "${doc.id}": Datei ${doc.file} fehlt`); continue; }
+    const buf = readFileSync(p);
+    const mb = buf.length / 1024 / 1024;
+    if (buf.subarray(0, 5).toString('latin1') !== '%PDF-') errors.push(`Dokument "${doc.id}": ${doc.file} ist keine PDF-Datei`);
+    if (mb > DOC_MAX_MB) errors.push(`Dokument "${doc.id}": ${mb.toFixed(1)} MB, erlaubt sind ${DOC_MAX_MB} MB`);
+    else if (mb > 3) warnings.push(`Dokument "${doc.id}": ${mb.toFixed(1)} MB, im Messe-WLAN langsam. Möglichst unter 3 MB.`);
+    const text = buf.toString('latin1');
+    if (/\/(JavaScript|JS|Launch|EmbeddedFile|RichMedia)\b/.test(text)) errors.push(`Dokument "${doc.id}": PDF enthält Skripte, Programmstarts oder eingebettete Dateien und ist nicht erlaubt`);
+  }
+  return { errors, warnings };
+}
+
 // Ankündigung (Veranstaltung angelegt, Programm folgt): kleine Datei ankuendigung.json
 export function validateAnnouncement(a) {
   const errors = [];
@@ -238,11 +261,12 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
       continue;
     }
     const { errors, warnings } = validateData(data);
-    if (!errors.length && data.sponsors?.length) {
-      // Logos liegen im Veranstaltungsordner; Dateien unter versionen/ verweisen auf denselben Ordner
+    if (!errors.length && (data.sponsors?.length || data.documents?.length)) {
+      // Logos und Dokumente liegen im Veranstaltungsordner; Dateien unter versionen/ verweisen auf denselben Ordner
       const eventDir = dirname(file).endsWith('versionen') ? dirname(dirname(file)) : dirname(file);
-      const a = checkSponsorAssets(data, eventDir);
-      errors.push(...a.errors); warnings.push(...a.warnings);
+      for (const a of [checkSponsorAssets(data, eventDir), checkDocuments(data, eventDir)]) {
+        errors.push(...a.errors); warnings.push(...a.warnings);
+      }
     }
     const n = data.sessions?.length ?? 0;
     const fo = data.forums?.length ?? 0;

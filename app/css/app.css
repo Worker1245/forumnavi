@@ -150,6 +150,12 @@ input[type="search"], input[type="text"], select {
 .status-entfaellt { background: var(--entfaellt-bg); color: var(--entfaellt-text); }
 .konflikt { font-size: .85rem; color: var(--geaendert-text); background: var(--geaendert-bg); padding: .1rem .5rem; border-radius: 6px; }
 
+/* Pläne und Dokumente */
+.plaene { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .75rem; margin: 0 0 .6rem; font-size: .9rem; }
+.plaene-titel { font-weight: 700; }
+.plaene a { display: inline-flex; align-items: center; gap: .3rem; min-height: 40px; font-weight: 600; }
+.plaene a .leise { font-weight: 400; }
+
 /* Schwerpunkte (Kategorien) mit Farbe */
 .punkt { display: inline-block; width: .7em; height: .7em; border-radius: 50%; background: var(--farbe, #888); margin-right: .35em; vertical-align: baseline; }
 .wahl.chip input:checked + span .punkt { box-shadow: 0 0 0 2px #fff; }

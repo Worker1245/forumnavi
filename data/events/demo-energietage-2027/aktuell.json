@@ -20,10 +20,10 @@
       "country": "DE"
     },
     "programStatus": {
-      "date": "2026-11-13T01:45:00+01:00",
-      "version": "2026-11-13_03",
+      "date": "2026-11-13T01:49:00+01:00",
+      "version": "2026-11-13_04",
       "source": "Programmheft (PDF) programmheft_demo-energietage-2027.pdf, Stand 20.11.2026",
-      "note": "Testimport aus erfundenem Programmheft (Etappe 3)"
+      "note": "Lageplan ergänzt"
     }
   },
   "days": [
@@ -9228,6 +9228,14 @@
       "sponsorId": "sp-windmuehle",
       "text": "Programm-App unterstützt von Windmühle Beispiel AG",
       "active": true
+    }
+  ],
+  "documents": [
+    {
+      "id": "lageplan",
+      "title": "Lageplan Kongresszentrum",
+      "kind": "lageplan",
+      "file": "dokumente/lageplan.pdf"
     }
   ]
 }

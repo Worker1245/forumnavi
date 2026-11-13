@@ -4,6 +4,17 @@ Versionen nach Semantic Versioning: erste veröffentlichte Demo v0.1.0, Pilotver
 Vor jeder neuen Version wird der alte Stand als ZIP im internen Repo unter `archive/` abgelegt und
 die Version per Git-Tag markiert.
 
+## [0.4.0] (2026-11-13)
+
+### Hinzugefügt
+* Veranstalter-Demo unter `/veranstalter/`: klickbarer Rundgang durch den geplanten Veranstalter-Bereich
+  (Anmelden, Hochladen, Preis nach Programmgröße, Zahlung simuliert, Aufbereitung, Prüfen und Korrigieren,
+  mehrere Codes, Pläne, Sponsorflächen, Aktivieren/Deaktivieren). Speichert und überträgt nichts.
+* Pläne und Dokumente (PDF) je Veranstaltung, z. B. Lageplan und Standplan, oben im Programm verlinkt.
+  Prüfung vor Veröffentlichung: echte PDF, höchstens 10 MB, keine eingebetteten Skripte
+* Demo mit erfundenem Lageplan (Version `2026-11-13_04`); Testimport freigegeben (`2026-11-13_03`)
+* Startseite verweist auf die Veranstalter-Demo
+
 ## [0.3.2] (2026-11-13)
 
 ### Geändert

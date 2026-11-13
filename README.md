@@ -3,6 +3,7 @@
 **Das Programm Ihrer Fachtagung, filterbar auf jedem Handy. Ohne App, ohne Anmeldung.**
 
 Demo ansehen: **https://worker1245.github.io/forumnavi/** mit dem Code **WIND26**
+Demo für Veranstalter (so funktioniert die Einrichtung): **https://worker1245.github.io/forumnavi/veranstalter/**
 (Die Demo zeigt eine erfundene Veranstaltung. Alle Namen, Firmen und Vorträge sind ausgedacht.)
 
 ## Das Problem
@@ -20,6 +21,7 @@ Filter, keine Merkliste und keinen Kalendereintrag. Kurzfristige Änderungen err
 * **Kalender:** einzelne Termine, die ganze Merkliste oder alle Treffer eines Filters in den eigenen Kalender übernehmen
 * **Vom Laptop aufs Handy:** per Link oder QR-Code
 * **Aktueller Stand:** „Programmstand vom …“ auf jeder Seite, Änderungen und entfallene Vorträge deutlich markiert
+* **Pläne:** Lageplan, Standplan oder Anfahrt als PDF direkt im Programm
 * **Schwaches Messe-WLAN:** Die ganze Anwendung ist sehr klein und funktioniert nach dem ersten Aufruf auch ohne Netz
 
 Teilnehmende brauchen nur einen Browser. Es gibt nichts zu installieren und kein Konto.

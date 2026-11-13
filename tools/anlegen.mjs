@@ -18,7 +18,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const arg = (n) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const fail = (m) => { console.error(`ABBRUCH: ${m}`); process.exit(1); };
 
-export const RESERVED = new Set(['CSS', 'JS', 'EVENTS', 'VENDOR', 'IMPRESSUM', 'DATENSCHUTZ', 'DEMO', 'TEST', 'ADMIN']);
+export const RESERVED = new Set(['CSS', 'JS', 'EVENTS', 'VENDOR', 'IMPRESSUM', 'DATENSCHUTZ', 'VERANSTALTER', 'DEMO', 'TEST', 'ADMIN']);
 export const EVENT_DIRS = [join(root, 'data/events'), join(root, '../forumnavi-intern/data/events')];
 
 // Alle bereits vergebenen Codes aus beiden Repos (Programme und Ankündigungen)

@@ -450,6 +450,45 @@
         }
       }
     },
+    "documents": {
+      "description": "Pläne und Dokumente für Teilnehmende (z. B. Lageplan, Standplan). Nur PDF, Datei im Veranstaltungsordner unter dokumente/.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "kind",
+          "file"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "title": {
+            "$ref": "#/$defs/text"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "lageplan",
+              "standplan",
+              "anfahrt",
+              "sonstiges"
+            ]
+          },
+          "file": {
+            "type": "string",
+            "pattern": "^dokumente/[a-z0-9_.-]+\\.pdf$"
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 140
+          }
+        }
+      }
+    },
     "sponsors": {
       "type": "array",
       "items": {

@@ -11,7 +11,7 @@ import { createHash } from 'node:crypto';
 import { gzipSync } from 'node:zlib';
 import { dirname, join, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { validateData, validateAnnouncement, checkSponsorAssets } from './validate.mjs';
+import { validateData, validateAnnouncement, checkSponsorAssets, checkDocuments } from './validate.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const arg = (name, def) => {
@@ -53,7 +53,7 @@ for (const id of readdirSync(eventsDir).sort()) {
   if (!existsSync(file)) continue;
   const data = JSON.parse(readFileSync(file, 'utf8'));
   const { errors } = validateData(data);
-  if (!errors.length) errors.push(...checkSponsorAssets(data, join(eventsDir, id)).errors);
+  if (!errors.length) errors.push(...checkSponsorAssets(data, join(eventsDir, id)).errors, ...checkDocuments(data, join(eventsDir, id)).errors);
   if (errors.length) {
     console.error(`ABBRUCH: ${relative(root, file)} hat ${errors.length} Fehler. Erst "npm run pruefen" ausführen und beheben.`);
     process.exit(1);
@@ -65,8 +65,13 @@ for (const id of readdirSync(eventsDir).sort()) {
   delete data.$schema;
   const out = join(dist, 'events', id);
   mkdirSync(out, { recursive: true });
-  writeFileSync(join(out, 'data.json'), JSON.stringify(data));
   if (existsSync(join(eventsDir, id, 'sponsoren'))) cpSync(join(eventsDir, id, 'sponsoren'), join(out, 'sponsoren'), { recursive: true });
+  for (const doc of data.documents || []) {
+    mkdirSync(join(out, 'dokumente'), { recursive: true });
+    cpSync(join(eventsDir, id, doc.file), join(out, doc.file));
+    doc.sizeKB = Math.round(statSync(join(eventsDir, id, doc.file)).size / 1024); // Größe für die Anzeige
+  }
+  writeFileSync(join(out, 'data.json'), JSON.stringify(data));
   const e = data.event;
   const meta = { id: e.id, name: e.name, city: e.location.city, startDate: e.startDate, endDate: e.endDate, timezone: e.timezone, isDemo: e.isDemo, code: e.code, programStatus: e.programStatus };
   // Kleine Infodatei für Impressum/Datenschutz-Seiten (Programmstand)
@@ -86,7 +91,7 @@ writeFileSync(join(dist, 'events/index.json'), JSON.stringify({
 // Veranstaltungscodes: je Code eine Datei, benannt nach der Prüfsumme (SHA-256) des Codes.
 // So steht keine Liste aller Codes auf der Website.
 // Zusätzlich Kurzadresse /<code klein>/ (z. B. /wind26/), die zur Veranstaltung weiterleitet.
-const RESERVED = new Set(['css', 'js', 'events', 'vendor', 'impressum', 'datenschutz']);
+const RESERVED = new Set(['css', 'js', 'events', 'vendor', 'impressum', 'datenschutz', 'veranstalter']);
 const seenCodes = new Map();
 mkdirSync(join(dist, 'events/codes'), { recursive: true });
 for (const e of events.filter((x) => x.code)) {
@@ -124,7 +129,7 @@ const hash = createHash('sha256');
 for (const f of files) hash.update(f).update(readFileSync(join(dist, f)));
 const version = hash.digest('hex').slice(0, 12);
 // Alles außer dem Service Worker selbst, auch die Programmdaten: so funktioniert die App nach dem ersten Aufruf offline
-const precache = ['./', ...files.filter((f) => f !== 'sw.js' && f !== '.nojekyll' && !f.startsWith('events/codes/') && !/^[a-z0-9]+\/index\.html$/.test(f))];
+const precache = ['./', ...files.filter((f) => f !== 'sw.js' && f !== '.nojekyll' && !f.startsWith('veranstalter/') && !f.startsWith('events/codes/') && !f.endsWith('.pdf') && !/^[a-z0-9]+\/index\.html$/.test(f))];
 const sw = readFileSync(join(dist, 'sw.js'), 'utf8')
   .replace('__VERSION__', version)
   .replace('__DATEIEN__', JSON.stringify(precache));

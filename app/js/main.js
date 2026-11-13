@@ -164,6 +164,9 @@ async function renderStart() {
       </form>
     </section>
     ${mine.length ? `<section aria-labelledby="h-meine"><h2 id="h-meine">Auf diesem Gerät</h2><ul class="liste-veranstaltungen">${mine.map((e) => item(e, true)).join('')}</ul></section>` : ''}
+    <section aria-labelledby="h-vb" class="infobox"><h2 id="h-vb">Sie veranstalten eine Tagung?</h2>
+      <p>Sehen Sie in einer Demo, wie Sie Ihr Programm in wenigen Schritten hierher bringen.</p>
+      <p><a href="veranstalter/">Demo für Veranstalter ansehen</a></p></section>
     ${listed.length ? `<section aria-labelledby="h-offen"><h2 id="h-offen">Öffentlich</h2><ul class="liste-veranstaltungen">${listed.map((e) => item(e, false)).join('')}</ul></section>` : ''}`;
   $('#code-form').addEventListener('submit', async (ev) => {
     ev.preventDefault();
@@ -364,6 +367,16 @@ function sponsorHtml(slot, variant) {
   return `<${tag} class="anzeige anzeige-${variant}"${attrs}>${inner}${hint}</${tag}>`;
 }
 
+// ---------- Pläne und Dokumente ----------
+
+const DOC_ICON = '<svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20"><path d="M6 3h8l4 4v14H6z M14 3v4h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>';
+function plaeneHtml() {
+  const docs = D.documents || [];
+  if (!docs.length) return '';
+  return `<nav class="plaene" aria-label="Pläne und Dokumente"><span class="plaene-titel">Pläne:</span>
+    ${docs.map((d) => `<a href="events/${esc(D.event.id)}/${esc(d.file)}" target="_blank" rel="noopener">${DOC_ICON}${esc(d.title)}<span class="leise"> (PDF${d.sizeKB ? `, ${d.sizeKB < 1024 ? d.sizeKB + ' KB' : (d.sizeKB / 1024).toFixed(1).replace('.', ',') + ' MB'}` : ''})</span><span class="sr-only">, öffnet in neuem Tab</span></a>`).join('')}</nav>`;
+}
+
 // ---------- Filter ----------
 
 function checkboxList(name, items, cls = '') {
@@ -557,6 +570,7 @@ function renderProgram(fromFilter = false) {
   const list = filtered();
   const active = filterIsActive(S.filter);
   $('#banner-start').innerHTML = sponsorHtml(C.homeBanner, 'banner');
+  $('#plaene').innerHTML = plaeneHtml();
   $('#ergebnis').textContent = active
     ? `${plural(list.length, 'Programmpunkt', 'Programmpunkte')} gefunden (von ${D.sessions.length})`
     : `${D.sessions.length} Programmpunkte`;

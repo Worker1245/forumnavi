@@ -1,0 +1,34 @@
+/* Veranstalter-Demo: ergänzt app.css */
+.vb { padding-top: 1rem; }
+.schritte ol { list-style: none; padding: 0; margin: 0 0 1rem; display: flex; flex-wrap: wrap; gap: .35rem; counter-reset: s; }
+.schritte li { counter-increment: s; font-size: .8rem; padding: .25rem .55rem; border-radius: 1rem; background: var(--flaeche); border: 1px solid var(--linie); color: var(--leise); }
+.schritte li::before { content: counter(s) ". "; }
+.schritte li[aria-current="step"] { background: var(--primaer); border-color: var(--primaer); color: #fff; font-weight: 600; }
+.schritte li.erledigt { color: var(--primaer-dunkel); border-color: var(--primaer); }
+.vb-schritt { background: var(--flaeche); border: 1px solid var(--linie); border-radius: var(--radius); padding: .5rem 1rem 1.25rem; }
+.vb-schritt h2 { margin-top: .75rem; }
+.vb-schritt label { display: block; font-weight: 600; margin: .6rem 0 .3rem; }
+.vb-schritt .zeile input { flex: 1 1 14rem; width: auto; }
+.vb-schritt > .knopf, .vb-schritt > p > .knopf { margin-top: 1rem; }
+.vb-raster { display: grid; gap: 0 1rem; grid-template-columns: 1fr; margin-bottom: .75rem; }
+@media (min-width: 48rem) { .vb-raster { grid-template-columns: 1fr 1fr; } }
+.vb-upload { border: 2px dashed #8a959f; border-radius: var(--radius); padding: .5rem 1rem; margin: .5rem 0; }
+.vb-tabelle-rahmen { overflow-x: auto; }
+.vb-tabelle { border-collapse: collapse; width: 100%; font-size: .9rem; margin: .5rem 0; }
+.vb-tabelle th, .vb-tabelle td { text-align: left; padding: .4rem .5rem; border-bottom: 1px solid var(--linie); vertical-align: top; }
+.vb-tabelle tr.aktiv-stufe { background: var(--primaer-hell); font-weight: 700; }
+.vb-tabelle input, .vb-tabelle select { min-height: 36px; padding: .25rem .4rem; font-size: .9rem; }
+.vb-summe { font-size: 1.15rem; }
+.vb-fortschritt { height: 12px; background: var(--hintergrund); border: 1px solid var(--linie); border-radius: 6px; overflow: hidden; margin: 1rem 0; }
+#vb-balken { height: 100%; width: 0; background: var(--primaer); transition: width .4s; }
+.vb-protokoll { padding-left: 1.2rem; font-size: .92rem; }
+.vb-pruefliste { list-style: none; padding: 0; }
+.vb-pruefliste li { display: flex; gap: .5rem; align-items: flex-start; padding: .45rem 0; border-bottom: 1px solid var(--linie); }
+.vb-pruefliste input { width: 1.2rem; height: 1.2rem; margin-top: .15rem; flex: 0 0 auto; }
+.vb-pruefliste .art { font-weight: 700; }
+.vb-codes { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.vb-codes li { background: var(--primaer-hell); border-radius: 2rem; padding: .3rem .4rem .3rem .8rem; font-weight: 700; letter-spacing: .05em; display: inline-flex; align-items: center; gap: .3rem; }
+.vb-codes button { font: inherit; border: 0; background: none; cursor: pointer; color: var(--primaer-dunkel); min-width: 32px; min-height: 32px; }
+#vb-code { text-transform: uppercase; }
+#vb-code::placeholder { text-transform: none; }
+.vb-status strong.an { color: #1e6b33; }

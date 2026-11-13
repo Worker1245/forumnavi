@@ -79,9 +79,9 @@ if (existsSync(currentPath)) {
   const cur = JSON.parse(readFileSync(currentPath, 'utf8'));
   const d = diffPrograms(cur, data);
   const strip = (x) => JSON.stringify({ ...x, $schema: undefined, event: { ...x.event, programStatus: undefined } });
-  const total = d.added.length + d.changed.length + d.removed.length + d.forumChanges.length + (d.sponsorsChanged ? 1 : 0);
+  const total = d.added.length + d.changed.length + d.removed.length + d.forumChanges.length + (d.sponsorsChanged ? 1 : 0) + d.docChanges.length;
   if (strip(cur) === strip(data) && !process.argv.includes('--trotzdem')) fail('Keine Änderungen gegenüber der aktuellen Fassung. Nichts veröffentlicht.');
-  console.log(`Änderungen gegenüber ${cur.event.programStatus.version}: ${d.added.length} neu, ${d.changed.length} geändert, ${d.removed.length} entfallen${total ? '' : ' (nur Metadaten geändert)'}`);
+  console.log(`Änderungen gegenüber ${cur.event.programStatus.version}: ${d.added.length} neu, ${d.changed.length} geändert, ${d.removed.length} entfallen${d.docChanges.length ? `, ${d.docChanges.length} Dokument(e)` : ''}${d.sponsorChanges.length ? `, ${d.sponsorChanges.length} Sponsorfläche(n)` : ''}${total ? '' : ' (nur Metadaten geändert)'}`);
 }
 
 data.event.programStatus = {

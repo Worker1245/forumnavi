@@ -105,9 +105,19 @@ export function diffPrograms(oldData, newData) {
   }
   for (const [k, v] of SA) if (!SB.has(k)) sponsorChanges.push(`Entfallen: ${k}: ${v}`);
 
+  // Pläne und Dokumente
+  const docMap = (d) => new Map((d.documents || []).map((x) => [x.id, `${x.title} (${x.kind}, ${x.file})`]));
+  const DA = docMap(oldData), DB = docMap(newData);
+  const docChanges = [];
+  for (const [k, v] of DB) {
+    if (!DA.has(k)) docChanges.push(`Neu: ${v}`);
+    else if (DA.get(k) !== v) docChanges.push(`Geändert: ${DA.get(k)} → ${v}`);
+  }
+  for (const [k, v] of DA) if (!DB.has(k)) docChanges.push(`Entfallen: ${v}`);
+
   const byTime = (x, y) => x.fields.Beginn.localeCompare(y.fields.Beginn) || x.id.localeCompare(y.id);
   added.sort(byTime); removed.sort(byTime); changed.sort(byTime);
-  return { added, removed, changed, idChanges, forumChanges, sponsorsChanged, sponsorChanges };
+  return { added, removed, changed, idChanges, forumChanges, sponsorsChanged, sponsorChanges, docChanges };
 }
 
 const short = (v) => (String(v).length > 80 ? String(v).slice(0, 77) + '...' : String(v));
@@ -156,7 +166,12 @@ export function diffMarkdown(r, labels = { old: 'alt', new: 'neu' }) {
   } else if (r.sponsorsChanged) {
     L.push('### Sponsorflächen', '', '* Zuordnung unverändert, nur interne Kennungen geändert', '');
   }
-  if (!r.added.length && !r.changed.length && !r.removed.length && !r.forumChanges.length && !r.sponsorsChanged) L.push('Keine inhaltlichen Änderungen.', '');
+  if (r.docChanges.length) {
+    L.push('### Pläne und Dokumente', '');
+    for (const d of r.docChanges) L.push(`* ${d}`);
+    L.push('');
+  }
+  if (!r.added.length && !r.changed.length && !r.docChanges.length && !r.removed.length && !r.forumChanges.length && !r.sponsorsChanged) L.push('Keine inhaltlichen Änderungen.', '');
   return L.join('\n');
 }
 

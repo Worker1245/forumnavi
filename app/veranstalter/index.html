@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Forumnavi für Veranstalter: Demo</title>
+  <meta name="description" content="So funktioniert Forumnavi für Veranstalter: Programm hochladen, Preis sehen, prüfen, aktivieren. Klickbare Demo ohne Anmeldung.">
+  <meta name="theme-color" content="#0a5a75">
+  <meta name="referrer" content="no-referrer">
+  <link rel="icon" href="../icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/app.css">
+  <link rel="stylesheet" href="veranstalter.css">
+  <script type="module" src="veranstalter.js"></script>
+</head>
+<body>
+  <a class="sprunglink" href="#inhalt">Zum Inhalt springen</a>
+  <header class="kopf">
+    <div class="demo-hinweis"><strong>Demo:</strong> Alle Daten sind erfunden. Es wird nichts gespeichert, hochgeladen oder bezahlt.</div>
+    <div class="breite">
+      <h1>Forumnavi für Veranstalter</h1>
+      <p class="kopf-meta">So bringen Sie Ihr Programm in wenigen Schritten aufs Handy Ihrer Teilnehmenden</p>
+    </div>
+  </header>
+
+  <main id="inhalt" class="breite vb" tabindex="-1">
+    <nav aria-label="Schritte" class="schritte">
+      <ol id="schritt-liste"></ol>
+    </nav>
+
+    <section class="vb-schritt" data-schritt="1" aria-labelledby="s1">
+      <h2 id="s1">Anmelden</h2>
+      <p>Sie melden sich mit Ihrer E-Mail-Adresse an. Sie erhalten einen Anmeldelink, ein Passwort brauchen Sie nicht.</p>
+      <label for="vb-mail">E-Mail-Adresse</label>
+      <div class="zeile"><input id="vb-mail" type="text" value="programm@beispiel-veranstalter.de" autocomplete="off"><button type="button" class="knopf" data-weiter>Anmeldelink senden</button></div>
+      <p class="leise">In der Demo wird keine E-Mail verschickt.</p>
+    </section>
+
+    <section class="vb-schritt" data-schritt="2" aria-labelledby="s2" hidden>
+      <h2 id="s2">Veranstaltung anlegen und Programm hochladen</h2>
+      <div class="vb-raster">
+        <div><label for="vb-name">Name der Veranstaltung</label><input id="vb-name" type="text" value="Demo-Energietage 2027"></div>
+        <div><label for="vb-ort">Ort</label><input id="vb-ort" type="text" value="Kongresszentrum Musterstadt"></div>
+        <div><label for="vb-von">Beginn</label><input id="vb-von" type="text" value="09.11.2027"></div>
+        <div><label for="vb-bis">Ende</label><input id="vb-bis" type="text" value="11.11.2027"></div>
+      </div>
+      <p>Laden Sie Ihr Programm hoch, so wie es vorliegt: PDF, Word, Excel. Oder nennen Sie die Adresse Ihrer Programmseite.</p>
+      <div class="vb-upload" aria-label="Hochgeladene Dateien">
+        <p><strong>programmheft_demo-energietage-2027.pdf</strong> <span class="leise">(25 Seiten, Beispiel)</span></p>
+        <p><a href="beispiel-programmheft.pdf" target="_blank" rel="noopener">Beispiel-Programmheft ansehen (PDF, erfunden)</a></p>
+      </div>
+      <button type="button" class="knopf" data-weiter>Hochladen und Preis ermitteln</button>
+    </section>
+
+    <section class="vb-schritt" data-schritt="3" aria-labelledby="s3" hidden>
+      <h2 id="s3">Ihr Preis</h2>
+      <div id="vb-zaehlung" class="infobox" role="status">Programm wird gezählt …</div>
+      <table class="vb-tabelle" id="vb-preise">
+        <caption class="sr-only">Preisstufen je Veranstaltung</caption>
+        <thead><tr><th scope="col">Stufe</th><th scope="col">Programmpunkte</th><th scope="col">Preis je Veranstaltung (zzgl. USt.)</th></tr></thead>
+        <tbody>
+          <tr data-stufe="S"><td>S</td><td>bis 150</td><td>490 €</td></tr>
+          <tr data-stufe="M"><td>M</td><td>151 bis 500</td><td>990 €</td></tr>
+          <tr data-stufe="L"><td>L</td><td>501 bis 1.500</td><td>1.490 €</td></tr>
+          <tr data-stufe="XL"><td>XL</td><td>über 1.500</td><td>1.990 €</td></tr>
+        </tbody>
+      </table>
+      <p class="leise">Enthalten: Aufbereitung, beliebig viele Korrekturen, Programm-Updates bis zum Veranstaltungsende, Sponsorflächen, Sichtbarkeit nach der Veranstaltung bis Sie deaktivieren. Es wird nicht nachberechnet.</p>
+      <button type="button" class="knopf" data-weiter>Weiter zur Zahlung</button>
+    </section>
+
+    <section class="vb-schritt" data-schritt="4" aria-labelledby="s4" hidden>
+      <h2 id="s4">Bezahlen</h2>
+      <p>Zahlung per Kreditkarte, SEPA-Lastschrift oder Überweisung. Die Rechnung erhalten Sie automatisch per E-Mail.</p>
+      <p class="vb-summe">Stufe <strong id="vb-stufe-name">M</strong>: <strong id="vb-stufe-preis">990 €</strong> zzgl. USt.</p>
+      <button type="button" class="knopf" data-weiter>Demo: Zahlung simulieren</button>
+    </section>
+
+    <section class="vb-schritt" data-schritt="5" aria-labelledby="s5" hidden>
+      <h2 id="s5">Ihr Programm wird aufbereitet</h2>
+      <div class="vb-fortschritt" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Aufbereitung"><div id="vb-balken"></div></div>
+      <ul id="vb-protokoll" class="vb-protokoll" aria-live="polite"></ul>
+      <button type="button" class="knopf" data-weiter hidden id="vb-weiter-5">Ergebnis prüfen</button>
+    </section>
+
+    <section class="vb-schritt" data-schritt="6" aria-labelledby="s6" hidden>
+      <h2 id="s6">Prüfen und korrigieren</h2>
+      <p>Die Aufbereitung markiert alle Stellen, bei denen sie unsicher war. Bitte prüfen Sie diese mit Ihrem Programm.</p>
+      <ul class="vb-pruefliste" id="vb-pruefliste"></ul>
+      <h3>Programmpunkte bearbeiten (Ausschnitt)</h3>
+      <p class="leise">Klicken Sie in ein Feld, um es zu ändern.</p>
+      <div class="vb-tabelle-rahmen"><table class="vb-tabelle" id="vb-edit"><caption class="sr-only">Programmpunkte zum Bearbeiten</caption>
+        <thead><tr><th scope="col">Zeit</th><th scope="col">Forum</th><th scope="col">Titel</th><th scope="col">Raum</th><th scope="col">Status</th></tr></thead><tbody></tbody></table></div>
+      <button type="button" class="knopf" data-weiter>Weiter zu den Codes</button>
+    </section>
+
+    <section class="vb-schritt" data-schritt="7" aria-labelledby="s7" hidden>
+      <h2 id="s7">Veranstaltungscodes festlegen</h2>
+      <p>Mit dem Code finden Teilnehmende Ihr Programm, z. B. von Plakat, Leinwand oder Programmheft. Sie können mehrere Codes festlegen.
+        Den Code erhalten Sie sofort, auch wenn das Programm noch nicht fertig ist. Bis zur Aktivierung erscheint „Programm folgt“.</p>
+      <form id="vb-code-form" class="zeile" novalidate>
+        <label for="vb-code" class="sr-only">Neuer Code</label>
+        <input id="vb-code" type="text" maxlength="12" placeholder="z. B. ENERGIE27" autocapitalize="characters" autocomplete="off">
+        <button type="submit" class="knopf">Prüfen und hinzufügen</button>
+      </form>
+      <p id="vb-code-meldung" role="status" class="leise"></p>
+      <ul id="vb-codes" class="vb-codes"></ul>
+      <button type="button" class="knopf" data-weiter>Weiter zu Plänen und Dokumenten</button>
+    </section>
+
+    <section class="vb-schritt" data-schritt="8" aria-labelledby="s-plaene" hidden>
+      <h2 id="s-plaene">Pläne und Dokumente (optional)</h2>
+      <p>Laden Sie Lagepläne, Standpläne oder eine Anfahrtsbeschreibung als PDF hoch. Teilnehmende finden sie oben im Programm.</p>
+      <ul class="leise">
+        <li>Nur PDF, höchstens 10 MB, besser unter 3 MB (Messe-WLAN)</li>
+        <li>PDFs mit eingebetteten Skripten werden aus Sicherheitsgründen abgelehnt</li>
+      </ul>
+      <div class="vb-raster">
+        <div><label for="vb-dok-titel">Titel</label><input id="vb-dok-titel" type="text" value="Standplan Ausstellung"></div>
+        <div><label for="vb-dok-art">Art</label><select id="vb-dok-art"><option value="lageplan">Lageplan</option><option value="standplan" selected>Standplan</option><option value="anfahrt">Anfahrt</option><option value="sonstiges">Sonstiges</option></select></div>
+        <div><label for="vb-dok-datei">PDF-Datei</label><input id="vb-dok-datei" type="file" accept=".pdf,application/pdf"></div>
+      </div>
+      <p id="vb-dok-meldung" role="status"></p>
+      <h3>Ihre Dokumente</h3>
+      <ul id="vb-doks" class="vb-doks"><li>Lageplan Kongresszentrum <span class="leise">(PDF, 21 KB, Beispiel)</span></li></ul>
+      <p class="leise">In der Demo wird nichts hochgeladen. Die Prüfung läuft nur in Ihrem Browser.</p>
+      <button type="button" class="knopf" data-weiter>Weiter zu den Sponsorflächen</button>
+    </section>
+
+    <section class="vb-schritt" data-schritt="9" aria-labelledby="s8" hidden>
+      <h2 id="s8">Sponsorflächen (optional)</h2>
+      <p>Die Flächen gehören Ihnen, Sie können sie an Ihre Sponsoren weitergeben. Jede Fläche ist als „Anzeige“ gekennzeichnet. Logos werden unverändert übernommen, Tracking ist ausgeschlossen.</p>
+      <div class="vb-raster">
+        <div><label for="vb-flaeche">Fläche</label>
+          <select id="vb-flaeche"><option>Banner oben im Programm</option><option>Banner über einem Tag</option><option>Forum präsentiert von</option><option>Hinweis im Kalenderexport</option></select></div>
+        <div><label for="vb-sponsor">Sponsor</label><input id="vb-sponsor" type="text" value="Windmühle Beispiel AG"></div>
+        <div><label for="vb-text">Text (höchstens 140 Zeichen)</label><input id="vb-text" type="text" maxlength="140" value="Wir unterstützen die Demo-Energietage."></div>
+        <div><label for="vb-logo">Logo (SVG, PNG oder WebP, höchstens 200 KB)</label><input id="vb-logo" type="file" accept=".svg,.png,.webp"></div>
+      </div>
+      <p class="leise">Das Logo wird nur in Ihrem Browser angezeigt, in der Demo wird nichts hochgeladen.</p>
+      <h3>So sieht es aus</h3>
+      <div id="vb-anzeige-vorschau"></div>
+      <button type="button" class="knopf" data-weiter>Weiter zur Aktivierung</button>
+    </section>
+
+    <section class="vb-schritt" data-schritt="10" aria-labelledby="s9" hidden>
+      <h2 id="s9">Vorschau und Aktivieren</h2>
+      <p>Sehen Sie sich Ihr Programm an, so wie es Teilnehmende sehen. Erst wenn Sie aktivieren, ist es unter Ihren Codes erreichbar.</p>
+      <p><a class="knopf knopf-leise" href="../?e=demo-energietage-2027" target="_blank" rel="noopener">Vorschau öffnen (neuer Tab)</a></p>
+      <p class="vb-status">Status: <strong id="vb-status">Nicht aktiv</strong></p>
+      <div class="zeile">
+        <button type="button" class="knopf" id="vb-aktivieren">Veranstaltung aktivieren</button>
+        <button type="button" class="knopf knopf-leise" id="vb-deaktivieren" hidden>Deaktivieren</button>
+      </div>
+      <p id="vb-status-text" role="status"></p>
+      <div class="infobox">
+        <p><strong>Und danach?</strong></p>
+        <ul>
+          <li>Programmänderungen: neue Datei hochladen oder direkt im Editor ändern. Teilnehmende sehen sofort den neuen Stand mit Hinweis.</li>
+          <li>Nach der Veranstaltung bleibt das Programm sichtbar, bis Sie deaktivieren.</li>
+          <li>Weitere Veranstaltungen legen Sie genauso an, jeweils mit eigenem Preis.</li>
+          <li>Fragen oder Probleme: über „Hilfe“ im Veranstalter-Bereich, wir antworten per E-Mail.</li>
+        </ul>
+      </div>
+      <button type="button" class="knopf knopf-leise" id="vb-neu">Demo von vorn beginnen</button>
+    </section>
+  </main>
+
+  <footer class="fuss">
+    <div class="breite">
+      <p class="rechtliches"><a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a> · <a href="../">Teilnehmer-Ansicht</a></p>
+      <p class="leise">Diese Demo zeigt den geplanten Veranstalter-Bereich. Funktionen und Preise können sich bis zum Start noch ändern.</p>
+    </div>
+  </footer>
+  <div id="ansage" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

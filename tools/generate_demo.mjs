@@ -419,6 +419,7 @@ const data = {
   speakers,
   forums,
   sessions,
+  documents: [{ id: 'lageplan', title: 'Lageplan Kongresszentrum', kind: 'lageplan', file: 'dokumente/lageplan.pdf' }],
   sponsors,
   sponsorSlots,
 };
