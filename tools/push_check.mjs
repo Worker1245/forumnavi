@@ -21,7 +21,13 @@ const SECRET_PATTERNS = [
   [/\bxox[abposr]-[A-Za-z0-9-]{10,}/, 'Slack-Token'],
   [/(passwor[dt]|passwd|secret|api[_-]?key|token)\s*[:=]\s*["']?[^\s"']{8,}/i, 'Passwort oder Schlüssel als Wert'],
 ];
-const SKIP_CONTENT = /\.(png|jpe?g|webp|gif|ico|pdf|zip|pptx|woff2?)$/i;
+const SKIP_CONTENT = /\.(png|jpe?g|webp|gif|ico|pdf|zip|pptx|xlsx|woff2?)$/i;
+
+// Veranstaltungen mit echten Daten, für die eine schriftliche Zustimmung vorliegt
+let released = new Set();
+try {
+  released = new Set(JSON.parse(readFileSync('data/freigaben.json', 'utf8')).freigaben.map((f) => f.eventId));
+} catch { /* keine Freigabeliste: nur Demo-Daten erlaubt */ }
 
 const problems = [];
 for (const f of files) {
@@ -37,7 +43,8 @@ for (const f of files) {
   if (publicRepo && f.startsWith('data/events/') && f.endsWith('.json')) {
     try {
       const d = JSON.parse(text);
-      if (d.event && d.event.isDemo !== true) problems.push(`${f}: keine Demo-Daten (isDemo ist nicht true). Echte Programmdaten nur nach Freigabe des Veranstalters.`);
+      if (f.endsWith('ankuendigung.json') && d.isDemo !== true && !released.has(d.id)) problems.push(`${f}: Ankündigung einer echten Veranstaltung ohne Eintrag in data/freigaben.json. Erst nach Zustimmung des Veranstalters veröffentlichen.`);
+      if (d.event && d.event.isDemo !== true && !released.has(d.event.id)) problems.push(`${f}: echte Programmdaten ohne Eintrag in data/freigaben.json. Erst nach schriftlicher Zustimmung des Veranstalters veröffentlichen.`);
     } catch { problems.push(`${f}: kein gültiges JSON`); }
   }
 }

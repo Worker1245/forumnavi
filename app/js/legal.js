@@ -6,10 +6,10 @@ document.querySelectorAll('.rechtliches a').forEach((a) => {
   a.href = `${a.getAttribute('href')}${location.search}${location.hash}`;
 });
 
-fetch('events/index.json', { cache: 'no-cache' })
-  .then((r) => r.json())
-  .then((index) => {
-    const ev = index.events.find((e) => e.id === params.get('e')) || (index.events.length === 1 ? index.events[0] : null);
+const id = params.get('e');
+if (id) fetch(`events/${encodeURIComponent(id)}/meta.json`)
+  .then((r) => (r.ok ? r.json() : null))
+  .then((ev) => {
     if (!ev) return;
     const f = new Intl.DateTimeFormat('de-DE', { timeZone: ev.timezone, day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
     const text = `${ev.name} · Programmstand vom ${f.format(new Date(ev.programStatus.date))} Uhr`;

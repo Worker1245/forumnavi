@@ -72,6 +72,16 @@
           "type": "boolean",
           "description": "true = erfundene Beispieldaten. Die App zeigt dann einen Hinweis."
         },
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z0-9]{4,12}$",
+          "description": "Veranstaltungscode zum Eintippen, z. B. WIND26. Nur Großbuchstaben und Ziffern. Möglichst ohne verwechselbare Zeichen (0/O, 1/I)."
+        },
+        "listed": {
+          "type": "boolean",
+          "default": false,
+          "description": "true = erscheint auf der Startseite in der Liste. Standard: nicht gelistet, nur über Code oder Link erreichbar."
+        },
         "location": {
           "type": "object",
           "additionalProperties": false,

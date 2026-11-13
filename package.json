@@ -1,6 +1,6 @@
 {
   "name": "forumnavi",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Filterbares Programm für Fachveranstaltungen mit vielen parallelen Foren",
   "type": "module",
@@ -12,7 +12,13 @@
     "demo-daten": "node tools/generate_demo.mjs",
     "push-pruefung": "node tools/push_check.mjs --oeffentlich",
     "bauen": "node tools/build.mjs",
-    "vorschau": "node tools/build.mjs && npx --yes http-server dist -p 8080 -c-1"
+    "vorschau": "node tools/build.mjs && npx --yes http-server dist -p 8080 -c-1",
+    "vergleich": "node tools/diff.mjs",
+    "bericht": "node tools/import_bericht.mjs",
+    "freigeben": "node tools/freigeben.mjs",
+    "vorschau-intern": "node tools/build.mjs --events ../forumnavi-intern/data/events --ziel ../forumnavi-intern/vorschau && npx --yes http-server ../forumnavi-intern/vorschau -p 8080 -c-1",
+    "anlegen": "node tools/anlegen.mjs",
+    "ids": "node tools/ids_uebernehmen.mjs"
   },
   "license": "UNLICENSED",
   "dependencies": {

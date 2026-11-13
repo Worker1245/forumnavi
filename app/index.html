@@ -40,6 +40,7 @@
 
   <main id="inhalt" class="breite" tabindex="-1">
     <noscript><p class="hinweis">Für das Programm bitte JavaScript einschalten.</p></noscript>
+    <div id="link-import" class="infobox link-import" role="region" aria-label="Einträge aus dem Link" hidden></div>
 
     <section id="seite-programm" aria-labelledby="h-programm" hidden>
       <h2 id="h-programm" class="sr-only">Programm</h2>
@@ -79,8 +80,8 @@
 
     <section id="seite-merkliste" aria-labelledby="h-merkliste" hidden>
       <h2 id="h-merkliste" tabindex="-1">Merkliste</h2>
-      <p class="infobox">Die Merkliste wird nirgends gespeichert, sie steht nur im Link dieser Seite.
-        Lege ein Lesezeichen an oder schicke dir den Link über „Teilen“, um sie wiederzufinden.</p>
+      <p class="infobox">Die Merkliste wird nur auf diesem Gerät gespeichert, kein Server kennt sie.
+        Auf ein anderes Gerät überträgst du sie über „Teilen“ per Link oder QR-Code.</p>
       <p id="merkliste-info"></p>
       <div class="zeile">
         <button type="button" class="knopf" id="knopf-ics-merkliste">Alle in den Kalender</button>
@@ -92,7 +93,7 @@
 
     <section id="seite-filter" aria-labelledby="h-filter" hidden>
       <h2 id="h-filter" tabindex="-1">Meine Filter</h2>
-      <p class="infobox">Gespeicherte Filter stehen nur im Link. Neue Filter speicherst du im Programm unter „Filter und Suche“.</p>
+      <p class="infobox">Gespeicherte Filter bleiben auf diesem Gerät. Neue Filter speicherst du im Programm unter „Filter und Suche“.</p>
       <ul id="gf-liste" class="gf-liste"></ul>
     </section>
 
@@ -110,14 +111,18 @@
       <p>Mit der Handykamera scannen, um diese Ansicht samt Merkliste auf dem Handy zu öffnen.</p>
       <div id="qr" class="qr"></div>
       <p class="leise" id="qr-info"></p>
+      <h3>Auf diesem Gerät gespeichert</h3>
+      <p>Merkliste und gespeicherte Filter dieser Veranstaltung liegen nur im Speicher dieses Browsers. Sie werden an niemanden übertragen.</p>
+      <button type="button" class="knopf knopf-leise" id="knopf-geraet-loeschen">Von diesem Gerät löschen</button>
+      <p class="leise" id="geraet-meldung" role="status"></p>
     </section>
   </main>
 
   <footer class="fuss">
     <div class="breite">
       <p class="stand"></p>
-      <p class="rechtliches"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
-      <p class="leise">Ohne Anmeldung, ohne Cookies, ohne Tracking. Merkliste und Filter stehen nur im Link.</p>
+      <p class="rechtliches"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="./" class="zur-start">Anderen Veranstaltungscode eingeben</a></p>
+      <p class="leise">Ohne Anmeldung, ohne Cookies, ohne Tracking. Merkliste und Filter bleiben auf deinem Gerät.</p>
       <p class="leise">Forumnavi __APP_VERSION__</p>
     </div>
   </footer>

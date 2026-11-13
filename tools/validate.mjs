@@ -161,6 +161,17 @@ function checkContent(d) {
   return { errors, warnings };
 }
 
+// Ankündigung (Veranstaltung angelegt, Programm folgt): kleine Datei ankuendigung.json
+export function validateAnnouncement(a) {
+  const errors = [];
+  const need = ['id', 'name', 'code', 'startDate', 'endDate', 'timezone', 'location', 'hinweis'];
+  for (const k of need) if (a[k] === undefined || a[k] === '') errors.push(`Pflichtfeld "${k}" fehlt`);
+  if (a.id && !/^[a-z0-9][a-z0-9-]{0,63}$/.test(a.id)) errors.push(`id "${a.id}" hat ein falsches Format`);
+  if (a.code && !/^[A-Z0-9]{4,12}$/.test(a.code)) errors.push(`code "${a.code}" hat ein falsches Format (4 bis 12 Großbuchstaben/Ziffern)`);
+  if (a.startDate > a.endDate) errors.push('startDate liegt nach endDate');
+  return { errors, warnings: [] };
+}
+
 export function validateData(data) {
   if (!validateSchema(data)) {
     return { errors: validateSchema.errors.map((e) => schemaMessage(e, data)), warnings: [] };
@@ -186,6 +197,13 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
     } catch (e) {
       console.log(`✗ ${rel}\n  FEHLER: Datei ist kein gültiges JSON: ${e.message}`);
       failed++;
+      continue;
+    }
+    if (file.endsWith('ankuendigung.json')) {
+      const { errors } = validateAnnouncement(data);
+      if (errors.length) failed++;
+      console.log(`${errors.length ? '✗' : '✓'} ${rel}  (Ankündigung, Code ${data.code || '?'}, ${errors.length} Fehler)`);
+      errors.forEach((e) => console.log(`  FEHLER:  ${e}`));
       continue;
     }
     const { errors, warnings } = validateData(data);

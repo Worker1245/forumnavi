@@ -183,6 +183,14 @@ input[type="search"], input[type="text"], select {
 .fuss { border-top: 1px solid var(--linie); background: var(--flaeche); padding: 1rem 0 2rem; font-size: .9rem; }
 .fuss p { margin: .3rem 0; }
 
+/* Startseite und Hinweise */
+.code-form input { flex: 1 1 10rem; width: auto; text-transform: uppercase; font-size: 1.2rem; letter-spacing: .08em; }
+.code-form input::placeholder { text-transform: none; letter-spacing: normal; }
+.fehler { color: var(--entfaellt-text); font-weight: 600; min-height: 1.2em; }
+.liste-veranstaltungen .link { margin-left: .5rem; font-size: .85rem; }
+.link-import { border: 2px solid var(--primaer); margin-bottom: .75rem; }
+.link-import p { margin: 0 0 .25rem; }
+
 /* Rechtliche Seiten */
 .text-seite { background: var(--flaeche); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1rem auto; }
 .platzhalter { background: #fff3d1; padding: 0 .2rem; }

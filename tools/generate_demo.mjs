@@ -406,6 +406,8 @@ const data = {
     startDate: DAYS[0].date,
     endDate: DAYS[DAYS.length - 1].date,
     isDemo: true,
+    code: 'WIND26',
+    listed: true,
     location: { venue: 'Kongresszentrum Musterstadt', street: 'Beispielallee 1', postalCode: '00000', city: 'Musterstadt', country: 'DE' },
     programStatus: { date: STAND, version: VERSION, source: 'tools/generate_demo.mjs (erfundene Daten)' },
   },

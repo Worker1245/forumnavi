@@ -17,6 +17,9 @@ data/events/
 Die Versionskennung lautet `JJJJ-MM-TT_NN`, also Datum plus laufende Nummer am selben Tag.
 Ein Beispiel ist `2027-11-09_02` für die zweite Änderung am 9. November.
 
+Vor dem ersten Programm kann statt `aktuell.json` eine kleine Datei `ankuendigung.json` im Ordner liegen
+(angelegt mit `tools/anlegen.mjs`). Sie reserviert den Veranstaltungscode, die App zeigt dann „Programm folgt“.
+
 Echte Programme (z. B. Spreewind) liegen erst einmal **nur im internen Repo**. Ins öffentliche Repo
 kommen sie erst nach schriftlicher Zustimmung des Veranstalters.
 
@@ -24,7 +27,7 @@ kommen sie erst nach schriftlicher Zustimmung des Veranstalters.
 
 | Bereich | Bedeutung | Wichtigste Felder |
 |---|---|---|
-| `event` | Die Veranstaltung selbst | Name, Ort, Zeitzone, Beginn, Ende, `programStatus` (Programmstand), `isDemo` |
+| `event` | Die Veranstaltung selbst | Name, Ort, Zeitzone, Beginn, Ende, `programStatus` (Programmstand), `isDemo`, `code` (Veranstaltungscode), `listed` (auf der Startseite gelistet, Standard nein) |
 | `days` | Veranstaltungstage | Datum, Anzeigename („Dienstag, 9. November“) |
 | `rooms` | Räume | Name, Etage |
 | `topics` | Themen für den Filter | Bezeichnung |

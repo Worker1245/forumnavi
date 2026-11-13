@@ -1,9 +1,11 @@
 // Forumnavi: Programmansicht, Filter, Merkliste, gespeicherte Filter, Teilen, Kalenderexport.
-// Kein Server speichert Nutzerdaten: Merkliste und Filter stehen nur im Link (Teil nach '#').
+// Kein Server speichert Nutzerdaten: Merkliste und Filter stehen im Link (Teil nach '#')
+// und zusätzlich nur auf diesem Gerät (store.js).
 
 import { sessionCode } from './codes.js';
-import { emptyFilter, filterIsActive, encodeState, decodeState } from './state.js';
+import { emptyFilter, filterIsActive, encodeState, decodeState, encodeSavedFilter, decodeSavedFilter } from './state.js';
 import { buildIcs } from './ics.js';
+import { loadEventState, saveEventState, myEvents, rememberEvent, forgetEvent } from './store.js';
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -22,6 +24,7 @@ let C; // aufbereitete Daten (Nachschlagetabellen)
 let S; // Zustand (aus dem Link)
 let searchTimer;
 let renderRun = 0;
+let pendingImport = null; // Merkliste/Filter aus einem fremden Link, die noch nicht übernommen sind
 
 // ---------- Laden ----------
 
@@ -33,45 +36,157 @@ async function fetchJson(url) {
 
 async function init() {
   const main = $('#inhalt');
+  const id = new URLSearchParams(location.search).get('e');
+  if (!id) return renderStart();
   try {
-    let id = new URLSearchParams(location.search).get('e');
-    // Ist die Veranstaltung im Link genannt, laden Übersicht und Programm gleichzeitig (spart eine Wartezeit im schwachen WLAN)
-    const early = id ? fetchJson(`events/${encodeURIComponent(id)}/data.json`).catch(() => null) : null;
-    const index = await fetchJson('events/index.json');
-    if (!id) {
-      if (index.events.length === 1) id = index.events[0].id;
-      else return renderEventList(index.events);
-    }
-    if (!index.events.some((e) => e.id === id)) {
-      main.innerHTML = '<p class="hinweis">Diese Veranstaltung gibt es hier nicht. <a href="./">Zur Übersicht</a></p>';
-      return;
-    }
-    D = (early && await early) || await fetchJson(`events/${encodeURIComponent(id)}/data.json`);
+    D = await fetchJson(`events/${encodeURIComponent(id)}/data.json`);
   } catch (err) {
     console.error(err);
-    main.innerHTML = '<div class="hinweis" role="alert"><p>Das Programm konnte nicht geladen werden. Bitte die Internetverbindung prüfen.</p><p><button type="button" class="knopf" onclick="location.reload()">Erneut versuchen</button></p></div>';
+    const notFound = /HTTP 404/.test(String(err));
+    if (notFound) {
+      const meta = await fetchJson(`events/${encodeURIComponent(id)}/meta.json`).catch(() => null);
+      if (meta && meta.announced) return renderAnnouncement(meta);
+    }
+    main.innerHTML = notFound
+      ? '<p class="hinweis" role="alert">Diese Veranstaltung gibt es hier nicht. <a href="./">Veranstaltungscode eingeben</a></p>'
+      : '<div class="hinweis" role="alert"><p>Das Programm konnte nicht geladen werden. Bitte die Internetverbindung prüfen.</p><p><button type="button" class="knopf" onclick="location.reload()">Erneut versuchen</button></p></div>';
     return;
   }
   prepare();
   S = decodeState(location.hash, D.days);
+  applyDeviceState();
+  rememberEvent({ id: D.event.id, name: D.event.name, city: D.event.location.city, startDate: D.event.startDate, endDate: D.event.endDate });
   renderShell();
+  writeHash();
   renderAll();
   window.addEventListener('hashchange', () => {
     const next = encodeState(S, D.days);
     if (location.hash.replace(/^#/, '') === next) return;
     S = decodeState(location.hash, D.days);
+    applyDeviceState();
+    writeHash();
     renderAll();
   });
+  registerServiceWorker();
+}
+
+function registerServiceWorker() {
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
     navigator.serviceWorker.register('sw.js').catch(() => {});
   }
 }
 
-function renderEventList(events) {
-  document.title = 'Forumnavi';
-  $('#titel').textContent = 'Veranstaltungen';
-  $('#inhalt').innerHTML = `<ul class="liste-veranstaltungen">${events.map((e) =>
-    `<li><a href="?e=${encodeURIComponent(e.id)}">${esc(e.name)}</a> <span class="leise">${esc(e.city)}, ${esc(formatDateRange(e.startDate, e.endDate))}</span></li>`).join('')}</ul>`;
+// ---------- Gerätespeicher (Variante b) ----------
+
+// Merkliste und Filter aus dem Link mit dem Stand auf diesem Gerät zusammenführen.
+// Enthält der Link eine andere Merkliste als das Gerät, wird nichts überschrieben:
+// Die App fragt, ob die Einträge aus dem Link hinzugefügt werden sollen.
+function applyDeviceState() {
+  const local = loadEventState(D.event.id);
+  pendingImport = null;
+  if (!local) return; // erstes Öffnen auf diesem Gerät: Link gilt
+  const localFav = new Set(local.fav.filter((c) => typeof c === 'string'));
+  const localGf = local.gf.map((x) => decodeSavedFilter(x, D.days));
+  const linkFav = S.fav;
+  const linkGf = S.gf;
+  S.fav = localFav;
+  S.gf = localGf;
+  const newFav = [...linkFav].filter((c) => !localFav.has(c));
+  const localGfKeys = new Set(local.gf);
+  const newGf = linkGf.filter((g) => !localGfKeys.has(encodeSavedFilter(g, D.days)));
+  if (newFav.length || newGf.length) pendingImport = { fav: newFav, gf: newGf };
+}
+
+function persist() {
+  if (!D) return;
+  saveEventState(D.event.id, [...S.fav].sort(), S.gf.map((g) => encodeSavedFilter(g, D.days)));
+}
+
+function renderImportBanner() {
+  const box = $('#link-import');
+  if (!pendingImport) { box.hidden = true; return; }
+  const { fav, gf } = pendingImport;
+  const parts = [fav.length ? plural(fav.length, 'Programmpunkt', 'Programmpunkte') : '', gf.length ? plural(gf.length, 'gespeicherten Filter', 'gespeicherte Filter') : ''].filter(Boolean);
+  box.hidden = false;
+  box.innerHTML = `<p><strong>Dieser Link enthält ${parts.join(' und ')}, die nicht in deiner Merkliste auf diesem Gerät stehen.</strong></p>
+    <div class="zeile"><button type="button" class="knopf" data-aktion="import-uebernehmen">Hinzufügen</button>
+    <button type="button" class="knopf knopf-leise" data-aktion="import-verwerfen">Nicht übernehmen</button></div>`;
+}
+
+// ---------- Veranstaltung angelegt, Programm folgt ----------
+
+function renderAnnouncement(meta) {
+  document.title = `${meta.name} · Programm folgt`;
+  $('#titel').textContent = meta.name;
+  $('#ort').textContent = `${formatDateRange(meta.startDate, meta.endDate)}${meta.venue ? ` · ${meta.venue}` : ''}${meta.city ? `, ${meta.city}` : ''}${meta.code ? ` · Code ${meta.code}` : ''}`;
+  rememberEvent({ id: meta.id, name: meta.name, city: meta.city, startDate: meta.startDate, endDate: meta.endDate });
+  $('#inhalt').innerHTML = `<section aria-labelledby="h-folgt"><h2 id="h-folgt">Programm folgt</h2>
+    <p class="infobox">${esc(meta.hinweis)}</p>
+    <p>Diese Veranstaltung ist auf diesem Gerät vorgemerkt. Sobald das Programm da ist, findest du es hier unter derselben Adresse
+      oder auf der Startseite unter „Auf diesem Gerät“.</p>
+    <p><a href="./">Zur Startseite</a></p></section>`;
+  registerServiceWorker();
+}
+
+// ---------- Startseite: Veranstaltungscode ----------
+
+function normalizeCode(s) {
+  return String(s || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+}
+
+async function sha256Hex(text) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function renderStart() {
+  document.title = 'Forumnavi: Programm öffnen';
+  $('#titel').textContent = 'Forumnavi';
+  $('#ort').textContent = 'Das Programm deiner Veranstaltung auf dem Handy';
+  $$('.zur-start').forEach((a) => { a.hidden = true; });
+  let listed = [];
+  try { listed = (await fetchJson('events/index.json')).events; } catch { /* offline: nur Gerätespeicher */ }
+  const mine = myEvents();
+  const item = (e, removable) => `<li><a href="?e=${encodeURIComponent(e.id)}">${esc(e.name)}</a>
+      <span class="leise">${esc(e.city || '')}${e.startDate ? `, ${esc(formatDateRange(e.startDate, e.endDate))}` : ''}</span>
+      ${removable ? `<button type="button" class="link" data-vergessen="${esc(e.id)}">Von diesem Gerät entfernen<span class="sr-only">: ${esc(e.name)}</span></button>` : ''}</li>`;
+  $('#inhalt').innerHTML = `
+    <section aria-labelledby="h-code">
+      <h2 id="h-code">Veranstaltung öffnen</h2>
+      <form id="code-form" class="code-form" novalidate>
+        <label for="code-eingabe">Veranstaltungscode</label>
+        <p class="leise" id="code-hilfe">Den Code findest du auf der Website des Veranstalters, im Programmheft oder vor Ort.</p>
+        <div class="zeile">
+          <input id="code-eingabe" name="code" type="text" inputmode="text" autocapitalize="characters" autocomplete="off" spellcheck="false" maxlength="20" aria-describedby="code-hilfe code-fehler" placeholder="z. B. WIND26">
+          <button type="submit" class="knopf">Öffnen</button>
+        </div>
+        <p id="code-fehler" class="fehler" role="alert"></p>
+      </form>
+    </section>
+    ${mine.length ? `<section aria-labelledby="h-meine"><h2 id="h-meine">Auf diesem Gerät</h2><ul class="liste-veranstaltungen">${mine.map((e) => item(e, true)).join('')}</ul></section>` : ''}
+    ${listed.length ? `<section aria-labelledby="h-offen"><h2 id="h-offen">Öffentlich</h2><ul class="liste-veranstaltungen">${listed.map((e) => item(e, false)).join('')}</ul></section>` : ''}`;
+  $('#code-form').addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    const code = normalizeCode($('#code-eingabe').value);
+    const out = $('#code-fehler');
+    out.textContent = '';
+    if (code.length < 4) { out.textContent = 'Bitte den vollständigen Code eingeben.'; return; }
+    try {
+      const res = await fetch(`events/codes/${await sha256Hex(code)}.json`);
+      if (!res.ok) { out.textContent = `Der Code „${code}“ ist unbekannt. Bitte die Schreibweise prüfen.`; return; }
+      const { id } = await res.json();
+      location.href = `?e=${encodeURIComponent(id)}`;
+    } catch {
+      out.textContent = 'Keine Verbindung. Bitte später erneut versuchen.';
+    }
+  });
+  $('#inhalt').addEventListener('click', (ev) => {
+    const b = ev.target.closest('[data-vergessen]');
+    if (!b) return;
+    forgetEvent(b.dataset.vergessen);
+    renderStart();
+  });
+  registerServiceWorker();
 }
 
 // ---------- Daten aufbereiten ----------
@@ -167,7 +282,7 @@ function renderShell() {
   const ev = D.event;
   document.title = `${ev.name} · Programm`;
   $('#titel').textContent = ev.name;
-  $('#ort').textContent = `${formatDateRange(ev.startDate, ev.endDate)} · ${ev.location.venue}, ${ev.location.city}`;
+  $('#ort').textContent = `${formatDateRange(ev.startDate, ev.endDate)} · ${ev.location.venue}, ${ev.location.city}${ev.code ? ` · Code ${ev.code}` : ''}`;
   $$('.stand').forEach((el) => { el.textContent = statusText(); });
   $('#demo-hinweis').hidden = !ev.isDemo;
   $('#reiter').hidden = false;
@@ -186,7 +301,7 @@ function renderShell() {
   $('#knopf-gf-speichern').addEventListener('click', onSaveFilter);
   $('#gf-name').addEventListener('keydown', (e) => { if (e.key === 'Enter') onSaveFilter(e); });
   if (window.matchMedia('(min-width: 60rem)').matches) $('#filter-klappe').open = true;
-  $$('.rechtliches a').forEach((a) => a.addEventListener('click', () => {
+  $$('.rechtliches a:not(.zur-start)').forEach((a) => a.addEventListener('click', () => {
     a.href = `${a.getAttribute('href').split('?')[0]}?e=${encodeURIComponent(ev.id)}${location.hash}`;
   }));
 }
@@ -204,6 +319,7 @@ function writeHash(push = false) {
   const hash = encodeState(S, D.days);
   const url = `${location.pathname}${location.search}${hash ? '#' + hash : ''}`;
   if (push) history.pushState(null, '', url); else history.replaceState(null, '', url);
+  persist();
   if (S.seite === 'teilen') renderShare();
 }
 
@@ -215,6 +331,7 @@ function renderAll() {
   }
   syncFilterForm();
   updateBadges();
+  renderImportBanner();
   if (S.seite === 'programm') renderProgram();
   if (S.seite === 'merkliste') renderFavorites();
   if (S.seite === 'filter') renderSavedFilters();
@@ -612,6 +729,20 @@ function onClick(e) {
     case 'zuruecksetzen':
       S.filter = emptyFilter(); writeHash(); syncFilterForm(); renderProgram(true);
       return $('#f-q').focus();
+    case 'import-uebernehmen':
+      pendingImport.fav.forEach((c) => S.fav.add(c));
+      S.gf.push(...pendingImport.gf);
+      announce('Aus dem Link übernommen.');
+      pendingImport = null; writeHash(); return renderAll();
+    case 'import-verwerfen':
+      pendingImport = null; writeHash(); return renderAll();
+    case 'knopf-geraet-loeschen':
+      forgetEvent(D.event.id);
+      S.fav = new Set(); S.gf = []; pendingImport = null;
+      { const h = encodeState(S, D.days); history.replaceState(null, '', `${location.pathname}${location.search}${h ? '#' + h : ''}`); }
+      announce('Merkliste und Filter dieser Veranstaltung wurden von diesem Gerät gelöscht.');
+      $('#geraet-meldung').textContent = 'Gelöscht. Auf diesem Gerät ist für diese Veranstaltung nichts mehr gespeichert.';
+      updateBadges(); return renderShare();
     case 'unbekannte-entfernen':
       [...S.fav].filter((c) => !C.byCode.has(c)).forEach((c) => S.fav.delete(c));
       writeHash(); updateBadges(); return renderFavorites();

@@ -2,7 +2,7 @@
 
 **Das Programm Ihrer Fachtagung, filterbar auf jedem Handy. Ohne App, ohne Anmeldung.**
 
-Demo ansehen: **https://worker1245.github.io/forumnavi/**
+Demo ansehen: **https://worker1245.github.io/forumnavi/** mit dem Code **WIND26**
 (Die Demo zeigt eine erfundene Veranstaltung. Alle Namen, Firmen und Vorträge sind ausgedacht.)
 
 ## Das Problem
@@ -23,6 +23,20 @@ Filter, keine Merkliste und keinen Kalendereintrag. Kurzfristige Änderungen err
 * **Schwaches Messe-WLAN:** Die ganze Anwendung ist sehr klein und funktioniert nach dem ersten Aufruf auch ohne Netz
 
 Teilnehmende brauchen nur einen Browser. Es gibt nichts zu installieren und kein Konto.
+
+## So finden Teilnehmende Ihre Veranstaltung
+
+Jede Veranstaltung bekommt einen kurzen **Veranstaltungscode**, z. B. `WIND26`. Den Code erhalten Sie gleich bei
+Auftragserteilung, lange bevor das Programm steht. So können Sie ihn schon in Einladung, Website und Programmheft
+drucken. Bis das Programm online ist, erscheint unter dem Code der Hinweis „Programm folgt“.
+
+Drei Wege ins Programm:
+* Code auf der Startseite eingeben (gut für Plakate, Leinwand, Programmheft)
+* Kurzadresse mit dem Code, z. B. `…/wind26`
+* Link oder QR-Code auf Ihrer Website (ein Tipp, und man ist drin)
+
+Andere Veranstaltungen sehen Ihre Teilnehmenden nicht. Der Code dient der Trennung zwischen Veranstaltungen,
+er ist kein Zugangsschutz. Das Programm ist ohnehin öffentlich, da Sie es auch selbst veröffentlichen.
 
 ## Was Sie als Veranstalter tun müssen
 
@@ -49,7 +63,7 @@ Daten über Teilnehmende.
 
 * keine Anmeldung, keine Nutzerkonten
 * keine Cookies, kein Tracking einzelner Personen
-* Merkliste und Filter stehen nur im Link auf dem Gerät der Teilnehmenden und werden auf keinem Server gespeichert
+* Merkliste und Filter bleiben auf dem Gerät der Teilnehmenden und werden auf keinem Server gespeichert
 * Kalenderdateien und QR-Codes entstehen direkt im Browser
 
 Für den Echtbetrieb ist Hosting in der EU vorgesehen.

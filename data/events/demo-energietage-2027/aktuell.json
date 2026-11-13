@@ -10,6 +10,8 @@
     "startDate": "2027-11-09",
     "endDate": "2027-11-11",
     "isDemo": true,
+    "code": "WIND26",
+    "listed": true,
     "location": {
       "venue": "Kongresszentrum Musterstadt",
       "street": "Beispielallee 1",
@@ -18,9 +20,10 @@
       "country": "DE"
     },
     "programStatus": {
-      "date": "2026-11-13T00:40:00+01:00",
-      "version": "2026-11-13_01",
-      "source": "tools/generate_demo.mjs (erfundene Daten)"
+      "date": "2026-11-13T01:03:00+01:00",
+      "version": "2026-11-13_02",
+      "source": "tools/generate_demo.mjs (erfundene Daten)",
+      "note": "Veranstaltungscode WIND26 ergänzt"
     }
   },
   "days": [

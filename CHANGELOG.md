@@ -4,6 +4,24 @@ Versionen nach Semantic Versioning: erste veröffentlichte Demo v0.1.0, Pilotver
 Vor jeder neuen Version wird der alte Stand als ZIP im internen Repo unter `archive/` abgelegt und
 die Version per Git-Tag markiert.
 
+## [0.2.0] (2026-11-13)
+
+Etappe 3: Import-Werkzeug, Veranstaltungscodes, Speicherung auf dem Gerät.
+
+### Hinzugefügt
+* Veranstaltungscodes: Startseite mit Code-Eingabe, Kurzadresse je Code (z. B. `/wind26/`), Demo mit Code WIND26.
+  Keine öffentliche Liste aller Veranstaltungen mehr, nur Veranstaltungen mit `listed: true` erscheinen.
+* Veranstaltung vorab anlegen (`tools/anlegen.mjs`): Code wird reserviert, unter dem Code erscheint „Programm folgt“
+* Merkliste, gespeicherte Filter und geöffnete Veranstaltungen werden zusätzlich auf dem Gerät gespeichert
+  (Entscheidung b). Fremde Links überschreiben nichts, die App fragt nach. Löschen über „Teilen“.
+* Import-Werkzeug ohne KI: Vergleich (`tools/diff.mjs`), ID-Übernahme (`tools/ids_uebernehmen.mjs`),
+  Prüfbericht (`tools/import_bericht.mjs`), Freigabe mit Programmstand und Version (`tools/freigeben.mjs`)
+* Freigabeliste `data/freigaben.json`: echte Programmdaten nur nach Eintrag im öffentlichen Repo erlaubt
+
+### Geändert
+* Datenschutz-Vorlage um Speicherung auf dem Gerät ergänzt (mit offenem Prüfpunkt § 25 TDDDG)
+* Demo-Daten Version `2026-11-13_02` (Code WIND26 ergänzt, Programm unverändert)
+
 ## [0.1.0] (2026-11-13)
 
 Erste veröffentlichte Demo (Etappe 2).
