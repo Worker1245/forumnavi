@@ -7,7 +7,7 @@ Feste Entscheidung: Merkliste und gespeicherte Filter werden **nur im Link** ges
 Alles steht hinter dem Zeichen `#`, zum Beispiel:
 
 ```
-https://worker1245.github.io/forumnavi/#tag=2&thema=netz&m=d0kopj1rlsnrhvt
+https://dario-lanz.github.io/forumnavi/#tag=2&thema=netz&m=d0kopj1rlsnrhvt
 ```
 
 Den Teil hinter `#` schickt der Browser **nie an den Server**. Er erscheint deshalb auch in keinem
@@ -29,7 +29,7 @@ Server-Protokoll. Nur wer den Link hat, sieht die Merkliste.
 
 ## Warum ein Kurzcode je Programmpunkt?
 
-Gemessen am 13.11.2026 mit der Demo (Basisadresse `https://worker1245.github.io/forumnavi/`).
+Gemessen am 13.11.2026 mit der Demo (Basisadresse `https://dario-lanz.github.io/forumnavi/`).
 „Einfach“ bedeutet: vollständige IDs mit Komma getrennt. „Kompakt“ ist die gewählte Lösung.
 QR-Code mit Fehlerkorrektur M (15 % des Codes dürfen beschädigt sein).
 

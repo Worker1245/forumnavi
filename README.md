@@ -2,8 +2,8 @@
 
 **Das Programm Ihrer Fachtagung, filterbar auf jedem Handy. Ohne App, ohne Anmeldung.**
 
-Demo ansehen: **https://worker1245.github.io/forumnavi/** mit dem Code **WIND26**
-Demo für Veranstalter (so funktioniert die Einrichtung): **https://worker1245.github.io/forumnavi/veranstalter/**
+Demo ansehen: **https://dario-lanz.github.io/forumnavi/** mit dem Code **WIND26**
+Demo für Veranstalter (so funktioniert die Einrichtung): **https://dario-lanz.github.io/forumnavi/veranstalter/**
 (Die Demo zeigt eine erfundene Veranstaltung. Alle Namen, Firmen und Vorträge sind ausgedacht.)
 
 ## Das Problem
